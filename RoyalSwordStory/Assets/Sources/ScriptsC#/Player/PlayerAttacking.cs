@@ -4,11 +4,15 @@ using UnityEngine;
 public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 {
     [SerializeField] private float damage = 10;
-    [Range(0.15f, 1), SerializeField] private float attackTime = 0.1f;
+    [SerializeField] private float attackTime = 0.12f;
     [SerializeField] private float forceAttack = 7;
     [SerializeField] private float repulsion = 10;
     [SerializeField] private float stunTime = 0.3f;
     [SerializeField] private float radiusDamage = 1.73f;
+    [Space]
+    [SerializeField] private float damageAttackDown = 10;
+    [SerializeField] private float speedAttackDown = 35;
+    [Space]
     [SerializeField] private LayerMask layerTarget;
     [SerializeField] private Vector2 distanceDamage;
 
@@ -80,13 +84,47 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     {
         if (IsAttacking) return;
 
-        StartCoroutine(Attack());
-        StartCoroutine(AttackTimer());
+        IsAttacking = true;
+
+        if (_playerMove.GetIsGround())
+        {
+            StartCoroutine(Attack());
+            StartCoroutine(AttackTimer(AttackTime));
+        }
+        else
+        {
+            StartCoroutine(AttackDown());
+        }
+
+
+    }
+
+    public IEnumerator AttackDown()
+    {
+        IsAttacking = true;
+        _playerMove.SetStopMove(true);
+
+        while (_playerMove.GetIsGround() == false)
+        {
+            _playerMove.SetVelosity((Vector2.down + Vector2.right * transform.localScale.x) * speedAttackDown);
+            _animationController.FallAnimation(true);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        _playerMove.SetStopMove(false);
+
+        if (_animationController)
+            _animationController.EndetAttack();
+
+        IsAttacking = false;
+
     }
 
     public IEnumerator Attack()
     {
         yield return null;
+
+        if (_animationController)
+            _animationController.RandomAnimationAttack();
 
         if (_playerMove)
             _playerMove.SetVelosity(forceAttack * transform.localScale.x, _playerMove.GetRigidbody().velocity.y);
@@ -103,14 +141,11 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         }
     }
 
-    public IEnumerator AttackTimer()
+    public IEnumerator AttackTimer(float time)
     {
         IsAttacking = true;
 
-        if (_animationController)
-            _animationController.RandomAnimationAttack();
-
-        yield return new WaitForSeconds(AttackTime);
+        yield return new WaitForSeconds(time);
 
         if (_animationController)
             _animationController.EndetAttack();

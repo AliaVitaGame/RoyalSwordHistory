@@ -14,7 +14,6 @@ public interface IUnitAttacking
 {
     public float Damage { get; set; }
     public float AttackTime { get; set; }
-    public float ForceAttack { get; set; }
     public float Repulsion { get; set; }
     public float StunTime { get; set; }
     public float RadiusDamage { get; set; }
@@ -24,5 +23,5 @@ public interface IUnitAttacking
 
     public void StartAttack();
     public IEnumerator Attack();
-    public IEnumerator AttackTimer();
+    public IEnumerator AttackTimer(float time);
 }

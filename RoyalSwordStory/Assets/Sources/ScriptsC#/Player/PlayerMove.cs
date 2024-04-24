@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     private int _currentCountJump;
     private float _startPlayerSpriteScaleX;
+    private bool _isStopMove;
     private Rigidbody2D _rigidbody;
     private PlayerAttacking _attacking;
     private GroundChecker _groundChecker;
@@ -25,14 +26,14 @@ public class PlayerMove : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _attacking = GetComponent<PlayerAttacking>();
         _animationController = GetComponent<PlayerAnimationController>();
-        _groundChecker = GetComponentInChildren<GroundChecker>();   
+        _groundChecker = GetComponentInChildren<GroundChecker>();
         _startPlayerSpriteScaleX = transform.localScale.x;
     }
 
     private void FixedUpdate()
     {
-        if(PlatformManager.IsDesktop)
-        SetHorizontal(Input.GetAxisRaw("Horizontal"));
+        if (PlatformManager.IsDesktop)
+            SetHorizontal(Input.GetAxisRaw("Horizontal"));
 
         Move();
         GroundCheck();
@@ -48,6 +49,7 @@ public class PlayerMove : MonoBehaviour
     public void Move()
     {
         if (_attacking.IsAttacking) return;
+        if (_isStopMove) return;
 
         SetVelosity(InputX * speedMove * Time.fixedDeltaTime, _rigidbody.velocity.y);
         RotateSprite();
@@ -56,17 +58,18 @@ public class PlayerMove : MonoBehaviour
     public void Jump()
     {
         if (_currentCountJump >= countJump) return;
-        _groundChecker.IsGround = false;
+        if (_isStopMove) return;
+
         SetVelosity(_rigidbody.velocity.x, jumpForce);
         _currentCountJump++;
     }
 
-    public void SetHorizontal(float X) 
+    public void SetHorizontal(float X)
         => InputX = X;
 
     private void GroundCheck()
     {
-        if(_groundChecker.IsGround) _currentCountJump = 0;
+        if (_groundChecker.IsGround) _currentCountJump = 0;
     }
 
     private void Animation()
@@ -86,6 +89,14 @@ public class PlayerMove : MonoBehaviour
 
     public void SetVelosity(float X, float Y)
         => _rigidbody.velocity = new Vector2(X, Y);
+
+    public void SetVelosity(Vector2 value)
+       => _rigidbody.velocity = value;
+
+    public void SetStopMove(bool stopMove)
+        => _isStopMove = stopMove;
+
+    public bool GetIsGround() => _groundChecker.IsGround;
 
     public Rigidbody2D GetRigidbody() => _rigidbody;
 }
