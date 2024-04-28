@@ -2,10 +2,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(EnemyAnimationController))]
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] private float speedMove = 5;
-    [SerializeField] private float jumpForce = 10;
+    [SerializeField] private float jumpForce = 13;
     [Space]
     [SerializeField] private float groundDistance = 1.1f;
     [SerializeField] private LayerMask groundLayer;
@@ -14,14 +15,17 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float maxRandomTimeJump = 1;
     [SerializeField] private float minRandomTimeJump = -1;
 
-    private PlayerMove _player;
     private bool _isGround;
+    private PlayerMove _player;
     private Rigidbody2D _rigidbody;
+    private EnemyAnimationController _animationController;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _player = FindObjectOfType<PlayerMove>();
+        _animationController = GetComponent<EnemyAnimationController>();
+        _rigidbody.freezeRotation = true;
     }
 
     private void FixedUpdate()
@@ -42,10 +46,18 @@ public class EnemyMove : MonoBehaviour
             Vector2 target = point;
             target.y = _isGround ? target.y : transform.position.y;
             transform.position = Vector2.MoveTowards(transform.position, target, speedMove * Time.fixedDeltaTime);
+            _animationController.MoveAnimation(true);
+        }
+        else
+        {
+            _animationController.MoveAnimation(false);
         }
 
         SetScaleX(point.x > transform.position.x ? 1 : -1);
         Jump(point);
+
+        _animationController.JumpAnimation(_rigidbody.velocity.y > 0 && _isGround == false);
+        _animationController.FallAnimation(_rigidbody.velocity.y < 0 && _isGround == false);
     }
 
     public void Jump(Vector2 targetAttack)

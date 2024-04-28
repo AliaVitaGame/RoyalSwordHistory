@@ -11,7 +11,9 @@ public class EnemyAnimationController : MonoBehaviour
     private string _nameAttack = "Attack";
     private string _nameFall = "Fall";
     private string _nameHit = "Hit";
-    private string _nameSwing = "Swing";
+
+
+    private int _lastAnimationAttack;
 
     private void Start()
     {
@@ -42,11 +44,12 @@ public class EnemyAnimationController : MonoBehaviour
     {
         var randomValue = Random.Range(1, countAttack + 1);
         AnimatorSetBool($"{_nameAttack}{randomValue}", true);
+        _lastAnimationAttack = randomValue;
     }
 
     public void AnimationAttack()
     {
-        AnimatorSetTrigger(_nameAttack);
+        AnimatorSetBool($"{_nameAttack}{_lastAnimationAttack}", true);
     }
 
     public void EndetAttack()

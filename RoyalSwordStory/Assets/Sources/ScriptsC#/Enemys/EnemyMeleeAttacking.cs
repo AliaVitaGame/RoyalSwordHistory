@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 {
     [SerializeField] private float damage = 10;
-    [SerializeField] private float attackTime = 0.12f;
+    [SerializeField] private float attackTime = 2;
     [SerializeField] private float repulsion = 10;
     [SerializeField] private float stunTime = 0.3f;
     [SerializeField] private float radiusDamage = 1.73f;
@@ -14,7 +14,6 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private float attackRadius = 7;
     [SerializeField] private LayerMask layerTarget;
     [SerializeField] private Vector2 distanceDamage;
-
     public float Damage
     {
         get => damage;
@@ -96,13 +95,14 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     public IEnumerator Swing()
     {
         yield return new WaitForSeconds(swingTime);
+        _animationController.RandomSwingAnimation();
         StartCoroutine(Attack());
         StartCoroutine(AttackTimer(attackTime));
     }
 
     public IEnumerator Attack()
     {
-        Debug.Log("BOOM");
+        _animationController.AnimationAttack();
 
         yield return null;
 
@@ -125,6 +125,8 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         yield return new WaitForSeconds(time);
 
         IsAttacking = false;
+
+        _animationController.EndetAttack();
     }
 
 
