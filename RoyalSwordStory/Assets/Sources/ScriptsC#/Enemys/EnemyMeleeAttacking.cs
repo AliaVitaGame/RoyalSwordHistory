@@ -89,6 +89,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     {
         if (IsAttacking) return;
 
+        IsAttacking = true;
         StartCoroutine(Swing());
     }
 

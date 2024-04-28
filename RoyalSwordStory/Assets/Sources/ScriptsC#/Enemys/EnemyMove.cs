@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] private float speedMove = 5;
-    [SerializeField] private float jumpForce = 15;
+    [SerializeField] private float jumpForce = 10;
     [Space]
     [SerializeField] private float groundDistance = 1.1f;
     [SerializeField] private LayerMask groundLayer;
     [Space]
     [SerializeField] private float stopDistance = 2;
-    [SerializeField] private float minRandomTimeJump = 1;
-    [SerializeField] private float maxRandomTimeJump = -1;
+    [SerializeField] private float maxRandomTimeJump = 1;
+    [SerializeField] private float minRandomTimeJump = -1;
 
     private PlayerMove _player;
     private bool _isGround;
@@ -38,8 +38,13 @@ public class EnemyMove : MonoBehaviour
     public void MoveToPoint(Vector2 point)
     {
         if (Vector2.Distance(transform.position, point) > stopDistance)
-        transform.position = Vector2.MoveTowards(transform.position, point, speedMove * Time.fixedDeltaTime);
+        {
+            Vector2 target = point;
+            target.y = _isGround ? target.y : transform.position.y;
+            transform.position = Vector2.MoveTowards(transform.position, target, speedMove * Time.fixedDeltaTime);
+        }
 
+        SetScaleX(point.x > transform.position.x ? 1 : -1);
         Jump(point);
     }
 
@@ -49,10 +54,8 @@ public class EnemyMove : MonoBehaviour
         {
             var randomJumpForce = jumpForce + Random.Range(minRandomTimeJump, maxRandomTimeJump);
 
-            if (targetAttack.y > transform.position.y)
+            if (targetAttack.y > transform.position.y + 1)
                 SetVelocity(new Vector2(_rigidbody.velocity.x, randomJumpForce));
-            else
-                SetVelocity(new Vector2(_rigidbody.velocity.x, -randomJumpForce));
         }
     }
 
@@ -63,6 +66,9 @@ public class EnemyMove : MonoBehaviour
 
     private void IsGroundCheck()
         => _isGround = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayer);
+
+    public void SetScaleX(float x) 
+        => transform.localScale = new Vector2(x, transform.localScale.y);
 
     private void OnDrawGizmos()
     {
