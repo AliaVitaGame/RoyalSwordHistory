@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyMove))]
+[RequireComponent(typeof(ExplosionLimbs))]
 [RequireComponent(typeof(EnemyAnimationController))]
 public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
+    [SerializeField] private ParticleSystem bloodFX;
     [SerializeField] private Color hitColor = Color.red;
 
     public float Health
@@ -33,19 +36,23 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     public static Action EnemyAnyHitEvent;
     public static Action EnemyAnyDeadEvent;
 
+    private EnemyMove _enemyMove;
     private HealthBar _healthBar;
+    private ExplosionLimbs _explosionLimbs;
     private EnemyAnimationController _animationController; 
 
     private void Start()
     {
+        _healthBar = GetComponentInChildren<HealthBar>();
+        _healthBar.Unpin();
         _animationController = GetComponent<EnemyAnimationController>();
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         StartColor = SpriteRenderer.color;
-        _healthBar = GetComponentInChildren<HealthBar>();
-        _healthBar.Unpin();
+        _explosionLimbs = GetComponentInChildren<ExplosionLimbs>();
+        _enemyMove = GetComponentInChildren<EnemyMove>();
     }
 
-    public void TakeDamage(float damage, float timeStun)
+    public void TakeDamage(float damage, float timeStun, float repulsion)
     {
         if (IsDead) return;
 
@@ -53,12 +60,17 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         Health -= damage;
 
+        bloodFX.Play();
+
         EnemyStanEvent?.Invoke(true);
         EnemyAnyHitEvent?.Invoke();
 
         _healthBar.SetHealth(Health, MaxHealth);
 
+        _enemyMove.SetVelocity(repulsion, 0);
+
         StartCoroutine(SwitchColorHit());
+
 
         if (Health <= 0)
             Dead();
@@ -81,6 +93,7 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     private void Dead()
     {
         IsDead = true;
+        _explosionLimbs.PlayFX();
         EnemyAnyDeadEvent?.Invoke();
         Destroy(gameObject);
     }

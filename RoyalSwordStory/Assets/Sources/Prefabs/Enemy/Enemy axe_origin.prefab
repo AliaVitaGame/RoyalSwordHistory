@@ -56,6 +56,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: aa3bae286f91c9844a9d6be62b8cc21c, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 832373729, guid: d274d07462cafb445af62bac8999d7b7, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 1131713670, guid: d274d07462cafb445af62bac8999d7b7, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 725783549, guid: d274d07462cafb445af62bac8999d7b7, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: -2142604478, guid: d274d07462cafb445af62bac8999d7b7, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: 403323126, guid: d274d07462cafb445af62bac8999d7b7, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[5]
+      value: 
+      objectReference: {fileID: 2001965479, guid: d274d07462cafb445af62bac8999d7b7, type: 3}
     - target: {fileID: 6898085659257880661, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Name
       value: Enemy axe_origin

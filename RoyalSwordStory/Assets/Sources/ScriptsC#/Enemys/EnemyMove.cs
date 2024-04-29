@@ -75,15 +75,18 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
+    public void SetVelocity(float x, float y)
+        => _rigidbody.velocity = new Vector3(x, y);
+
     public void SetVelocity(Vector2 vector)
     {
         _rigidbody.velocity = vector;
     }
 
-    public void SetStopMove(bool isStop) 
+    public void SetStopMove(bool isStop)
         => _isStopMove = isStop;
 
-    public void SetScaleX(float x) 
+    public void SetScaleX(float x)
         => transform.localScale = new Vector2(x, transform.localScale.y);
     public float GetStopDistance() => stopDistance;
     public bool GetIsGround() => _isGround;

@@ -12,9 +12,9 @@ public class HealthBar : MonoBehaviour
     public void Unpin()
     {
         _isUnpin = true;
-        _parent = transform.parent;
-        _startPosition = transform.position;
+        _startPosition = transform.localPosition;
         _startPosition.x = 0;
+        _parent = transform.parent;
         transform.SetParent(null);
     }
 

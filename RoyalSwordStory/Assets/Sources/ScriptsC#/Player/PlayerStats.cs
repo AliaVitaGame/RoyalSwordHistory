@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         _healthBar.Unpin();
     }
 
-    public void TakeDamage(float damage, float timeStun)
+    public void TakeDamage(float damage, float timeStun, float repulsion)
     {
         if (IsDead) return;
 
@@ -50,7 +50,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         _healthBar.SetHealth(Health, MaxHealth);
 
         _playerMove.SetStopMove(true);
-
+        _playerMove.SetVelosity(repulsion, 0);
         if (Health <= 0)
             Dead();
 

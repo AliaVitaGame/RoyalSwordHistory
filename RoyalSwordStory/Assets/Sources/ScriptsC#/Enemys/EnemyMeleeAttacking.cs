@@ -133,7 +133,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
             {
                 if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
                 {
-                    unitHealth.TakeDamage(damage, StunTime);
+                    unitHealth.TakeDamage(damage, StunTime, repulsion * transform.localScale.x);
                 }
             }
         }

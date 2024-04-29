@@ -7,7 +7,7 @@ public interface IUnitHealthStats
     public float MaxHealth { get; set; }
     public bool IsDead { get; set; }
     public bool IsStunned { get; set; }
-    public void TakeDamage(float damage, float timeStun);
+    public void TakeDamage(float damage, float timeStun, float repulsion);
     public IEnumerator StunTimer(float time);
 }
 
