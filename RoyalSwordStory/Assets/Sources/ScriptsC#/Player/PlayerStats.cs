@@ -26,12 +26,15 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     public static Action PlayerDaadEvent;
 
     private PlayerMove _playerMove;
+    private HealthBar _healthBar;
     private PlayerAnimationController _animationController;
 
     private void Start()
     {
         _playerMove = GetComponent<PlayerMove>();
         _animationController = GetComponent<PlayerAnimationController>();
+        _healthBar = GetComponentInChildren<HealthBar>();
+        _healthBar.Unpin();
     }
 
     public void TakeDamage(float damage, float timeStun)
@@ -43,6 +46,8 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         Health -= damage;
 
         PlayerHitEvent?.Invoke();
+
+        _healthBar.SetHealth(Health, MaxHealth);
 
         _playerMove.SetStopMove(true);
 

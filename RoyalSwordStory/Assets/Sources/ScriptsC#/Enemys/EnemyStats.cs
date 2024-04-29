@@ -33,13 +33,16 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     public static Action EnemyAnyHitEvent;
     public static Action EnemyAnyDeadEvent;
 
-    private EnemyAnimationController _animationController;
+    private HealthBar _healthBar;
+    private EnemyAnimationController _animationController; 
 
     private void Start()
     {
         _animationController = GetComponent<EnemyAnimationController>();
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         StartColor = SpriteRenderer.color;
+        _healthBar = GetComponentInChildren<HealthBar>();
+        _healthBar.Unpin();
     }
 
     public void TakeDamage(float damage, float timeStun)
@@ -52,6 +55,8 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         EnemyStanEvent?.Invoke(true);
         EnemyAnyHitEvent?.Invoke();
+
+        _healthBar.SetHealth(Health, MaxHealth);
 
         StartCoroutine(SwitchColorHit());
 
