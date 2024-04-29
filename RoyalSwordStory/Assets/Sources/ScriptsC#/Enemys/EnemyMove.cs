@@ -15,6 +15,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float maxRandomTimeJump = 1;
     [SerializeField] private float minRandomTimeJump = -1;
 
+    private bool _isStopMove;
     private bool _isGround;
     private PlayerMove _player;
     private Rigidbody2D _rigidbody;
@@ -34,13 +35,10 @@ public class EnemyMove : MonoBehaviour
         MoveToPoint(_player.transform.position);
     }
 
-    private void Update()
-    {
-
-    }
-
     public void MoveToPoint(Vector2 point)
     {
+        if (_isStopMove) return;
+
         if (Vector2.Distance(transform.position, point) > stopDistance)
         {
             Vector2 target = point;
@@ -76,11 +74,16 @@ public class EnemyMove : MonoBehaviour
         _rigidbody.velocity = vector;
     }
 
-    private void IsGroundCheck()
-        => _isGround = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayer);
+    public void SetStopMove(bool isStop) 
+        => _isStopMove = isStop;
 
     public void SetScaleX(float x) 
         => transform.localScale = new Vector2(x, transform.localScale.y);
+    public float GetStopDistance() => stopDistance;
+    public bool GetIsGround() => _isGround;
+
+    private void IsGroundCheck()
+        => _isGround = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayer);
 
     private void OnDrawGizmos()
     {

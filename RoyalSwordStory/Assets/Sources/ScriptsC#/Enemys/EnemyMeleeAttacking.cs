@@ -11,7 +11,6 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private float radiusDamage = 1.73f;
     [SerializeField] private float swingTime = 0.5f;
     [SerializeField] private float aggressionRadius = 7;
-    [SerializeField] private float attackRadius = 7;
     [SerializeField] private LayerMask layerTarget;
     [SerializeField] private Vector2 distanceDamage;
     public float Damage
@@ -70,7 +69,9 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     {
         if (_target)
         {
-            if (GetDistance(transform.position, _target.position) < attackRadius)
+            var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
+
+            if (Physics2D.OverlapCircle(positionCircle, radiusDamage, LayerTarget))
                 StartAttack();
             else
                 _enemyMove.MoveToPoint(_target.position);
@@ -87,6 +88,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     public void StartAttack()
     {
         if (IsAttacking) return;
+        if (_enemyMove.GetIsGround() == false) return;
 
         IsAttacking = true;
         StartCoroutine(Swing());
@@ -94,8 +96,11 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
     public IEnumerator Swing()
     {
-        yield return new WaitForSeconds(swingTime);
         _animationController.RandomSwingAnimation();
+        _enemyMove.SetStopMove(true);
+
+        yield return new WaitForSeconds(swingTime);
+
         StartCoroutine(Attack());
         StartCoroutine(AttackTimer(attackTime));
     }
@@ -126,12 +131,13 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
         IsAttacking = false;
 
+        _enemyMove.SetStopMove(false);
         _animationController.EndetAttack();
     }
 
 
-    private float GetDistance(Vector2 a, Vector2 b)
-        => Vector2.Distance(a, b);
+    private float GetDistance(Vector3 a, Vector3 b)
+        => Vector3.Distance(a, b);
 
     private void OnDrawGizmosSelected()
     {
@@ -139,6 +145,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         else Gizmos.color = Color.yellow;
 
         var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
+
         Gizmos.DrawWireSphere(positionCircle, radiusDamage);
     }
 }

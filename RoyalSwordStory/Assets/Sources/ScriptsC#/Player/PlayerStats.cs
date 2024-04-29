@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyAnimationController))]
-public class EnemyStats : MonoBehaviour, IUnitHealthStats
+[RequireComponent(typeof(PlayerMove))]
+[RequireComponent(typeof(PlayerAnimationController))]
+public class PlayerStats : MonoBehaviour, IUnitHealthStats
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
@@ -21,14 +22,16 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
     public bool IsDead { get; set; }
     public bool IsStunned { get; set; }
 
-    public static Action EnemyHitEvent;
-    public static Action EnemyDaadEvent;
+    public static Action PlayerHitEvent;
+    public static Action PlayerDaadEvent;
 
-    private EnemyAnimationController _animationController;
+    private PlayerMove _playerMove;
+    private PlayerAnimationController _animationController;
 
     private void Start()
     {
-        _animationController = GetComponent<EnemyAnimationController>();
+        _playerMove = GetComponent<PlayerMove>();
+        _animationController = GetComponent<PlayerAnimationController>();
     }
 
     public void TakeDamage(float damage, float timeStun)
@@ -39,12 +42,15 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
 
         Health -= damage;
 
-        EnemyHitEvent?.Invoke();
+        PlayerHitEvent?.Invoke();
+
+        _playerMove.SetStopMove(true);
 
         if (Health <= 0)
             Dead();
 
-        StartCoroutine(StunTimer(timeStun));
+        if (IsStunned == false)
+            StartCoroutine(StunTimer(timeStun));
     }
 
     public IEnumerator StunTimer(float time)
@@ -53,15 +59,15 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
         yield return new WaitForSeconds(time);
         IsStunned = false;
 
-        if (_animationController)
-            _animationController.HitAnimation(false);
+        _playerMove.SetStopMove(false);
+        _animationController.HitAnimation(false);
     }
 
     private void Dead()
     {
         IsDead = true;
-        EnemyDaadEvent?.Invoke();
-        Destroy(gameObject);
+        PlayerDaadEvent?.Invoke();
+        Debug.Log("Player dead");
     }
 
 

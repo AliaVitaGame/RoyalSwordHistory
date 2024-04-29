@@ -44,11 +44,13 @@ public class EnemyAnimationController : MonoBehaviour
     {
         var randomValue = Random.Range(1, countAttack + 1);
         AnimatorSetBool($"{_nameAttack}{randomValue}", true);
+        animator.speed = 0;
         _lastAnimationAttack = randomValue;
     }
 
     public void AnimationAttack()
     {
+        animator.speed = 1;
         AnimatorSetBool($"{_nameAttack}{_lastAnimationAttack}", true);
     }
 

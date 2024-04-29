@@ -5,9 +5,10 @@ public interface IUnitHealthStats
 {
     public float Health {  get; set; }
     public float MaxHealth { get; set; }
-    public float IsStunned { get; set; }
+    public bool IsDead { get; set; }
+    public bool IsStunned { get; set; }
     public void TakeDamage(float damage, float timeStun);
-    public IEnumerator StunTimer();
+    public IEnumerator StunTimer(float time);
 }
 
 public interface IUnitAttacking
