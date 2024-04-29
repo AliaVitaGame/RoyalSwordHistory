@@ -2,17 +2,18 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyMove))]
+[RequireComponent(typeof(EnemyStats))]
 public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 {
     [SerializeField] private float damage = 10;
-    [SerializeField] private float attackTime = 2;
+    [SerializeField] private float attackTime = 0.7f;
     [SerializeField] private float repulsion = 10;
     [SerializeField] private float stunTime = 0.3f;
     [SerializeField] private float radiusDamage = 1.73f;
     [SerializeField] private float swingTime = 0.5f;
     [SerializeField] private float aggressionRadius = 7;
     [SerializeField] private LayerMask layerTarget;
-    [SerializeField] private Vector2 distanceDamage;
+    [SerializeField] private Vector2 distanceDamage = Vector2.right * 1.5f;
     public float Damage
     {
         get => damage;
@@ -54,14 +55,27 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         set => distanceDamage = value;
     }
 
+    private bool _isStopAttacking;
     private Transform _target;
     private EnemyMove _enemyMove;
+    private EnemyStats _enemyStats;
     private EnemyAnimationController _animationController;
 
+
+    private void OnEnable()
+    {
+        GetComponent<EnemyStats>().EnemyStanEvent += SetStopAttacking;
+    }
+
+    private void OnDisable()
+    {
+        GetComponent<EnemyStats>().EnemyStanEvent -= SetStopAttacking;
+    }
 
     private void Start()
     {
         _enemyMove = GetComponent<EnemyMove>();
+        _enemyStats = GetComponent<EnemyStats>();
         _animationController = GetComponent<EnemyAnimationController>();
     }
 
@@ -69,9 +83,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     {
         if (_target)
         {
-            var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
-
-            if (Physics2D.OverlapCircle(positionCircle, radiusDamage, LayerTarget))
+            if (Physics2D.OverlapCircle(GetPositionCircle(), radiusDamage, LayerTarget))
                 StartAttack();
             else
                 _enemyMove.MoveToPoint(_target.position);
@@ -82,12 +94,14 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
     private void FindTargetCircle()
     {
-        _target = Physics2D.OverlapCircle(transform.position, aggressionRadius, LayerTarget).transform;
+        var tempObject = Physics2D.OverlapCircle(transform.position, aggressionRadius, LayerTarget);
+        if (tempObject) _target = tempObject.transform;
     }
 
     public void StartAttack()
     {
         if (IsAttacking) return;
+        if (_isStopAttacking) return;
         if (_enemyMove.GetIsGround() == false) return;
 
         IsAttacking = true;
@@ -107,18 +121,20 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
     public IEnumerator Attack()
     {
-        _animationController.AnimationAttack();
-
-        yield return null;
-
-        var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
-        var tempTargets = Physics2D.OverlapCircleAll(positionCircle, radiusDamage, layerTarget);
-
-        for (int i = 0; i < tempTargets.Length; i++)
+        if (_isStopAttacking == false)
         {
-            if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
+            _animationController.AnimationAttack();
+
+            yield return null;
+
+            var tempTargets = Physics2D.OverlapCircleAll(GetPositionCircle(), radiusDamage, layerTarget);
+
+            for (int i = 0; i < tempTargets.Length; i++)
             {
-                unitHealth.TakeDamage(damage, StunTime);
+                if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
+                {
+                    unitHealth.TakeDamage(damage, StunTime);
+                }
             }
         }
     }
@@ -136,16 +152,21 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     }
 
 
+    public void SetStopAttacking(bool stopAttacking)
+        => _isStopAttacking = stopAttacking;
+
     private float GetDistance(Vector3 a, Vector3 b)
         => Vector3.Distance(a, b);
+
+    private Vector3 GetPositionCircle()
+        => (transform.position + new Vector3(transform.localScale.x * distanceDamage.x, distanceDamage.y));
 
     private void OnDrawGizmosSelected()
     {
         if (IsAttacking) Gizmos.color = Color.red;
         else Gizmos.color = Color.yellow;
 
-        var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
-
+        var positionCircle = GetPositionCircle();
         Gizmos.DrawWireSphere(positionCircle, radiusDamage);
     }
 }

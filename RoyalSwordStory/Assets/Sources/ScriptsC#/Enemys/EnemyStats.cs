@@ -3,10 +3,11 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyAnimationController))]
-public class EnemyStats : MonoBehaviour, IUnitHealthStats
+public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
+    [SerializeField] private Color hitColor = Color.red;
 
     public float Health
     {
@@ -20,15 +21,25 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
     }
     public bool IsDead { get; set; }
     public bool IsStunned { get; set; }
+    public Color StartColor { get; set; }
+    public Color HitColor
+    {
+        get => hitColor;
+        set => hitColor = value;
+    }
+    public SpriteRenderer SpriteRenderer { get; set; }
 
-    public static Action EnemyHitEvent;
-    public static Action EnemyDaadEvent;
+    public Action<bool> EnemyStanEvent;
+    public static Action EnemyAnyHitEvent;
+    public static Action EnemyAnyDeadEvent;
 
     private EnemyAnimationController _animationController;
 
     private void Start()
     {
         _animationController = GetComponent<EnemyAnimationController>();
+        SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        StartColor = SpriteRenderer.color;
     }
 
     public void TakeDamage(float damage, float timeStun)
@@ -39,7 +50,10 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
 
         Health -= damage;
 
-        EnemyHitEvent?.Invoke();
+        EnemyStanEvent?.Invoke(true);
+        EnemyAnyHitEvent?.Invoke();
+
+        StartCoroutine(SwitchColorHit());
 
         if (Health <= 0)
             Dead();
@@ -53,6 +67,8 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
         yield return new WaitForSeconds(time);
         IsStunned = false;
 
+        EnemyStanEvent?.Invoke(false);
+
         if (_animationController)
             _animationController.HitAnimation(false);
     }
@@ -60,9 +76,23 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats
     private void Dead()
     {
         IsDead = true;
-        EnemyDaadEvent?.Invoke();
+        EnemyAnyDeadEvent?.Invoke();
         Destroy(gameObject);
     }
 
+    public IEnumerator SwitchColorHit()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            SpriteRenderer.color = Color.Lerp(HitColor, StartColor, Time.deltaTime);
+        }
 
+        for (int i = 0; i < 100; i++)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            SpriteRenderer.color = Color.Lerp(StartColor, HitColor, Time.deltaTime);
+        }
+
+    }
 }

@@ -12,32 +12,38 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [Space]
     [SerializeField] private float stopDistance = 2;
+    [Space]
+    [SerializeField] private float maxRandomSpeedMove = 1;
+    [SerializeField] private float minRandomSpeedMove = -1;
     [SerializeField] private float maxRandomTimeJump = 1;
     [SerializeField] private float minRandomTimeJump = -1;
 
     private bool _isStopMove;
     private bool _isGround;
-    private PlayerMove _player;
     private Rigidbody2D _rigidbody;
     private EnemyAnimationController _animationController;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _player = FindObjectOfType<PlayerMove>();
         _animationController = GetComponent<EnemyAnimationController>();
         _rigidbody.freezeRotation = true;
+
+        speedMove += Random.Range(maxRandomSpeedMove, minRandomSpeedMove);
     }
 
     private void FixedUpdate()
     {
         IsGroundCheck();
-        MoveToPoint(_player.transform.position);
     }
 
     public void MoveToPoint(Vector2 point)
     {
-        if (_isStopMove) return;
+        if (_isStopMove)
+        {
+            _animationController.MoveAnimation(false);
+            return;
+        }
 
         if (Vector2.Distance(transform.position, point) > stopDistance)
         {
@@ -85,7 +91,7 @@ public class EnemyMove : MonoBehaviour
     private void IsGroundCheck()
         => _isGround = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundLayer);
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(transform.position, Vector2.down * groundDistance);

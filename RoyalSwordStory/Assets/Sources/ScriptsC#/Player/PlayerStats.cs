@@ -68,6 +68,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         IsDead = true;
         PlayerDaadEvent?.Invoke();
         Debug.Log("Player dead");
+        Destroy(gameObject);
     }
 
 

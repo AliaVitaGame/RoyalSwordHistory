@@ -26,3 +26,11 @@ public interface IUnitAttacking
     public IEnumerator Attack();
     public IEnumerator AttackTimer(float time);
 }
+
+public interface ISwitchColorHit
+{
+    public Color StartColor { get; set; }
+    public Color HitColor { get; set; }
+    public SpriteRenderer SpriteRenderer {  get; set; }
+    public IEnumerator SwitchColorHit();
+}
