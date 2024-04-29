@@ -5,10 +5,9 @@ public interface IUnitHealthStats
 {
     public float Health {  get; set; }
     public float MaxHealth { get; set; }
-    public bool IsDead { get; set; }
-    public bool IsStunned { get; set; }
-    public void TakeDamage(float damage, float timeStun, float repulsion);
-    public IEnumerator StunTimer(float time);
+    public float IsStunned { get; set; }
+    public void TakeDamage(float damage, float timeStun);
+    public IEnumerator StunTimer();
 }
 
 public interface IUnitAttacking
@@ -25,12 +24,4 @@ public interface IUnitAttacking
     public void StartAttack();
     public IEnumerator Attack();
     public IEnumerator AttackTimer(float time);
-}
-
-public interface ISwitchColorHit
-{
-    public Color StartColor { get; set; }
-    public Color HitColor { get; set; }
-    public SpriteRenderer SpriteRenderer {  get; set; }
-    public IEnumerator SwitchColorHit();
 }

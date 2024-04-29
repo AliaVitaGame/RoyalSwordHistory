@@ -14,7 +14,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private float speedAttackDown = 35;
     [Space]
     [SerializeField] private LayerMask layerTarget;
-    [SerializeField] private Vector2 distanceDamage = Vector2.right * 0.5f;
+    [SerializeField] private Vector2 distanceDamage;
 
     private PlayerAnimationController _animationController;
     private PlayerMove _playerMove;
@@ -129,14 +129,14 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         if (_playerMove)
             _playerMove.SetVelosity(forceAttack * transform.localScale.x, _playerMove.GetRigidbody().velocity.y);
 
-        var positionCircle = GetPositionCircle();
+        var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
         var tempTargets = Physics2D.OverlapCircleAll(positionCircle, radiusDamage, layerTarget);
 
         for (int i = 0; i < tempTargets.Length; i++)
         {
             if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
             {
-                unitHealth.TakeDamage(damage, StunTime, repulsion * transform.localScale.x);
+                unitHealth.TakeDamage(damage, StunTime);
             }
         }
     }
@@ -153,15 +153,12 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         IsAttacking = false;
     }
 
-    private Vector3 GetPositionCircle()
-     => (transform.position + new Vector3(transform.localScale.x * distanceDamage.x, distanceDamage.y));
-
     private void OnDrawGizmosSelected()
     {
         if (IsAttacking) Gizmos.color = Color.red;
         else Gizmos.color = Color.yellow;
 
-        var positionCircle = GetPositionCircle();
+        var positionCircle = (transform.position + (Vector3)distanceDamage) + (transform.localScale.x * Vector3.right);
         Gizmos.DrawWireSphere(positionCircle, radiusDamage);
     }
 }
