@@ -49,7 +49,11 @@ public class PlayerMove : MonoBehaviour
     public void Move()
     {
         if (_attacking.IsAttacking) return;
-        if (_isStopMove) return;
+        if (_isStopMove)
+        {
+            SetVelosity(Vector2.zero);
+            return;
+        }
 
         SetVelosity(InputX * speedMove * Time.fixedDeltaTime, _rigidbody.velocity.y);
         RotateSprite();
@@ -95,6 +99,7 @@ public class PlayerMove : MonoBehaviour
 
     public void SetStopMove(bool stopMove)
         => _isStopMove = stopMove;
+
 
     public bool GetIsGround() => _groundChecker.IsGround;
 
