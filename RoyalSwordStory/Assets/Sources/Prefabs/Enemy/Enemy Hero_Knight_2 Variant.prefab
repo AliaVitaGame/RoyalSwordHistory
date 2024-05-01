@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5637902354884159696
+--- !u!1001 &2133849256770885166
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,14 +11,14 @@ PrefabInstance:
     - target: {fileID: 1809702246259765829, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: a48e88741013c154fb407665aaabdd9b, type: 2}
+      objectReference: {fileID: 22100000, guid: c76634e4e8c66304a8e92c4597db4597, type: 2}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.486
+      value: 4.729
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.427
+      value: -2.431
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53,68 +53,68 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
-      propertyPath: radiusDamage
-      value: 1.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: distanceDamage.x
-      value: 0.99
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 4416415089821692996, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4976274401295337057, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
+      objectReference: {fileID: -910092549403018386, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.size
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.data[0]
       value: 
-      objectReference: {fileID: 12762780, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
+      objectReference: {fileID: -1571861004, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.data[1]
       value: 
-      objectReference: {fileID: 835111083, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
+      objectReference: {fileID: -1980351209, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.data[2]
       value: 
-      objectReference: {fileID: -777346300, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
+      objectReference: {fileID: 974897229, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.data[3]
       value: 
-      objectReference: {fileID: 1540612252, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
+      objectReference: {fileID: -325621860, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.data[4]
       value: 
-      objectReference: {fileID: 1730574003, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
+      objectReference: {fileID: 2008657942, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
     - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: limbsSprite.Array.data[5]
       value: 
-      objectReference: {fileID: 2057107045, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
-    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
-      propertyPath: limbsSprite.Array.data[6]
-      value: 
-      objectReference: {fileID: 1589902639, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
-    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
-      propertyPath: limbsSprite.Array.data[7]
-      value: 
-      objectReference: {fileID: -1664929193, guid: 4e0fc7cde14ecc846b417aceac4ebf3c, type: 3}
-    - target: {fileID: 4818828509652550290, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
-      propertyPath: speedMove
-      value: 15
+      objectReference: {fileID: -196967271, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
+    - target: {fileID: 5520801104918578247, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8821175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520801104918578247, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: m_Size.y
+      value: 2.4911857
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520801104918578247, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.028941274
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520801104918578247, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.37940717
       objectReference: {fileID: 0}
     - target: {fileID: 6898085659257880661, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Name
-      value: Enemy Hero_Knight Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7272684125889334660, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.255
+      value: Enemy Hero_Knight_2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7272684125889334660, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.132
+      value: -0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812412603325745121, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: countAttack
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
