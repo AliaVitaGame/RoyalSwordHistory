@@ -9,7 +9,6 @@ public class NPCAnimationController : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private string _nameMove = "Move";
-    //private string _nameIdle = "Idle";
 
     private void Start()
     {
