@@ -96,9 +96,8 @@ public class Boss1Level : MonoBehaviour
         {
             _bossAnimator.SetBool("CriticalAttack", false);
             _bossAnimator.SetBool("Idle", false);
-            _bossAnimator.SetBool("Attack1", true);
+            RandomAnimationAttackBoss();
             _bossAnimator.SetBool("Run", false);
-
         }
         Vector3 direction = _playerTransform.position - transform.position;
     
@@ -132,5 +131,10 @@ public class Boss1Level : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         _isResting = false;
     }
-    
+    private void RandomAnimationAttackBoss()
+    {
+        var randomValue = Random.Range(1, 3);
+        Debug.Log(randomValue);
+        _bossAnimator.SetBool($"Attack{randomValue}", true);
+    }
 }

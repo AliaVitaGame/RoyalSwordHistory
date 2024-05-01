@@ -4,6 +4,7 @@ public class BossesStats : MonoBehaviour
 {
     public float AggroRange;
     public float MoveSpeed;
+    public float ShootDistance;
 
 
     private void OnDrawGizmosSelected()
