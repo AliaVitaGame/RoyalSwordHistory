@@ -235,6 +235,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &54508170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54508171}
+  m_Layer: 0
+  m_Name: MagicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &54508171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54508170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.890251, y: 0.1288106, z: 0.051060114}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216890118
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1907084299373075111, guid: 7d0e62b379193d04eb29166ab1f9d4fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.55
+      value: 15.75
       objectReference: {fileID: 0}
     - target: {fileID: 1907084299373075111, guid: 7d0e62b379193d04eb29166ab1f9d4fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -940,7 +971,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2041495177}
+  - {fileID: 3558570035392610395}
   - {fileID: 1047473783}
   - {fileID: 4636308893536167490}
   - {fileID: 1094057618}
@@ -1058,11 +1089,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!4 &2041495177 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2526600020197840180, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-  m_PrefabInstance: {fileID: 1329368670262924655}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1329368670262924655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1071,6 +1097,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1474131052}
     m_Modifications:
+    - target: {fileID: 466353960472980010, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2526600020197840180, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1118,8 +1148,21 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 466353960472980010, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9147444204914100498}
   m_SourcePrefab: {fileID: 100100000, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+--- !u!1 &1443983913190473541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 466353960472980010, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+  m_PrefabInstance: {fileID: 1329368670262924655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3558570035392610395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2526600020197840180, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+  m_PrefabInstance: {fileID: 1329368670262924655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4636308893536167490
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,8 +1200,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &9147444204914100498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443983913190473541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92855cd89f38f5a41bf44e9d23e4bf74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MagicManager: {fileID: 11400000, guid: 9ad0d910828bb264aafcf144bb28c9bf, type: 2}
+  _keyCode: 32
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1474131052}
+  - {fileID: 54508171}
