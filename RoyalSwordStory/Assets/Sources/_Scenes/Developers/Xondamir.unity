@@ -481,6 +481,9 @@ MonoBehaviour:
   AggroRange: 2.65
   MoveSpeed: 10
   ShootDistance: 0
+  ProjectileSpeed: 0
+  RunAwayDistance: 0
+  isWizard: 0
 --- !u!50 &874075293
 Rigidbody2D:
   serializedVersion: 4
@@ -520,7 +523,9 @@ GameObject:
   - component: {fileID: 956528088}
   - component: {fileID: 956528087}
   - component: {fileID: 956528086}
-  - component: {fileID: 956528090}
+  - component: {fileID: 956528092}
+  - component: {fileID: 956528091}
+  - component: {fileID: 956528093}
   m_Layer: 0
   m_Name: WizardMagick
   m_TagString: Untagged
@@ -556,7 +561,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AggroRange: 2.5
   MoveSpeed: 5
-  ShootDistance: 2.5
+  ShootDistance: 4.55
+  ProjectileSpeed: 69.44
+  RunAwayDistance: 5
+  isWizard: 1
 --- !u!212 &956528088
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -625,7 +633,69 @@ Transform:
   - {fileID: 1983462803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956528090
+--- !u!50 &956528091
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956528085}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &956528092
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956528085}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
+--- !u!114 &956528093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -634,12 +704,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 956528085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c0de7840e2cc3844931eaada02e8a34, type: 3}
+  m_Script: {fileID: 11500000, guid: fef3c86b2712fc54f838e58ca743530b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 1919160221490060503, guid: c9bdbbd19f090ff47b669382c9f9ea94, type: 3}
-  spawnInterval: 0.5
-  spawnRadius: 10
+  bulletPrefab: {fileID: 1919160221490060503, guid: c9bdbbd19f090ff47b669382c9f9ea94, type: 3}
+  fallSpeed: 10
 --- !u!1 &1017361683
 GameObject:
   m_ObjectHideFlags: 0
