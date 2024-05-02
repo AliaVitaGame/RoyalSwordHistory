@@ -4,21 +4,21 @@ using UnityEngine.UI;
 
 public class Cube : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Movement speed
-    public float jumpForce = 10f; // Jump force
-    public Transform groundCheck; // Ground check object
-    public LayerMask groundLayer; // Layer mask for the ground
+    public float moveSpeed = 5f; 
+    public float jumpForce = 10f; 
+    public Transform groundCheck; 
+    public LayerMask groundLayer; 
 
-    public Text dialogText;
-    public string[] dialogLines; // Array of dialog lines
+   // public Text dialogText;
+    //public string[] dialogLines; // Array of dialog lines
 
-    private int currentLineIndex = 0;
-    private bool isTyping = false;
+   // private int currentLineIndex = 0;
+    //private bool isTyping = false;
 
 
-    [SerializeField] private LayerMask _NPCMask;
-    [SerializeField] private float _detectRadius;
-    [SerializeField] private GameObject _actionCloud,_dialogCanvas;
+    //[SerializeField] private LayerMask _NPCMask;
+    //[SerializeField] private float _detectRadius;
+    //[SerializeField] private GameObject _actionCloud,_dialogCanvas;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -27,7 +27,7 @@ public class Cube : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+       //_animator = GetComponent<Animator>();
     }
 
 
@@ -36,21 +36,46 @@ public class Cube : MonoBehaviour
       
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
 
-      
-        float moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
+
+        Movement();
    
+       
+
+        //NPCCommunication();
+    }
+
+
+
+    private void Movement() {
+
+
+        float horizontalInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+
+        // Vertical movement
+        float verticalInput = Input.GetAxis("Vertical");
+        rb.velocity = new Vector2(rb.velocity.x, verticalInput * moveSpeed);
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        NPCCommunication();
     }
 
 
 
+
+
+
+
+
+
+
+
+
+    /*
 
     private void NPCCommunication() {
         if (Physics2D.OverlapCircle(transform.position, _detectRadius, _NPCMask))
@@ -103,9 +128,12 @@ public class Cube : MonoBehaviour
         
     }
 
+   
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _detectRadius);
     }
+     */
 }
