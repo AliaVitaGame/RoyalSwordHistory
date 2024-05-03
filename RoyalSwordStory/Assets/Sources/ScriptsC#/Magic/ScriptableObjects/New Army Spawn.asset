@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: New Army Spawn
   m_EditorClassIdentifier: 
   Name: ArmySpawn
-  CooldownTime: 5
-  ActiveTime: 10
+  CooldownTime: 0
+  ActiveTime: 3
   _soldiers:
   - {fileID: 859202571599416476, guid: 111530d56bb19204bb70c626d6483386, type: 3}
   - {fileID: 4766524519739758203, guid: fc96910c83085c544ba2e9b1c3dc5701, type: 3}
   - {fileID: 6766581459858591606, guid: 07b074879ac0e47468e0a032ff84b39a, type: 3}
-  _soldiersCount: 3
+  _spawnEffect: {fileID: 19800006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
