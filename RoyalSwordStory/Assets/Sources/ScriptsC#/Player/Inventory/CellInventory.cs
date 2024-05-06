@@ -9,17 +9,18 @@ public class CellInventory : MonoBehaviour
     [SerializeField] private Sprite nullSprite;
 
     private Image _image;
+    private Text _textCount;
 
     private void Start()
     {
-        _image = GetComponent<Image>();
+        InitializationUI();
     }
 
     public void AddItem(Item item, int count)
     {
         itemCell = item;
         countOblectCell += count;
-        SetSprite(item.Sprite);
+        RefreshUI(item.Sprite);
     }
 
 
@@ -27,7 +28,7 @@ public class CellInventory : MonoBehaviour
     {
         itemCell = null;
         countOblectCell = 0;
-        SetSprite(nullSprite);
+        RefreshUI(nullSprite);
     }
 
     public Item GetItem()
@@ -46,9 +47,18 @@ public class CellInventory : MonoBehaviour
     public Item.TypeItem GetItemType() => itemCell.Type;
     public int GetCountOblectCell() => countOblectCell;
     public void SetCountOblectCell(int count) => countOblectCell = count;
-    public void SetSprite(Sprite sprite)
+
+    private void RefreshUI(Sprite sprite)
     {
-        if(_image == null) _image = GetComponent<Image>();
+        InitializationUI();
         _image.sprite = sprite;
+
+        string text = HasItem() ? $"{countOblectCell}" : null;
+        _textCount.text = text;
+    }
+    private void InitializationUI()
+    {
+        if (_image == null) _image = transform.GetChild(0).GetComponent<Image>();
+        if (_textCount == null) _textCount = transform.GetChild(1).GetComponent<Text>();
     }
 }

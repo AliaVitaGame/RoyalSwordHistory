@@ -12,27 +12,31 @@ public class InventoryPlayer : MonoBehaviour
         int countItem = count;
         int remains = 0;
 
-        for (int i = 0; i < Cells.Count; i++)
+        if (item.IsStack)
         {
-            if (Cells[i].HasItem())
+            for (int i = 0; i < Cells.Count; i++)
             {
-                if (Cells[i].GetItemType() == item.Type)
+                if (Cells[i].HasItem())
                 {
-                    if (Cells[i].GetCountOblectCell() + countItem > _maxItemCountCell)
+                    if (Cells[i].GetItemType() == item.Type)
                     {
-                        // Cells[i].SetCountOblectCell(_maxItemCountCell);
-                        remains = Cells[i].GetCountOblectCell() + countItem - _maxItemCountCell;
-                        Cells[i].AddItem(item, countItem - remains);
-                        countItem = remains;
-                    }
-                    else
-                    {
-                        Cells[i].AddItem(item, countItem);
-                        return true;
+                        if (Cells[i].GetCountOblectCell() + countItem > _maxItemCountCell)
+                        {
+                            // Cells[i].SetCountOblectCell(_maxItemCountCell);
+                            remains = Cells[i].GetCountOblectCell() + countItem - _maxItemCountCell;
+                            Cells[i].AddItem(item, countItem - remains);
+                            countItem = remains;
+                        }
+                        else
+                        {
+                            Cells[i].AddItem(item, countItem);
+                            return true;
+                        }
                     }
                 }
             }
         }
+    
 
         for (int i = 0; i < Cells.Count; i++)
         {

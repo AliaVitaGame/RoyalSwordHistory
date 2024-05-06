@@ -6,6 +6,7 @@ public class Item : ScriptableObject
     [Header("Main")]
     [SerializeField] private TypeItem typeItem;
     [SerializeField] private Sprite spriteItem;
+    [SerializeField] private bool isStack;
     [Space]
     [Header("Coin")]
     [SerializeField] private float coinCount;
@@ -17,6 +18,7 @@ public class Item : ScriptableObject
 
     public TypeItem Type => typeItem;
     public Sprite Sprite => spriteItem;
+    public bool IsStack => isStack;
     public float CoinCount => coinCount;
     public float AddProtection => addProtection;
     public float AddHealth => addHealth;
