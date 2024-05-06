@@ -27,7 +27,14 @@ public interface IUnitAttacking
     public IEnumerator AttackTimer(float time);
 }
 
-public interface ISwitchColorHit
+public interface IItem
+{
+    public int CountItem { get; set; }
+    public Item GetItem();
+    public void Destroy();
+}
+
+    public interface ISwitchColorHit
 {
     public Color StartColor { get; set; }
     public Color HitColor { get; set; }

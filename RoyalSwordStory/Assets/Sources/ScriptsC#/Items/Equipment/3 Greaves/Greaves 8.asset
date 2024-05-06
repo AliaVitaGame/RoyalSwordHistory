@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f15b0f45274cf04aa73bbcb57d21196, type: 3}
+  m_Name: Greaves 8
+  m_EditorClassIdentifier: 
+  typeItem: 4
+  spriteItem: {fileID: -1917403659, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
+  coinCount: 0
+  addProtection: 0
+  addHealth: 0
+  addMana: 0
