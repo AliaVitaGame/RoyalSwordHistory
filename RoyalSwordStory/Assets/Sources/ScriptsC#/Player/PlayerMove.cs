@@ -78,7 +78,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Animation()
     {
+        if(_isStopMove == false)
         _animationController.MoveAnimation(InputX);
+        else
+            _animationController.MoveAnimation(0);
+
         _animationController.JumpAnimation(_rigidbody.velocity.y > 0);
         _animationController.FallAnimation(_rigidbody.velocity.y < 0);
     }

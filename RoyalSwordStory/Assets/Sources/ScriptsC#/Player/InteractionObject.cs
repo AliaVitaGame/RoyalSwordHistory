@@ -24,7 +24,8 @@ public class InteractionObject : MonoBehaviour
     {
         if(collision.TryGetComponent(out IItem item))
         {
-            if (_inventoryPlayer.AddItem(item.GetItem(), item.CountItem))
+            var countItem = item.GetItem().IsStack ? item.CountItem : 1;
+            if (_inventoryPlayer.AddItem(item.GetItem(), countItem))
             {
                 item.Destroy();
             }
