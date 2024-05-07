@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efc78b0860d39d489c0013596023404, type: 3}
   m_Name: LaserForward
   m_EditorClassIdentifier: 
-  Name: 
-  CooldownTime: 3
-  ActiveTime: 1.2
-  _lightningPrefab: {fileID: 1628744458893394, guid: e243632bb3aff9549abdcfcc2ef0c4f0, type: 3}
+  Name: LightningForward
+  CooldownTime: 1
+  ActiveTime: 1
+  _lightningPrefab: {fileID: 675161360108791972, guid: 585567686b71fe5458e91550e1154860, type: 3}
+  _lightningSpherePrefab: {fileID: 9027514048236820045, guid: effb650189dc5714e9e9801b1cfb3991, type: 3}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  _lightningSpawnDistance: 8
+  _radiusDamage: 10
+  _damage: 25
+  _timeStun: 1.2
+  _repulsion: 0
