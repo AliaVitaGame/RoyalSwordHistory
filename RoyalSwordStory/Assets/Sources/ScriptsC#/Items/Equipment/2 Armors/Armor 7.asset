@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeItem: 3
   spriteItem: {fileID: -1628370220, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
+  isStack: 0
   coinCount: 0
   addProtection: 0
   addHealth: 0
   addMana: 0
+  nameItem: Armor 7
+  description: "\u0411\u0440\u043E\u043D\u044F \u043A\u0430\u043A \u0432\u0442\u043E\u0440\u0430\u044F
+    \u043A\u043E\u0436\u0430 - \u043D\u043E \u0442\u043E\u043B\u044C\u043A\u043E
+    \u043D\u0430\u043C\u043D\u043E\u0433\u043E \u0431\u043E\u043B\u0435\u0435 \u043F\u0440\u0438\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F
+    \u0438 \u0437\u0430\u0449\u0438\u0449\u0451\u043D\u043D\u0430\u044F"

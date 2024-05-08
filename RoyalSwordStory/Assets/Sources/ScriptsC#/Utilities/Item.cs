@@ -15,6 +15,10 @@ public class Item : ScriptableObject
     [Header("Recovery")]
     [SerializeField] private float addHealth;
     [SerializeField] private float addMana;
+    [Space]
+    [Header("Other")]
+    [SerializeField] private string nameItem = "Item";
+    [SerializeField, TextArea(10,10)] private string description = "No description";
 
     public TypeItem Type => typeItem;
     public Sprite Sprite => spriteItem;
@@ -23,6 +27,8 @@ public class Item : ScriptableObject
     public float AddProtection => addProtection;
     public float AddHealth => addHealth;
     public float AddMana => addMana;
+    public string Description => description;
+    public string NameItem => nameItem;
 
     public enum TypeItem
     {

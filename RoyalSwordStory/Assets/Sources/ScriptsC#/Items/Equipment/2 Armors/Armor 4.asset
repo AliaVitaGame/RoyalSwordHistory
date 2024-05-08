@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeItem: 3
   spriteItem: {fileID: 1501056381, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
+  isStack: 0
   coinCount: 0
   addProtection: 0
   addHealth: 0
   addMana: 0
+  nameItem: Arm41
+  description: No description

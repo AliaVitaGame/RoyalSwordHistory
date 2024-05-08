@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemHandler : MonoBehaviour, IItem
 {
     [SerializeField] private Item item;
+    [SerializeField] private GameObject destroyEffectPrefab;
     [SerializeField, Range(1, 64)] private int countItem = 1;
 
     public int CountItem
@@ -14,7 +15,7 @@ public class ItemHandler : MonoBehaviour, IItem
 
     private void Start()
     {
-        if(item == null)
+        if (item == null)
         {
             Debug.LogWarning("Item null. GameObject: " + gameObject.name + ". The object has been deleted");
             Destroy(gameObject);
@@ -26,5 +27,10 @@ public class ItemHandler : MonoBehaviour, IItem
 
     public Item GetItem() => item;
 
-    public void Destroy() => Destroy(gameObject);
+    public void Destroy()
+    {
+        var tempFX = Instantiate(destroyEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(tempFX, 0.6f);
+        Destroy(gameObject);
+    }
 }
