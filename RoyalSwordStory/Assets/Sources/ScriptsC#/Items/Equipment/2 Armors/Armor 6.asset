@@ -15,8 +15,10 @@ MonoBehaviour:
   typeItem: 3
   spriteItem: {fileID: -1177944215, guid: b9346bb83c772804880c75b9e64d69e2, type: 3}
   isStack: 0
+  isEquip: 1
   coinCount: 0
   addProtection: 0
+  addSpeed: 0
   addHealth: 0
   addMana: 0
   nameItem: Armor 6

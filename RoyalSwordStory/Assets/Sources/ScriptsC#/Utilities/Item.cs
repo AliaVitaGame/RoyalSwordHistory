@@ -7,11 +7,13 @@ public class Item : ScriptableObject
     [SerializeField] private TypeItem typeItem;
     [SerializeField] private Sprite spriteItem;
     [SerializeField] private bool isStack;
+    [SerializeField] private bool isEquip;
     [Space]
     [Header("Coin")]
     [SerializeField] private float coinCount;
     [Header("Protection")]
     [SerializeField] private float addProtection;
+    [SerializeField] private float addSpeed;
     [Header("Recovery")]
     [SerializeField] private float addHealth;
     [SerializeField] private float addMana;
@@ -23,8 +25,10 @@ public class Item : ScriptableObject
     public TypeItem Type => typeItem;
     public Sprite Sprite => spriteItem;
     public bool IsStack => isStack;
+    public bool IsEquip => isEquip;
     public float CoinCount => coinCount;
     public float AddProtection => addProtection;
+    public float AddSpeed => addSpeed;
     public float AddHealth => addHealth;
     public float AddMana => addMana;
     public string Description => description;
@@ -37,9 +41,11 @@ public class Item : ScriptableObject
 
         Helmet = 2,
         Armor = 3,
-        Greaves = 4,
-        Boots = 5,
+        Gloves = 4,
+        Greaves = 5,
+        Boots = 6,
+        Ring = 7,
 
-        Ring = 6
+        Magic = 8
     }
 }

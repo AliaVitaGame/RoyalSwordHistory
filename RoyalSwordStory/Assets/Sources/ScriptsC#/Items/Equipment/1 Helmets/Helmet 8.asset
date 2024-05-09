@@ -15,8 +15,10 @@ MonoBehaviour:
   typeItem: 2
   spriteItem: {fileID: 1256780977, guid: 9b83ef740dafd14438332362aad2f261, type: 3}
   isStack: 0
+  isEquip: 1
   coinCount: 0
   addProtection: 0
+  addSpeed: 0
   addHealth: 0
   addMana: 0
   nameItem: Helmet 6
