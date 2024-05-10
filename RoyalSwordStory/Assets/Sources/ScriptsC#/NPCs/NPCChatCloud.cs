@@ -4,42 +4,25 @@ using UnityEngine.UI;
 
 public class NPCChatCloud : MonoBehaviour
 {
+    [SerializeField] private string[] prases = new string[] { };
     [SerializeField] private Text _cloudText;
-    [SerializeField] private Image _cloudImage;
-    [SerializeField] private string[] _prases = new string[] { };
 
-
-    private bool _canSpeak = true;
-
-    private void Start()
+    private bool canSpeak;
+    public void SaySomething()
     {
-        NPCController.OnPlayerIsClose += NPCController_OnPlayerIsClose;
-    }
-    private void OnDisable()
-    {
-        NPCController.OnPlayerIsClose -= NPCController_OnPlayerIsClose;
-    }
-    private void NPCController_OnPlayerIsClose()
-    {
-        if (_canSpeak)
-            StartCoroutine(WriteRandomPhraseCO());
-    }
-
-    private void SpeakRandomText()
-    {
-        if (_canSpeak)
+        if(canSpeak)
         {
-            _cloudText.text = _prases[Random.Range(0, _prases.Length)];
+            _cloudText.text = prases[Random.Range(0, prases.Length)];
+            StartCoroutine(SpeechIntervalCO());
         }
-
     }
-    private IEnumerator WriteRandomPhraseCO()
+
+    private IEnumerator SpeechIntervalCO()
     {
-        SpeakRandomText();
-        _canSpeak = false;
+        canSpeak = false;
 
         yield return new WaitForSeconds(5);
 
-        _canSpeak = true;
+        canSpeak = true;
     }
 }

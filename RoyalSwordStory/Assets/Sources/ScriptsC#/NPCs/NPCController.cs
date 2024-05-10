@@ -1,14 +1,22 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
 public class NPCController : MonoBehaviour
 {
+    [Header("BASIC SETTINGS")]
     [SerializeField] private float checkRadius;
+    [SerializeField] private float checkRadiusDevident;
     [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] private GameObject _interactionPanel;
+    [SerializeField] private NPCChatCloud _chatCloud;
 
-    public static event Action OnPlayerIsClose;
+
+
+    private void Start()
+    {
+        _interactionPanel.SetActive(false);
+    }
 
     private void FixedUpdate()
     {
@@ -19,7 +27,11 @@ public class NPCController : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, checkRadius, _playerLayer))
         {
-            OnPlayerIsClose?.Invoke();
+
+        }
+        else
+        {
+            _interactionPanel.SetActive(false);
         }
     }
 
@@ -27,5 +39,8 @@ public class NPCController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, checkRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, checkRadius - checkRadiusDevident);
     }
 }
