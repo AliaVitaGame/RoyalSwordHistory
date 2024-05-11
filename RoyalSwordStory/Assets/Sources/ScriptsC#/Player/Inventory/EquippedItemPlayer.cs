@@ -1,79 +1,57 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EquippedItemPlayer : MonoBehaviour
 {
-    [SerializeField] private Image itemHelmetImage;
-    [SerializeField] private Image itemArmorImage;
-    [SerializeField] private Image itemGlovesImage;
-    [SerializeField] private Image itemGreavesImage;
-    [SerializeField] private Image itemBootsImage;
-    [SerializeField] private Image itemRingImage;
-    [Space]
-    [SerializeField] private Sprite nullSprite;
+    [SerializeField] private CellEquippedItem _cellHelmet;
+    [SerializeField] private CellEquippedItem _cellArmor;
+    [SerializeField] private CellEquippedItem _cellGloves;
+    [SerializeField] private CellEquippedItem _cellGreaves;
+    [SerializeField] private CellEquippedItem _cellBoots;
+    [SerializeField] private CellEquippedItem _cellRing;
 
-    private Item _itemHelmet;
-    private Item _itemArmor;
-    private Item _itemGloves;
-    private Item _itemGreaves;
-    private Item _itemBoots;
-    private Item _itemRing;
-
-
-    private void Start()
+    public void Equip(Item itemCell)
     {
-        RefreshUI();
+        var item = itemCell;
+        if (item.Type == Item.TypeItem.Helmet) _cellHelmet.AddItem(item);
+        else if (item.Type == Item.TypeItem.Armor) _cellArmor.AddItem(item);
+        else if (item.Type == Item.TypeItem.Gloves) _cellGloves.AddItem(item);
+        else if (item.Type == Item.TypeItem.Greaves) _cellGreaves.AddItem(item);
+        else if (item.Type == Item.TypeItem.Boots) _cellBoots.AddItem(item);
+        else if (item.Type == Item.TypeItem.Ring) _cellRing.AddItem(item);
     }
 
-    public void Equip(Item item)
+    public float GetDamageRepaymentPercentage()
     {
-        if (item.Type == Item.TypeItem.Helmet) _itemHelmet = item;
-        else if (item.Type == Item.TypeItem.Armor) _itemArmor = item;
-        else if (item.Type == Item.TypeItem.Gloves) _itemGloves = item;
-        else if (item.Type == Item.TypeItem.Greaves) _itemGreaves = item;
-        else if (item.Type == Item.TypeItem.Boots) _itemBoots = item;
-        else if (item.Type == Item.TypeItem.Ring) _itemRing = item;
-
-        RefreshUI();
+        return HelmetStats() + ArmorStats() + GlovesStats() + GreavesStats() + BootsStats();
     }
 
     public float HelmetStats()
     {
-        return _itemHelmet ? _itemHelmet.AddProtection : 0;
+        return _cellHelmet ? _cellHelmet.GetItem().AddProtection : 0;
     }
 
     public float ArmorStats()
     {
-        return _itemArmor ? _itemArmor.AddProtection : 0;
+        return _cellArmor ? _cellArmor.GetItem().AddProtection : 0;
     }
 
     public float GlovesStats()
     {
-        return _itemGloves ? _itemGloves.AddProtection : 0;
+        return _cellGloves ? _cellGloves.GetItem().AddProtection : 0;
     }
 
     public float GreavesStats()
     {
-        return _itemGreaves ? _itemGreaves.AddProtection : 0;
+        return _cellGreaves ? _cellGreaves.GetItem().AddProtection : 0;
     }
 
     public float BootsStats()
     {
-        return _itemBoots ? _itemBoots.AddProtection : 0;
+        return _cellBoots ? _cellBoots.GetItem().AddProtection : 0;
     }
 
     public float RingStats()
     {
-        return _itemRing ? _itemRing.AddProtection : 0;
-    }
-
-    private void RefreshUI()
-    {
-        itemHelmetImage.sprite = _itemHelmet ? _itemHelmet.Sprite : nullSprite;
-        itemArmorImage.sprite = _itemArmor ? _itemArmor.Sprite : nullSprite;
-        itemGlovesImage.sprite = _itemGloves ? _itemGloves.Sprite : nullSprite;
-        itemGreavesImage.sprite = _itemGreaves ? _itemGreaves.Sprite : nullSprite;
-        itemBootsImage.sprite = _itemBoots ? _itemBoots.Sprite : nullSprite;
-        itemRingImage.sprite = _itemRing ? _itemRing.Sprite : nullSprite;
+        return _cellRing ? _cellRing.GetItem().AddProtection : 0;
     }
 }

@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 6084264409928202653}
   - component: {fileID: 2787407385472888892}
   - component: {fileID: 5931427250039430172}
+  - component: {fileID: 5997557988585559395}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -670,8 +671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bc3bef16ca05b47935ad3ae7a52729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10000
-  maxHealth: 10000
+  health: 100
+  maxHealth: 100
+  equippedItemPlayer: {fileID: 5997557988585559395}
 --- !u!114 &6856323628999223351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +835,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+--- !u!114 &5997557988585559395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466353960472980010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71730186556cb346b5c6af1708cfe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cellHelmet: {fileID: 6501009624368570919}
+  _cellArmor: {fileID: 7086666855667278814}
+  _cellGloves: {fileID: 5114013173785374272}
+  _cellGreaves: {fileID: 5617970041217112143}
+  _cellBoots: {fileID: 4291304906420889868}
+  _cellRing: {fileID: 1105342726446484703}
 --- !u!1 &599601587259070792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,8 +1472,9 @@ GameObject:
   - component: {fileID: 3264716737461137824}
   - component: {fileID: 1663233073507728740}
   - component: {fileID: 6246978158507171095}
+  - component: {fileID: 1105342726446484703}
   m_Layer: 0
-  m_Name: Cell (Equip) (5)
+  m_Name: Cell (Ring) (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1561,6 +1582,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1105342726446484703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214891619245524263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb57df100fc624b87f2cbe96483203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCell: {fileID: 0}
+  nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  selectColor: {r: 0, g: 1, b: 0, a: 1}
+  deselectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1394879103623728835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,8 +3008,9 @@ GameObject:
   - component: {fileID: 115672484838686167}
   - component: {fileID: 2982912909979325821}
   - component: {fileID: 5434444498695959404}
+  - component: {fileID: 6501009624368570919}
   m_Layer: 0
-  m_Name: Cell (Equip)
+  m_Name: Cell (Helmet)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3080,6 +3118,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6501009624368570919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441602157539970227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb57df100fc624b87f2cbe96483203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCell: {fileID: 0}
+  nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  selectColor: {r: 0, g: 1, b: 0, a: 1}
+  deselectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2559160555637974358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,8 +6221,9 @@ GameObject:
   - component: {fileID: 4149675831933524389}
   - component: {fileID: 3698864112527165211}
   - component: {fileID: 212912594269337864}
+  - component: {fileID: 7086666855667278814}
   m_Layer: 0
-  m_Name: Cell (Equip) (1)
+  m_Name: Cell (Armor) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6276,6 +6331,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7086666855667278814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803301254290579928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb57df100fc624b87f2cbe96483203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCell: {fileID: 0}
+  nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  selectColor: {r: 0, g: 1, b: 0, a: 1}
+  deselectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4830566723399162727
 GameObject:
   m_ObjectHideFlags: 0
@@ -8952,7 +9023,7 @@ Transform:
   m_GameObject: {fileID: 6188167769570218224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.78, z: -10}
+  m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9887,7 +9958,7 @@ Transform:
   m_GameObject: {fileID: 7106682681743012576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.78, z: -10}
+  m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10605,8 +10676,9 @@ GameObject:
   - component: {fileID: 1494617772798229392}
   - component: {fileID: 814197982533074129}
   - component: {fileID: 5650605830553826530}
+  - component: {fileID: 5114013173785374272}
   m_Layer: 0
-  m_Name: Cell (Equip) (2)
+  m_Name: Cell (Gloves (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10714,6 +10786,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5114013173785374272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7497588478149149574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb57df100fc624b87f2cbe96483203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCell: {fileID: 0}
+  nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  selectColor: {r: 0, g: 1, b: 0, a: 1}
+  deselectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7754603406280586700
 GameObject:
   m_ObjectHideFlags: 0
@@ -10815,6 +10903,7 @@ MonoBehaviour:
   sellButton: {fileID: 304614009453986625}
   dropButton: {fileID: 1042555873140457336}
   nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  _equippedItemPlayer: {fileID: 5997557988585559395}
 --- !u!1 &7789683820469902378
 GameObject:
   m_ObjectHideFlags: 0
@@ -11735,8 +11824,9 @@ GameObject:
   - component: {fileID: 8012447668419759108}
   - component: {fileID: 8308460761593824010}
   - component: {fileID: 7045600207094757041}
+  - component: {fileID: 4291304906420889868}
   m_Layer: 0
-  m_Name: Cell (Equip) (4)
+  m_Name: Cell (Boots) (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11844,6 +11934,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4291304906420889868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8251636786655547648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb57df100fc624b87f2cbe96483203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCell: {fileID: 0}
+  nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  selectColor: {r: 0, g: 1, b: 0, a: 1}
+  deselectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8399802699655618135
 GameObject:
   m_ObjectHideFlags: 0
@@ -12160,8 +12266,9 @@ GameObject:
   - component: {fileID: 2125615534129687124}
   - component: {fileID: 7093693864320401385}
   - component: {fileID: 3380985703249017209}
+  - component: {fileID: 5617970041217112143}
   m_Layer: 0
-  m_Name: Cell (Equip) (3)
+  m_Name: Cell (Greaves) (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12269,6 +12376,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5617970041217112143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857095332009180582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb57df100fc624b87f2cbe96483203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemCell: {fileID: 0}
+  nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
+  selectColor: {r: 0, g: 1, b: 0, a: 1}
+  deselectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &8988899657190681819
 GameObject:
   m_ObjectHideFlags: 0

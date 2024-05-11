@@ -17,7 +17,7 @@ MonoBehaviour:
   isStack: 0
   isEquip: 1
   coinCount: 0
-  addProtection: 0
+  addProtection: 100
   addSpeed: 0
   addHealth: 0
   addMana: 0

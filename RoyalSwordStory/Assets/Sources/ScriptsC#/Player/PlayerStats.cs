@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
+    [SerializeField] private EquippedItemPlayer equippedItemPlayer;
 
     public float Health
     {
@@ -43,7 +44,8 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
 
         _animationController.HitAnimation(true);
 
-        Health -= damage;
+        var damageTakenArmor = damage * (1 - (equippedItemPlayer.GetDamageRepaymentPercentage() / 100));
+        Health -= damageTakenArmor;
 
         PlayerHitEvent?.Invoke();
 
