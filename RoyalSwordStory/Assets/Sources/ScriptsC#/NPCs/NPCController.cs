@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -5,17 +7,18 @@ using UnityEngine;
 public class NPCController : MonoBehaviour
 {
     [Header("BASIC SETTINGS")]
-    [SerializeField] private float checkRadius;
-    [SerializeField] private float checkRadiusDevident;
+    [SerializeField] private float checkRadiusOne;
+    [SerializeField] private float checkRadiusTwo;
     [SerializeField] private LayerMask _playerLayer;
-    [SerializeField] private GameObject _interactionPanel;
-    [SerializeField] private NPCChatCloud _chatCloud;
+    [SerializeField] private NPCChatCloudManager _chatCloudManager;
 
-
+    private float mainCheckRadius;
+    private bool _isPassedFirstRadius;
+    public static event Action OnPlayerIsClose;
 
     private void Start()
     {
-        _interactionPanel.SetActive(false);
+        mainCheckRadius = checkRadiusOne;
     }
 
     private void FixedUpdate()
@@ -25,22 +28,41 @@ public class NPCController : MonoBehaviour
 
     private void CheckZone()
     {
-        if (Physics2D.OverlapCircle(transform.position, checkRadius, _playerLayer))
+        if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer) && _isPassedFirstRadius == false)
         {
-
+            StartCoroutine(ReduceRadius(checkRadiusTwo, true));
+            
+            _chatCloudManager.TurnOnChatPanel(0);
+            OnPlayerIsClose?.Invoke();
+        }
+        else if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer) && _isPassedFirstRadius == true)
+        {
+            _chatCloudManager.TurnOnChatPanel(1);
         }
         else
         {
-            _interactionPanel.SetActive(false);
+            _isPassedFirstRadius = false;
+            StartCoroutine(ReduceRadius(checkRadiusOne , false));
+            _chatCloudManager.TurnOnChatPanel(2);
         }
+    }
+
+    private IEnumerator ReduceRadius(float radius , bool isPassedFirstRadius)
+    {
+        yield return new WaitForSeconds(5);
+        _isPassedFirstRadius = isPassedFirstRadius;
+        mainCheckRadius = radius;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, checkRadius);
+        Gizmos.DrawWireSphere(transform.position, checkRadiusOne);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, checkRadius - checkRadiusDevident);
+        Gizmos.DrawWireSphere(transform.position, checkRadiusTwo);
+
+        Gizmos.color= Color.blue;
+        Gizmos.DrawWireSphere(transform.position, mainCheckRadius);
     }
 }

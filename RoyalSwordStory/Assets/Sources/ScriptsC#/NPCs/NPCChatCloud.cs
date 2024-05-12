@@ -7,7 +7,22 @@ public class NPCChatCloud : MonoBehaviour
     [SerializeField] private string[] prases = new string[] { };
     [SerializeField] private Text _cloudText;
 
-    private bool canSpeak;
+    private bool canSpeak = true;
+
+    private void Awake()
+    {
+        NPCController.OnPlayerIsClose += NPCController_OnPlayerIsClose;
+    }
+
+    private void OnDisable()
+    {
+        NPCController.OnPlayerIsClose -= NPCController_OnPlayerIsClose;
+    }
+    private void NPCController_OnPlayerIsClose()
+    {
+        SaySomething();
+    }
+
     public void SaySomething()
     {
         if(canSpeak)
@@ -16,6 +31,8 @@ public class NPCChatCloud : MonoBehaviour
             StartCoroutine(SpeechIntervalCO());
         }
     }
+
+    
 
     private IEnumerator SpeechIntervalCO()
     {
