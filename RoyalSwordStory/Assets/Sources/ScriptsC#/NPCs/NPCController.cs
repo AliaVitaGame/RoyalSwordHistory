@@ -28,14 +28,14 @@ public class NPCController : MonoBehaviour
 
     private void CheckZone()
     {
-        if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer) && _isPassedFirstRadius == false)
+        if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer))
         {
             StartCoroutine(ReduceRadius(checkRadiusTwo, true));
             
             _chatCloudManager.TurnOnChatPanel(0);
             OnPlayerIsClose?.Invoke();
         }
-        else if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer) && _isPassedFirstRadius == true)
+        else if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer))
         {
             _chatCloudManager.TurnOnChatPanel(1);
         }
