@@ -3,7 +3,7 @@ using UnityEngine;
 
 public interface IUnitHealthStats
 {
-    public float Health {  get; set; }
+    public float Health { get; set; }
     public float MaxHealth { get; set; }
     public bool IsDead { get; set; }
     public bool IsStunned { get; set; }
@@ -18,9 +18,9 @@ public interface IUnitAttacking
     public float Repulsion { get; set; }
     public float StunTime { get; set; }
     public float RadiusDamage { get; set; }
-    public bool IsAttacking {  get; set; }
-    public LayerMask LayerTarget {  get; set; }
-    public Vector2 DistanceDamage {  get; set; }
+    public bool IsAttacking { get; set; }
+    public LayerMask LayerTarget { get; set; }
+    public Vector2 DistanceDamage { get; set; }
 
     public void StartAttack();
     public IEnumerator Attack();
@@ -34,10 +34,16 @@ public interface IItem
     public void Destroy();
 }
 
-    public interface ISwitchColorHit
+public interface ISwitchColorHit
 {
     public Color StartColor { get; set; }
     public Color HitColor { get; set; }
-    public SpriteRenderer SpriteRenderer {  get; set; }
+    public SpriteRenderer SpriteRenderer { get; set; }
     public IEnumerator SwitchColorHit();
+}
+
+public interface ICell
+{
+    public Item GetItem();
+    public Item ReceiveItem();
 }

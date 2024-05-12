@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CellEquippedItem : MonoBehaviour
+public class CellEquippedItem : MonoBehaviour, ICell
 {
     [SerializeField] private Item itemCell;
     [SerializeField] private Sprite nullSprite;
@@ -14,7 +14,7 @@ public class CellEquippedItem : MonoBehaviour
     private Image _backImageCell;
     private bool _isSelect;
     public static Action CellEquippedDeselectEvent;
-    public static Action<CellEquippedItem> CellEquippedSelectEvent;
+    public static Action<CellEquippedItem, bool> CellEquippedSelectEvent;
 
     private static Action<CellEquippedItem> _selectNewCell;
 
@@ -71,7 +71,7 @@ public class CellEquippedItem : MonoBehaviour
 
         SetColorBackImage(selectColor);
 
-        if (_isSelect) CellEquippedSelectEvent?.Invoke(this);
+        if (_isSelect) CellEquippedSelectEvent?.Invoke(this, true);
         else Deselect();
     }
 

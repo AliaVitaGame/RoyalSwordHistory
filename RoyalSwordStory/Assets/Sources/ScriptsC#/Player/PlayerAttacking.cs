@@ -15,6 +15,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [Space]
     [SerializeField] private LayerMask layerTarget;
     [SerializeField] private Vector2 distanceDamage = Vector2.right * 0.5f;
+    [Space]
+    [SerializeField] private ParticleSystem damageEffect;
 
     private PlayerAnimationController _animationController;
     private PlayerMove _playerMove;
@@ -137,6 +139,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
             {
                 unitHealth.TakeDamage(damage, StunTime, repulsion * transform.localScale.x);
+                damageEffect.transform.position = tempTargets[i].transform.position;
+                damageEffect.Play();
             }
         }
     }

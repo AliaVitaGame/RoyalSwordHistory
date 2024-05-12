@@ -15,18 +15,24 @@ public class PanelItemInfoInventory : MonoBehaviour
     [Space]
     [SerializeField] private EquippedItemPlayer _equippedItemPlayer;
 
-    private CellInventory _cellInventory;
+    private ICell _cellInventory;
 
     private void OnEnable()
     {
         CellInventory.CellSelectEvent += ShowInfo;
         CellInventory.CellDeselectEvent += DontShowInfo;
+
+        CellEquippedItem.CellEquippedSelectEvent += ShowInfo;
+        CellEquippedItem.CellEquippedDeselectEvent += DontShowInfo;
     }
 
     private void OnDisable()
     {
         CellInventory.CellSelectEvent -= ShowInfo;
         CellInventory.CellDeselectEvent -= DontShowInfo;
+
+        CellEquippedItem.CellEquippedSelectEvent -= ShowInfo;
+        CellEquippedItem.CellEquippedDeselectEvent -= DontShowInfo;
     }
 
     private void Start()
@@ -38,6 +44,7 @@ public class PanelItemInfoInventory : MonoBehaviour
     public void Use()
     {
         if (_cellInventory == null) return;
+        if (_cellInventory.GetItem() == null) return;
 
         var item = _cellInventory.GetItem();
 
@@ -57,12 +64,14 @@ public class PanelItemInfoInventory : MonoBehaviour
         _cellInventory.ReceiveItem();
     }
 
-    private void ShowInfo(CellInventory cellInventory)
+    private void ShowInfo(ICell cellInventory, bool ignoreSaveCell)
     {
         var item = cellInventory.GetItem();
         cellItemImage.sprite = item.Sprite;
         itemNameText.name = item.NameItem;
         itemDescriptionText.text = item.Description;
+
+        if(ignoreSaveCell == false)
         _cellInventory = cellInventory;
     }
 

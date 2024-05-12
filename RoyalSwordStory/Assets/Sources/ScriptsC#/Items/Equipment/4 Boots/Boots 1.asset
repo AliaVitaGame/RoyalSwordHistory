@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f15b0f45274cf04aa73bbcb57d21196, type: 3}
   m_Name: Boots 1
   m_EditorClassIdentifier: 
-  typeItem: 5
+  typeItem: 6
   spriteItem: {fileID: 1822758222, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
   isStack: 0
   isEquip: 1

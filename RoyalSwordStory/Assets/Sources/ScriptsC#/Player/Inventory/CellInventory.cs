@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
 [RequireComponent(typeof(Button))]
-public class CellInventory : MonoBehaviour
+public class CellInventory : MonoBehaviour, ICell
 {
     [SerializeField] private Item itemCell;
     [SerializeField] private int countOblectCell;
@@ -18,7 +18,7 @@ public class CellInventory : MonoBehaviour
     private Text _textCount;
     private bool _isSelect;
     public static Action CellDeselectEvent;
-    public static Action<CellInventory> CellSelectEvent;
+    public static Action<CellInventory, bool> CellSelectEvent;
 
     private static Action<CellInventory> _selectNewCell;
 
@@ -82,7 +82,7 @@ public class CellInventory : MonoBehaviour
 
         SetColorBackImage(selectColor);
 
-        if (_isSelect) CellSelectEvent?.Invoke(this);
+        if (_isSelect) CellSelectEvent?.Invoke(this, false);
         else Deselect();
     }
 
