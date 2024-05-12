@@ -219,7 +219,7 @@ MonoBehaviour:
   - Oh.. do you want to buy something?
   - My goods are cheap
   - Do you want to buy some?
-  _cloudText: {fileID: 1824803335}
+  _cloudText: {fileID: 34552656}
 --- !u!1 &81153343
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &392987063
 MonoBehaviour:
   m_ObjectHideFlags: 0

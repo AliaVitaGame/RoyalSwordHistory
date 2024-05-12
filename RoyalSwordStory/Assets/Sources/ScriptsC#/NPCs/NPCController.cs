@@ -13,7 +13,8 @@ public class NPCController : MonoBehaviour
     [SerializeField] private NPCChatCloudManager _chatCloudManager;
 
     private float mainCheckRadius;
-    private bool _isPassedFirstRadius;
+    private bool playerIsClose = false;
+    
     public static event Action OnPlayerIsClose;
 
     private void Start()
@@ -28,31 +29,28 @@ public class NPCController : MonoBehaviour
 
     private void CheckZone()
     {
-        if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer))
+        if (Physics2D.OverlapCircle(transform.position, checkRadiusOne, _playerLayer))
         {
-            StartCoroutine(ReduceRadius(checkRadiusTwo, true));
-            
-            _chatCloudManager.TurnOnChatPanel(0);
             OnPlayerIsClose?.Invoke();
-        }
-        else if (Physics2D.OverlapCircle(transform.position, mainCheckRadius, _playerLayer))
-        {
-            _chatCloudManager.TurnOnChatPanel(1);
+
+            if(playerIsClose == false)
+            {
+                _chatCloudManager.TurnOnChatPanel(0);
+            }
+
+            if (Physics2D.OverlapCircle(transform.position, checkRadiusTwo, _playerLayer) && playerIsClose == false)
+            {
+                playerIsClose = true;
+                _chatCloudManager.TurnOnChatPanel(1);
+            }
         }
         else
         {
-            _isPassedFirstRadius = false;
-            StartCoroutine(ReduceRadius(checkRadiusOne , false));
+            playerIsClose = false ;
             _chatCloudManager.TurnOnChatPanel(2);
         }
     }
 
-    private IEnumerator ReduceRadius(float radius , bool isPassedFirstRadius)
-    {
-        yield return new WaitForSeconds(5);
-        _isPassedFirstRadius = isPassedFirstRadius;
-        mainCheckRadius = radius;
-    }
 
     private void OnDrawGizmos()
     {
