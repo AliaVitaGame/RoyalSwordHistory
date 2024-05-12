@@ -4,6 +4,9 @@ using UnityEngine;
 public class InteractionObject : MonoBehaviour
 {
     [SerializeField] private float radius = 3;
+    [Space]
+    [SerializeField] private AudioClip audioInteraction;
+    [SerializeField] private AudioFX audioFX;
 
     private InventoryPlayer _inventoryPlayer;
 
@@ -27,6 +30,7 @@ public class InteractionObject : MonoBehaviour
             var countItem = item.GetItem().IsStack ? item.CountItem : 1;
             if (_inventoryPlayer.AddItem(item.GetItem(), countItem))
             {
+                PlayAudio();
                 item.Destroy();
             }
             else
@@ -46,10 +50,17 @@ public class InteractionObject : MonoBehaviour
             {
                 if (_inventoryPlayer.AddItem(item.GetItem(), item.CountItem))
                 {
+                    PlayAudio();
                     item.Destroy();
                 }
             }
         }
+    }
+
+
+    private void PlayAudio()
+    {
+        audioFX.PlayAudioRandomPitch(audioInteraction);
     }
 
     private void OnDrawGizmosSelected()
