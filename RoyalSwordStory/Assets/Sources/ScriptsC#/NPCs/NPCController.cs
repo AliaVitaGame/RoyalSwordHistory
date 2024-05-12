@@ -7,6 +7,7 @@ using UnityEngine;
 public class NPCController : MonoBehaviour
 {
     [Header("BASIC SETTINGS")]
+    [SerializeField] private bool isInteractive; 
     [SerializeField] private float checkRadiusOne;
     [SerializeField] private float checkRadiusTwo;
     [SerializeField] private LayerMask _playerLayer;
@@ -38,7 +39,7 @@ public class NPCController : MonoBehaviour
                 _chatCloudManager.TurnOnChatPanel(0);
             }
 
-            if (Physics2D.OverlapCircle(transform.position, checkRadiusTwo, _playerLayer) && playerIsClose == false)
+            if (Physics2D.OverlapCircle(transform.position, checkRadiusTwo, _playerLayer) && playerIsClose == false && isInteractive == true)
             {
                 playerIsClose = true;
                 _chatCloudManager.TurnOnChatPanel(1);

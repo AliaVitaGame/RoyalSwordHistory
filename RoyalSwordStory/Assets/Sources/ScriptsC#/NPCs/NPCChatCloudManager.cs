@@ -28,11 +28,4 @@ public class NPCChatCloudManager : MonoBehaviour
         }
     }
 
-   
-
-    //public void DeactivateAllChatClouds()
-    //{
-    //    chatPanel.SetActive(false);
-    //    interactionPanel.SetActive(false);
-    //}
 }
