@@ -17,6 +17,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private Vector2 distanceDamage = Vector2.right * 0.5f;
     [Space]
     [SerializeField] private ParticleSystem damageEffect;
+    [SerializeField] private AudioFX audioFX;
+    [SerializeField] private AudioClip[] audiosAttack;
 
     private PlayerAnimationController _animationController;
     private PlayerMove _playerMove;
@@ -127,6 +129,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 
         if (_animationController)
             _animationController.RandomAnimationAttack();
+
+        audioFX.PlayAudioRandomPitch(audiosAttack[Random.Range(0, audiosAttack.Length)]);
 
         if (_playerMove)
             _playerMove.SetVelosity(forceAttack * transform.localScale.x, _playerMove.GetRigidbody().velocity.y);

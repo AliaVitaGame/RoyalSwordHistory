@@ -14,6 +14,9 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private float aggressionRadius = 7;
     [SerializeField] private LayerMask layerTarget;
     [SerializeField] private Vector2 distanceDamage = Vector2.right * 1.5f;
+    [Space]
+    [SerializeField] private AudioFX audioFX;
+    [SerializeField] private AudioClip[] audiosAttack;
     public float Damage
     {
         get => damage;
@@ -124,6 +127,8 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         if (_isStopAttacking == false)
         {
             _animationController.AnimationAttack();
+
+            audioFX.PlayAudioRandomPitch(audiosAttack[Random.Range(0, audiosAttack.Length)]);
 
             yield return null;
 

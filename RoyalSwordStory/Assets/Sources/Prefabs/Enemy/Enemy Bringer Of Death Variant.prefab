@@ -77,6 +77,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audioFX
+      value: 
+      objectReference: {fileID: 5049070213159027842}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: swingTime
       value: 0.3
       objectReference: {fileID: 0}
@@ -96,6 +100,22 @@ PrefabInstance:
       propertyPath: distanceDamage.y
       value: 0.96
       objectReference: {fileID: 0}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: da292309c63dab54aa04efb57293f293, type: 3}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57312fd22910bb14ca98a3ef21ba79e0, type: 3}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5d85f077b8cc4459c7737933526859, type: 3}
     - target: {fileID: 4265834899749239934, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 1
@@ -241,3 +261,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+--- !u!114 &5049070213159027842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4921505559624829857, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+  m_PrefabInstance: {fileID: 170386509358550819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8e0a915b6fe21429ea40719100d114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
