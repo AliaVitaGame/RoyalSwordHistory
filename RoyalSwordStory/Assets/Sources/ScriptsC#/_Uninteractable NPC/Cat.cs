@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -23,14 +22,14 @@ public class Cat : MonoBehaviour
         if (_isRight)
         {
             Move(_startPosition);
-            transform.localScale = new Vector2(-7f, 7f);
+            transform.localScale = new Vector2(-2f, 2f);
 
 
         }
         else
         {
             Move(_targetPosition);
-            transform.localScale = new Vector2(7f, 7f);
+            transform.localScale = new Vector2(2f, 2f);
 
         }
 
@@ -72,7 +71,7 @@ public class Cat : MonoBehaviour
     private IEnumerator AnimationHolder() { 
         _isMoving = false;
         AnimationRandomizer(true);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(4.1f);
         _isMoving = true;
         AnimationRandomizer(false);
         
