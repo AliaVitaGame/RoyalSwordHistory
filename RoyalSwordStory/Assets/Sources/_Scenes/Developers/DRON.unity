@@ -3495,37 +3495,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3699977868895495258, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: m_TrackedObjectOffset.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3699977868895495258, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: m_TrackedObjectOffset.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3868842928750347331, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3868842928750347331, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3995328600462591139, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
       propertyPath: m_Name
       value: Main
-      objectReference: {fileID: 0}
-    - target: {fileID: 5860543947160785491, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: forceAttackUpForJump
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8831924810051598415, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8831924810051598415, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
