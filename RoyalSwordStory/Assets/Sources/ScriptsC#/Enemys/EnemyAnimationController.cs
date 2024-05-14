@@ -22,6 +22,7 @@ public class EnemyAnimationController : MonoBehaviour
 
     public void MoveAnimation(bool moving)
     {
+        animator.speed = 1; 
         AnimatorSetBool(_nameMove, moving);
     }
 

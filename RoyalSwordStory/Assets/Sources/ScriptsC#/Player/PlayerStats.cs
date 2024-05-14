@@ -9,6 +9,12 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
     [SerializeField] private EquippedItemPlayer equippedItemPlayer;
+    [SerializeField] private ParticleSystem bloodFX;
+    [Space]
+    [SerializeField] private AudioClip[] damageAudio;
+    [SerializeField] private AudioClip[] bloodAudio;
+    [SerializeField] private AudioClip[] deadAudio;
+    [SerializeField] private AudioFX audioFX;
 
     public float Health
     {
@@ -43,11 +49,15 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         if (IsDead) return;
 
         _animationController.HitAnimation(true);
+        audioFX.PlayAudioRandomPitch(damageAudio[GetRandomValue(0, damageAudio.Length)]);
+        audioFX.PlayAudioRandomPitch(bloodAudio[GetRandomValue(0, bloodAudio.Length)]);
 
         var damageTakenArmor = damage * (1 - (equippedItemPlayer.GetDamageRepaymentPercentage() / 100));
         Health -= damageTakenArmor;
 
         PlayerHitEvent?.Invoke();
+
+        bloodFX.Play(); 
 
         _healthBar.SetHealth(Health, MaxHealth);
 
@@ -73,10 +83,19 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     private void Dead()
     {
         IsDead = true;
+        DeadAudio();
         PlayerDaadEvent?.Invoke();
         Debug.Log("Player dead");
         Destroy(gameObject);
     }
 
+    private void DeadAudio()
+    {
+        audioFX.transform.SetParent(null);
+        audioFX.PlayAudioRandomPitch(deadAudio[GetRandomValue(0, deadAudio.Length)]);
+        Destroy(audioFX.gameObject, 3);
+    }
 
+    private int GetRandomValue(int min, int max)
+    => UnityEngine.Random.Range(min, max);
 }

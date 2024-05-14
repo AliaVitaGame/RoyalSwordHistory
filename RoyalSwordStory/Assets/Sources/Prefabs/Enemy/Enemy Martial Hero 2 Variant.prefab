@@ -72,6 +72,22 @@ PrefabInstance:
       propertyPath: distanceDamage.y
       value: 0.36
       objectReference: {fileID: 0}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fef1d2cad5c242a4f902e59b4931c1e7, type: 3}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c16a3fb2566d8ec4a95198bbea79b42f, type: 3}
+    - target: {fileID: 3312563692296031588, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: audiosAttack.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a54745dcde9a21a4c9ce1fafddf6dd03, type: 3}
     - target: {fileID: 4416415089821692996, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -66,7 +66,7 @@ public class EnemyMove : MonoBehaviour
 
     public void Jump(Vector2 targetAttack)
     {
-        if (_isGround)
+        if (_isGround && _isStopMove == false)
         {
             var randomJumpForce = jumpForce + Random.Range(minRandomTimeJump, maxRandomTimeJump);
 

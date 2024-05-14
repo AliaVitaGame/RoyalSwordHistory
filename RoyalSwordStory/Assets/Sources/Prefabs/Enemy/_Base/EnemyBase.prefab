@@ -196,6 +196,14 @@ MonoBehaviour:
   maxHealth: 100
   bloodFX: {fileID: 8836738505002409855}
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  damageAudio:
+  - {fileID: 8300000, guid: 6f688e50aa89334448c1fea666f141c7, type: 3}
+  - {fileID: 8300000, guid: 60da0c0f7b89d524c8173b8362adbe11, type: 3}
+  bloodAudio:
+  - {fileID: 8300000, guid: 8a751711264991745abaa6cc0dd49748, type: 3}
+  deadAudio:
+  - {fileID: 8300000, guid: 72b7c6d478d299343b4de3eb52238cf2, type: 3}
+  audioFX: {fileID: 4921505559624829857}
 --- !u!114 &4818828509652550290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +451,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

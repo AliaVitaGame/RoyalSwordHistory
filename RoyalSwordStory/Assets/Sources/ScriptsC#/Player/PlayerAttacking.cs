@@ -13,6 +13,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private float damageAttackDown = 10;
     [SerializeField] private float speedAttackDown = 35;
     [Space]
+    [SerializeField] private float forceAttackUpForJump = 3;
+    [Space]
     [SerializeField] private LayerMask layerTarget;
     [SerializeField] private Vector2 distanceDamage = Vector2.right * 0.5f;
     [Space]
@@ -82,25 +84,26 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     {
         if (Input.GetMouseButtonDown(0) && PlatformManager.IsDesktop)
             StartAttack();
+
+        if (Input.GetMouseButtonDown(1) && PlatformManager.IsDesktop)
+            StartAttack(true);
     }
 
-    public void StartAttack()
+    public void StartAttack(bool attackDown = false)
     {
         if (IsAttacking) return;
 
         IsAttacking = true;
 
-        if (_playerMove.GetIsGround())
+        if(attackDown && _playerMove.GetIsGround() == false)
+        {
+            StartCoroutine(AttackDown());
+        }
+        else
         {
             StartCoroutine(Attack());
             StartCoroutine(AttackTimer(AttackTime));
         }
-        else
-        {
-            StartCoroutine(AttackDown());
-        }
-
-
     }
 
     public IEnumerator AttackDown()
@@ -145,6 +148,9 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
                 unitHealth.TakeDamage(damage, StunTime, repulsion * transform.localScale.x);
                 damageEffect.transform.position = tempTargets[i].transform.position;
                 damageEffect.Play();
+
+                if (_playerMove.GetIsGround() == false)
+                    _playerMove.SetVelosity(Vector2.one * forceAttackUpForJump);
             }
         }
     }

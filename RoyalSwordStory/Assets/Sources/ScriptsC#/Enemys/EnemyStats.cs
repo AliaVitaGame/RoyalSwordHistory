@@ -11,6 +11,11 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     [SerializeField] private float maxHealth;
     [SerializeField] private ParticleSystem bloodFX;
     [SerializeField] private Color hitColor = Color.red;
+    [Space]
+    [SerializeField] private AudioClip[] damageAudio;
+    [SerializeField] private AudioClip[] bloodAudio;
+    [SerializeField] private AudioClip[] deadAudio;
+    [SerializeField] private AudioFX audioFX;
 
     public float Health
     {
@@ -58,6 +63,9 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         _animationController.HitAnimation(true);
 
+        audioFX.PlayAudioRandomPitch(damageAudio[GetRandomValue(0, damageAudio.Length)]);
+        audioFX.PlayAudioRandomPitch(bloodAudio[GetRandomValue(0, bloodAudio.Length)]);
+
         Health -= damage;
 
         bloodFX.Play();
@@ -93,9 +101,17 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     private void Dead()
     {
         IsDead = true;
+        DeadAudio();
         _explosionLimbs.PlayFX();
         EnemyAnyDeadEvent?.Invoke();
         Destroy(gameObject);
+    }
+
+    private void DeadAudio()
+    {
+        audioFX.transform.SetParent(null);
+        audioFX.PlayAudioRandomPitch(deadAudio[GetRandomValue(0, deadAudio.Length)]);
+        Destroy(audioFX.gameObject, 3);
     }
 
     public IEnumerator SwitchColorHit()
@@ -113,4 +129,7 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
         }
 
     }
+
+    private int GetRandomValue(int min, int max) 
+        => UnityEngine.Random.Range(min, max);
 }

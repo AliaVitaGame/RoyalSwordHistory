@@ -101,7 +101,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         if (tempObject) _target = tempObject.transform;
     }
 
-    public void StartAttack()
+    public void StartAttack(bool attackDown = false)
     {
         if (IsAttacking) return;
         if (_isStopAttacking) return;
@@ -113,13 +113,16 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
     public IEnumerator Swing()
     {
-        _animationController.RandomSwingAnimation();
-        _enemyMove.SetStopMove(true);
+        if(_isStopAttacking == false)
+        {
+            _animationController.RandomSwingAnimation();
+            _enemyMove.SetStopMove(true);
 
-        yield return new WaitForSeconds(swingTime);
+            yield return new WaitForSeconds(swingTime);
 
-        StartCoroutine(Attack());
-        StartCoroutine(AttackTimer(attackTime));
+            StartCoroutine(Attack());
+            StartCoroutine(AttackTimer(attackTime));
+        }
     }
 
     public IEnumerator Attack()
@@ -158,7 +161,10 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
 
     public void SetStopAttacking(bool stopAttacking)
-        => _isStopAttacking = stopAttacking;
+    {
+        _isStopAttacking = stopAttacking;
+        _enemyMove.SetStopMove(stopAttacking);
+    }
 
     private float GetDistance(Vector3 a, Vector3 b)
         => Vector3.Distance(a, b);

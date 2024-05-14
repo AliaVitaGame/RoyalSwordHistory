@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 177763734316853454, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: damageAudio.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 177763734316853454, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: damageAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ef1187102d15f8543937d56c8aa5d503, type: 3}
+    - target: {fileID: 177763734316853454, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: damageAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ccf399403121e4390344b81de40d13, type: 3}
+    - target: {fileID: 177763734316853454, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: damageAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25fe2fefc9b0ac949bbd9e081fd5624c, type: 3}
+    - target: {fileID: 177763734316853454, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: damageAudio.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b9ccf399403121e4390344b81de40d13, type: 3}
     - target: {fileID: 1809702246259765829, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Controller
       value: 

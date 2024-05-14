@@ -22,7 +22,7 @@ public interface IUnitAttacking
     public LayerMask LayerTarget { get; set; }
     public Vector2 DistanceDamage { get; set; }
 
-    public void StartAttack();
+    public void StartAttack(bool attackDown = false);
     public IEnumerator Attack();
     public IEnumerator AttackTimer(float time);
 }
