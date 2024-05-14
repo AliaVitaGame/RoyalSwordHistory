@@ -61,6 +61,8 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     {
         if (IsDead) return;
 
+        EnemyStanEvent?.Invoke(true);
+
         _animationController.HitAnimation(true);
 
         audioFX.PlayAudioRandomPitch(damageAudio[GetRandomValue(0, damageAudio.Length)]);
@@ -70,15 +72,11 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         bloodFX.Play();
 
-        EnemyStanEvent?.Invoke(true);
         EnemyAnyHitEvent?.Invoke();
 
         _healthBar.SetHealth(Health, MaxHealth);
 
         _enemyMove.SetVelocity(repulsion, 0);
-
-        StartCoroutine(SwitchColorHit());
-
 
         if (Health <= 0)
             Dead();
@@ -89,13 +87,19 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     public IEnumerator StunTimer(float time)
     {
         IsStunned = true;
-        yield return new WaitForSeconds(time);
-        IsStunned = false;
 
-        EnemyStanEvent?.Invoke(false);
+        SetColorSprite(HitColor);
+
+        yield return new WaitForSeconds(time);
+
+        SetColorSprite(StartColor);
+
+        IsStunned = false;
 
         if (_animationController)
             _animationController.HitAnimation(false);
+
+        EnemyStanEvent?.Invoke(false);
     }
 
     private void Dead()
@@ -114,20 +118,9 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
         Destroy(audioFX.gameObject, 3);
     }
 
-    public IEnumerator SwitchColorHit()
+    public void SetColorSprite(Color color)
     {
-        for (int i = 0; i < 100; i++)
-        {
-            yield return new WaitForSeconds(Time.deltaTime);
-            SpriteRenderer.color = Color.Lerp(HitColor, StartColor, Time.deltaTime);
-        }
-
-        for (int i = 0; i < 100; i++)
-        {
-            yield return new WaitForSeconds(Time.deltaTime);
-            SpriteRenderer.color = Color.Lerp(StartColor, HitColor, Time.deltaTime);
-        }
-
+        SpriteRenderer.color = color;
     }
 
     private int GetRandomValue(int min, int max) 

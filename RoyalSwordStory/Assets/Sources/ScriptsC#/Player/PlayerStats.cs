@@ -57,7 +57,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
 
         PlayerHitEvent?.Invoke();
 
-        bloodFX.Play(); 
+        bloodFX.Play();
 
         _healthBar.SetHealth(Health, MaxHealth);
 
@@ -66,8 +66,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         if (Health <= 0)
             Dead();
 
-        if (IsStunned == false)
-            StartCoroutine(StunTimer(timeStun));
+        StartCoroutine(StunTimer(timeStun));
     }
 
     public IEnumerator StunTimer(float time)

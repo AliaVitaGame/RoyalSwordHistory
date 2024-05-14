@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: b799667a1f313254abb20916579f1c23, type: 2}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0013501153
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -116,6 +116,14 @@ PrefabInstance:
       propertyPath: limbsSprite.Array.data[5]
       value: 
       objectReference: {fileID: -1957187539, guid: aec5070f5cb24b24e9fbdf06b0d1faf8, type: 3}
+    - target: {fileID: 4818828509652550290, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: jumpForce
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818828509652550290, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: speedMove
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6898085659257880661, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Name
       value: Enemy Martial Hero Variant

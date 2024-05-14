@@ -23,6 +23,18 @@ public class EnemyMove : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private EnemyAnimationController _animationController;
 
+
+    private void OnEnable()
+    {
+        GetComponent<EnemyStats>().EnemyStanEvent += SetStopMove;
+    }
+
+    private void OnDisable()
+    {
+        GetComponent<EnemyStats>().EnemyStanEvent -= SetStopMove;
+    }
+
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

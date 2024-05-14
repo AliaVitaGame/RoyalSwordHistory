@@ -34,15 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: c76634e4e8c66304a8e92c4597db4597, type: 2}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.729
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.431
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0013501153
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2406038083954376958, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -132,6 +132,14 @@ PrefabInstance:
       propertyPath: limbsSprite.Array.data[5]
       value: 
       objectReference: {fileID: -196967271, guid: 40834912ca492db44b62044b38a8dd65, type: 3}
+    - target: {fileID: 4818828509652550290, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: jumpForce
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818828509652550290, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: speedMove
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5520801104918578247, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: m_Size.x
       value: 0.8821175

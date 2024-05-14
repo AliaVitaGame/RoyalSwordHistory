@@ -150,7 +150,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
                 damageEffect.Play();
 
                 if (_playerMove.GetIsGround() == false)
-                    _playerMove.SetVelosity(Vector2.one * forceAttackUpForJump);
+                    _playerMove.SetVelosity(new Vector2(transform.localScale.x, 1) * forceAttackUpForJump);
             }
         }
     }

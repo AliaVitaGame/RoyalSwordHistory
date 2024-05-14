@@ -155,7 +155,10 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
         IsAttacking = false;
 
-        _enemyMove.SetStopMove(false);
+
+        if (_isStopAttacking == false)
+            _enemyMove.SetStopMove(false);
+
         _animationController.EndetAttack();
     }
 

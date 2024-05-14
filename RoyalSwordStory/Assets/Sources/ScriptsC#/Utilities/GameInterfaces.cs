@@ -39,7 +39,7 @@ public interface ISwitchColorHit
     public Color StartColor { get; set; }
     public Color HitColor { get; set; }
     public SpriteRenderer SpriteRenderer { get; set; }
-    public IEnumerator SwitchColorHit();
+    public void SetColorSprite(Color color);
 }
 
 public interface ICell
