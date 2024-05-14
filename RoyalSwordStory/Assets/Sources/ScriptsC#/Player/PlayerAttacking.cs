@@ -12,6 +12,9 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [Space]
     [SerializeField] private float damageAttackDown = 10;
     [SerializeField] private float speedAttackDown = 35;
+    [SerializeField] private float timePlayAttackDownFX = 40;
+    [SerializeField] private AudioClip[] attackDownAudio;
+    [SerializeField] private ParticleSystem attackDownFX;
     [Space]
     [SerializeField] private float forceAttackUpForJump = 3;
     [Space]
@@ -78,6 +81,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             _playerMove = playerMove;
 
         _animationController = GetComponent<PlayerAnimationController>();
+        attackDownFX.Stop();
     }
 
     private void Update()
@@ -95,7 +99,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 
         IsAttacking = true;
 
-        if(attackDown && _playerMove.GetIsGround() == false)
+        if (attackDown && _playerMove.GetIsGround() == false)
         {
             StartCoroutine(AttackDown());
         }
@@ -111,10 +115,21 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         IsAttacking = true;
         _playerMove.SetStopMove(true);
 
+        int timeAttackDown = 0;
+
         while (_playerMove.GetIsGround() == false)
         {
             _playerMove.SetVelosity((Vector2.down + Vector2.right * transform.localScale.x) * speedAttackDown);
             _animationController.FallAnimation(true);
+
+            timeAttackDown++;
+            if (timeAttackDown == timePlayAttackDownFX)
+            {
+                attackDownFX.Stop();
+                attackDownFX.Play();
+                audioFX.PlayAudioRandomPitch(attackDownAudio[Random.Range(0, attackDownAudio.Length)]);
+            }
+
             yield return new WaitForSeconds(Time.deltaTime);
         }
         _playerMove.SetStopMove(false);
@@ -123,7 +138,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             _animationController.EndetAttack();
 
         IsAttacking = false;
-
+        attackDownFX.Stop();
     }
 
     public IEnumerator Attack()

@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speedMove;
     [SerializeField] private float jumpForce;
     [SerializeField] private int countJump;
+    [Space]
+    [SerializeField] private AudioClip[] jumpAudios;
+    [SerializeField] private AudioFX audioFX;
 
     private int _currentCountJump;
     private float _startPlayerSpriteScaleX;
@@ -66,6 +69,7 @@ public class PlayerMove : MonoBehaviour
 
         SetVelosity(_rigidbody.velocity.x, jumpForce);
         _currentCountJump++;
+        audioFX.PlayAudioRandomPitch(jumpAudios[GetRandomValue(0, jumpAudios.Length)]);
     }
 
     public void SetHorizontal(float X)
@@ -95,6 +99,9 @@ public class PlayerMove : MonoBehaviour
         else if (InputX < 0) transform.localScale = new Vector3(-_startPlayerSpriteScaleX, scaleY, scaleZ);
     }
 
+    private int GetRandomValue(int min, int max) 
+        => Random.Range(min, max);
+
     public void SetVelosity(float X, float Y)
         => _rigidbody.velocity = new Vector2(X, Y);
 
@@ -104,7 +111,7 @@ public class PlayerMove : MonoBehaviour
     public void SetStopMove(bool stopMove)
         => _isStopMove = stopMove;
 
-
+    public Vector3 GetVelocity() => _rigidbody.velocity;    
     public bool GetIsGround() => _groundChecker.IsGround;
 
     public Rigidbody2D GetRigidbody() => _rigidbody;
