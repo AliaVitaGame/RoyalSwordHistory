@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerStats))]
 [RequireComponent(typeof(PlayerAttacking))]
 [RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(PlayerAnimationController))]
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerAttacking _attacking;
     private GroundChecker _groundChecker;
     private PlayerAnimationController _animationController;
+    private PlayerStats _playerStats;
 
     private bool _isOpenUI;
     public float InputX { get; private set; }
@@ -38,6 +40,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _playerStats = GetComponent<PlayerStats>();
         _attacking = GetComponent<PlayerAttacking>();
         _animationController = GetComponent<PlayerAnimationController>();
         _groundChecker = GetComponentInChildren<GroundChecker>();
@@ -63,7 +66,7 @@ public class PlayerMove : MonoBehaviour
     public void Move()
     {
         if (_attacking.IsAttacking) return;
-        if (_isStopMove || _isOpenUI)
+        if (_isStopMove || _isOpenUI || _playerStats.IsDead)
         {
             SetVelosity(new Vector2(0, GetVelocity().y));
             return;

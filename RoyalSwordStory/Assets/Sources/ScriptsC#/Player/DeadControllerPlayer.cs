@@ -45,10 +45,6 @@ public class DeadControllerPlayer : MonoBehaviour
     private void Dead()
     {
         deadPanel.SetActive(true);
-        _playerMove.SetStopMove(true);
-        _playerMove.SetVelosity(Vector2.zero);
-        _playerAttacking.IsAttacking = true;
-
         for (int i = 0; i < disabledObjects.Length; i++)
         {
             disabledObjects[i].SetActive(false);

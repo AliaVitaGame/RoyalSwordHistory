@@ -10,11 +10,14 @@ public class PanelItemInfoInventory : MonoBehaviour
     [SerializeField] private Button useButton;
     [SerializeField] private Button sellButton;
     [SerializeField] private Button dropButton;
+    [SerializeField] private Button takeOffButton;
     [Space]
     [SerializeField] private Sprite nullSprite;
     [Space]
+    [SerializeField] private InventoryPlayer inventoryPlayer;
     [SerializeField] private EquippedItemPlayer _equippedItemPlayer;
 
+    private bool _isEquippedItem;
     private ICell _cellInventory;
 
     private void OnEnable()
@@ -52,27 +55,43 @@ public class PanelItemInfoInventory : MonoBehaviour
         {
             _equippedItemPlayer.Equip(item);
         }
-        else if(item.Type == Item.TypeItem.Recovery)
+        else if (item.Type == Item.TypeItem.Recovery)
         {
-         
+
         }
         else
         {
             return;
         }
-
+        RefreshUI();
         _cellInventory.ReceiveItem();
     }
 
-    private void ShowInfo(ICell cellInventory, bool ignoreSaveCell)
+    public void TakeOff()
+    {
+        if (_cellInventory == null) return;
+        if (_cellInventory.GetItem() == null) return;
+
+
+        if (inventoryPlayer.AddItem(_cellInventory.GetItem(), 1))
+        {
+            _isEquippedItem = false;
+            _cellInventory.ReceiveItem();
+        }
+
+        RefreshUI();
+    }
+
+    private void ShowInfo(ICell cellInventory, bool equipped)
     {
         var item = cellInventory.GetItem();
         cellItemImage.sprite = item.Sprite;
         itemNameText.name = item.NameItem;
         itemDescriptionText.text = item.Description;
 
-        if(ignoreSaveCell == false)
+        _isEquippedItem = equipped;
         _cellInventory = cellInventory;
+        RefreshUI();
     }
 
     private void DontShowInfo()
@@ -81,5 +100,20 @@ public class PanelItemInfoInventory : MonoBehaviour
         itemNameText.text = "Name item";
         itemDescriptionText.text = "Click on the item to highlight it";
         _cellInventory = null;
+        RefreshUI();
+    }
+
+    private void RefreshUI()
+    {
+        var hasItem = _cellInventory != null;
+        useButton.interactable = hasItem;
+        sellButton.interactable = hasItem;
+        dropButton.interactable = hasItem;
+
+        useButton.gameObject.SetActive(_isEquippedItem == false);
+        sellButton.gameObject.SetActive(_isEquippedItem == false);
+        dropButton.gameObject.SetActive(_isEquippedItem == false);
+
+        takeOffButton.gameObject.SetActive(_isEquippedItem);
     }
 }

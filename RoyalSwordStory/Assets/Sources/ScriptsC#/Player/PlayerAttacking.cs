@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 {
     [SerializeField] private float damage = 10;
@@ -26,6 +27,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private AudioClip[] audiosAttack;
 
     private bool _isOpenUI;
+    private PlayerStats _playerStats;
     private PlayerAnimationController _animationController;
     private PlayerMove _playerMove;
 
@@ -90,6 +92,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         if (gameObject.TryGetComponent(out PlayerMove playerMove))
             _playerMove = playerMove;
 
+        _playerStats = GetComponent<PlayerStats>();
         _animationController = GetComponent<PlayerAnimationController>();
         attackDownFX.Stop();
     }
@@ -107,6 +110,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     {
         if (IsAttacking) return;
         if (_isOpenUI) return;
+        if (_playerStats.IsDead) return;
 
         IsAttacking = true;
 
