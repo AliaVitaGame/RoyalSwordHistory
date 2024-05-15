@@ -34,7 +34,7 @@ public class DeadControllerPlayer : MonoBehaviour
     public void Resurrect()
     {
         deadPanel.SetActive(false);
-        gameObject.SetActive(true);
+        _playerMove.SetStopMove(true);
         ManagerUI.Instance.OpenUI(false);
         transform.position = _respawnPosition;
         _playerStats.Resurrect();
@@ -45,7 +45,9 @@ public class DeadControllerPlayer : MonoBehaviour
     private void Dead()
     {
         deadPanel.SetActive(true);
-        gameObject.SetActive(false);
+        _playerMove.SetStopMove(true);
+        _playerMove.SetVelosity(Vector2.zero);
+        _playerAttacking.IsAttacking = true;
 
         for (int i = 0; i < disabledObjects.Length; i++)
         {

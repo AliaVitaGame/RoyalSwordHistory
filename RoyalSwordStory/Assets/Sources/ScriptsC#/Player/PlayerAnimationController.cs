@@ -11,6 +11,8 @@ public class PlayerAnimationController : MonoBehaviour
     private string _nameAttack = "Attack";
     private string _nameFall = "Fall";
     private string _nameHit = "Hit";
+    private string _nameDead = "Dead";
+    private string _nameDeadTigger = "DeadTigger";
 
     private void Start()
     {
@@ -46,6 +48,18 @@ public class PlayerAnimationController : MonoBehaviour
     {
         for (int i = 1; i <= countAttack; i++)
             AnimatorSetBool($"{_nameAttack}{i}", false);
+    }
+
+    public void Dead(bool isDead)
+    {
+        AnimatorSetBool(_nameDead, isDead);
+
+        if(isDead) animator.SetTrigger(_nameDeadTigger);
+
+        EndetAttack();
+        HitAnimation(false);
+        FallAnimation(false);
+        JumpAnimation(false);
     }
 
     public void AnimatorSetBool(string name, bool value)

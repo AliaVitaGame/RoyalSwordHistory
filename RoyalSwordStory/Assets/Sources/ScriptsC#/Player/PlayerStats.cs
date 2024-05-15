@@ -87,6 +87,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     {
         IsDead = true;
         DeadAudio();
+        _animationController.Dead(IsDead);
         PlayerDaadEvent?.Invoke();
     }
 
@@ -94,6 +95,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     {
         IsDead = false;
         Health = maxHealth;
+        _animationController.Dead(false);
         _healthBar.SetHealth(Health, MaxHealth);
         audioFX.transform.SetParent(transform);
     }
