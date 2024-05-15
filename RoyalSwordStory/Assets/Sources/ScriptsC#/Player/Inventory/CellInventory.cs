@@ -42,14 +42,14 @@ public class CellInventory : MonoBehaviour, ICell
     {
         itemCell = item;
         countOblectCell += count;
-        RefreshUI(item.Sprite);
+        RefreshUI();
     }
 
     public void Clear()
     {
         itemCell = null;
         countOblectCell = 0;
-        RefreshUI(nullSprite);
+        RefreshUI();
     }
 
 
@@ -64,7 +64,7 @@ public class CellInventory : MonoBehaviour, ICell
             Deselect();
             Clear();
         }
-
+        RefreshUI();
         return item;
     }
 
@@ -98,10 +98,10 @@ public class CellInventory : MonoBehaviour, ICell
         if (cellInventory != this) Deselect();
     }
 
-    private void RefreshUI(Sprite sprite)
+    private void RefreshUI()
     {
         InitializationUI();
-        _imageCell.sprite = sprite;
+        _imageCell.sprite = itemCell ? itemCell.Sprite : nullSprite;
 
         string text = HasItem() ? $"{countOblectCell}" : null;
         _textCount.text = text;

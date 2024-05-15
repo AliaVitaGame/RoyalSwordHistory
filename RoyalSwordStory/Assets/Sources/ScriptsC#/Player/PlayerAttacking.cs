@@ -25,6 +25,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private AudioFX audioFX;
     [SerializeField] private AudioClip[] audiosAttack;
 
+    private bool _isOpenUI;
     private PlayerAnimationController _animationController;
     private PlayerMove _playerMove;
 
@@ -74,6 +75,15 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         set => distanceDamage = value;
     }
 
+    private void OnEnable()
+    {
+        ManagerUI.OpenUIEvent += SetOpenUI;
+    }
+
+    private void OnDisable()
+    {
+        ManagerUI.OpenUIEvent -= SetOpenUI;
+    }
 
     private void Start()
     {
@@ -96,6 +106,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     public void StartAttack(bool attackDown = false)
     {
         if (IsAttacking) return;
+        if (_isOpenUI) return;
 
         IsAttacking = true;
 
@@ -184,6 +195,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 
     private Vector3 GetPositionCircle()
      => (transform.position + new Vector3(transform.localScale.x * distanceDamage.x, distanceDamage.y));
+
+    private void SetOpenUI(bool value) => _isOpenUI = value;
 
     private void OnDrawGizmosSelected()
     {

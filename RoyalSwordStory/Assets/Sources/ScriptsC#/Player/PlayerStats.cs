@@ -63,8 +63,12 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
 
         _playerMove.SetStopMove(true);
         _playerMove.SetVelosity(repulsion, 0);
+
         if (Health <= 0)
+        {
             Dead();
+            return;
+        }
 
         StartCoroutine(StunTimer(timeStun));
     }
@@ -84,15 +88,20 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         IsDead = true;
         DeadAudio();
         PlayerDaadEvent?.Invoke();
-        Debug.Log("Player dead");
-        Destroy(gameObject);
+    }
+
+    public void Resurrect()
+    {
+        IsDead = false;
+        Health = maxHealth;
+        _healthBar.SetHealth(Health, MaxHealth);
+        audioFX.transform.SetParent(transform);
     }
 
     private void DeadAudio()
     {
         audioFX.transform.SetParent(null);
         audioFX.PlayAudioRandomPitch(deadAudio[GetRandomValue(0, deadAudio.Length)]);
-        Destroy(audioFX.gameObject, 3);
     }
 
     private int GetRandomValue(int min, int max)

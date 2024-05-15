@@ -21,7 +21,18 @@ public class PlayerMove : MonoBehaviour
     private GroundChecker _groundChecker;
     private PlayerAnimationController _animationController;
 
+    private bool _isOpenUI;
     public float InputX { get; private set; }
+
+    private void OnEnable()
+    {
+        ManagerUI.OpenUIEvent += SetOpenUI;
+    }
+
+    private void OnDisable()
+    {
+        ManagerUI.OpenUIEvent -= SetOpenUI;
+    }
 
 
     private void Start()
@@ -52,9 +63,9 @@ public class PlayerMove : MonoBehaviour
     public void Move()
     {
         if (_attacking.IsAttacking) return;
-        if (_isStopMove)
+        if (_isStopMove || _isOpenUI)
         {
-            SetVelosity(Vector2.zero);
+            SetVelosity(new Vector2(0, GetVelocity().y));
             return;
         }
 
@@ -115,4 +126,5 @@ public class PlayerMove : MonoBehaviour
     public bool GetIsGround() => _groundChecker.IsGround;
 
     public Rigidbody2D GetRigidbody() => _rigidbody;
+    private void SetOpenUI(bool value) => _isOpenUI = value;
 }
