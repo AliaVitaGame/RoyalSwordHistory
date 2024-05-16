@@ -35,7 +35,8 @@ public class InteractionObject : MonoBehaviour
             }
             else
             {
-                Debug.Log("There is no place in the inventory");
+                if(item != null)
+                    item.SetCountItem(_inventoryPlayer.GetRemainderLastItem());
             }
         }
     }
@@ -52,7 +53,13 @@ public class InteractionObject : MonoBehaviour
                 {
                     PlayAudio();
                     item.Destroy();
+                    item.SetCountItem(_inventoryPlayer.GetRemainderLastItem());
                 }
+            }
+            else
+            {
+                if (item != null)
+                    item.SetCountItem(_inventoryPlayer.GetRemainderLastItem());
             }
         }
     }

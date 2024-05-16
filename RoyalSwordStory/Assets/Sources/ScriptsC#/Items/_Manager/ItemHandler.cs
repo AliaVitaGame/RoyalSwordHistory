@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class ItemHandler : MonoBehaviour, IItem
 {
     [SerializeField] private Item item;
+    [SerializeField] private Text countItemText;
     [SerializeField] private GameObject destroyEffectPrefab;
     [SerializeField, Range(1, 64)] private int countItem = 1;
 
@@ -23,6 +25,9 @@ public class ItemHandler : MonoBehaviour, IItem
         }
         GetComponent<Collider2D>().isTrigger = true;
         GetComponentInChildren<SpriteRenderer>().sprite = item.Sprite;
+
+      if (item.IsEquip) countItemText.gameObject.SetActive(false);
+        RefreshUI();
     }
 
     public Item GetItem() => item;
@@ -32,5 +37,20 @@ public class ItemHandler : MonoBehaviour, IItem
         var tempFX = Instantiate(destroyEffectPrefab, transform.position, Quaternion.identity);
         Destroy(tempFX, 0.6f);
         Destroy(gameObject);
+    }
+
+    public void SetCountItem(int count)
+    {
+        countItem = count;
+        RefreshUI();
+    }
+
+    private void RefreshUI()
+    {
+        if (countItemText)
+        {
+            if(countItemText.gameObject.activeSelf)
+                countItemText.text = $"{countItem}"; 
+        }
     }
 }

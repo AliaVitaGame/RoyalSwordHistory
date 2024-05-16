@@ -8,16 +8,59 @@ public class EquippedItemPlayer : MonoBehaviour
     [SerializeField] private CellEquippedItem _cellGreaves;
     [SerializeField] private CellEquippedItem _cellBoots;
     [SerializeField] private CellEquippedItem _cellRing;
+    [Space]
+    [SerializeField] private InventoryPlayer inventoryPlayer;
 
-    public void Equip(Item itemCell)
+    private Item _lastItem;
+
+    public void Equip(ICell itemCell)
     {
-        var item = itemCell;
-        if (item.Type == Item.TypeItem.Helmet) _cellHelmet.AddItem(item);
-        else if (item.Type == Item.TypeItem.Armor) _cellArmor.AddItem(item);
-        else if (item.Type == Item.TypeItem.Gloves) _cellGloves.AddItem(item);
-        else if (item.Type == Item.TypeItem.Greaves) _cellGreaves.AddItem(item);
-        else if (item.Type == Item.TypeItem.Boots) _cellBoots.AddItem(item);
-        else if (item.Type == Item.TypeItem.Ring) _cellRing.AddItem(item);
+        var item = itemCell.GetItem();
+        if (item.Type == Item.TypeItem.Helmet)
+        {
+            HasItemCell(_cellHelmet);
+            _cellHelmet.AddItem(item);
+        }
+        else if (item.Type == Item.TypeItem.Armor)
+        {
+            HasItemCell(_cellArmor);
+            _cellArmor.AddItem(item);
+
+        }
+        else if (item.Type == Item.TypeItem.Gloves)
+        {
+            HasItemCell(_cellGloves);
+            _cellGloves.AddItem(item);
+        }
+        else if (item.Type == Item.TypeItem.Greaves)
+        {
+            HasItemCell(_cellGreaves);
+            _cellGreaves.AddItem(item);
+        }
+        else if (item.Type == Item.TypeItem.Boots)
+        {
+            HasItemCell(_cellBoots);
+            _cellBoots.AddItem(item);
+        }
+        else if (item.Type == Item.TypeItem.Ring)
+        {
+            HasItemCell(_cellRing);
+            _cellRing.AddItem(item);
+        }
+
+        itemCell.ReceiveItem();
+
+        if (_lastItem)
+        {
+            inventoryPlayer.AddItem(_lastItem, 1);
+            _lastItem = null;
+        }
+    }
+
+    private void HasItemCell(ICell cell)
+    {
+        if(cell.HasItem())
+            _lastItem = cell.GetItem();
     }
 
     public float GetDamageRepaymentPercentage()

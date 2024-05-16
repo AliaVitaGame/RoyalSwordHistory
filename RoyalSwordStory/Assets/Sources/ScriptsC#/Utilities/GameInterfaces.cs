@@ -32,6 +32,7 @@ public interface IItem
     public int CountItem { get; set; }
     public Item GetItem();
     public void Destroy();
+    public void SetCountItem(int count);
 }
 
 public interface ISwitchColorHit
@@ -46,4 +47,5 @@ public interface ICell
 {
     public Item GetItem();
     public Item ReceiveItem();
+    public bool HasItem();
 }

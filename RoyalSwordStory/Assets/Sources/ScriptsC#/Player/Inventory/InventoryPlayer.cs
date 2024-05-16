@@ -7,6 +7,8 @@ public class InventoryPlayer : MonoBehaviour
 
     private int _maxItemCountCell = 64;
 
+    private int _remainderLastItem;
+
     public bool AddItem(Item item, int count)
     {
         int countItem = count;
@@ -22,10 +24,10 @@ public class InventoryPlayer : MonoBehaviour
                     {
                         if (Cells[i].GetCountOblectCell() + countItem > _maxItemCountCell)
                         {
-                            // Cells[i].SetCountOblectCell(_maxItemCountCell);
                             remains = Cells[i].GetCountOblectCell() + countItem - _maxItemCountCell;
                             Cells[i].AddItem(item, countItem - remains);
                             countItem = remains;
+                            _remainderLastItem = countItem;
                         }
                         else
                         {
@@ -36,7 +38,7 @@ public class InventoryPlayer : MonoBehaviour
                 }
             }
         }
-    
+
 
         for (int i = 0; i < Cells.Count; i++)
         {
@@ -49,4 +51,6 @@ public class InventoryPlayer : MonoBehaviour
 
         return false;
     }
+
+    public int GetRemainderLastItem() => _remainderLastItem;
 }

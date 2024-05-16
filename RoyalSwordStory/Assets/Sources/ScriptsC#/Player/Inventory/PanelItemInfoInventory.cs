@@ -53,18 +53,18 @@ public class PanelItemInfoInventory : MonoBehaviour
 
         if (item.IsEquip)
         {
-            _equippedItemPlayer.Equip(item);
+            _equippedItemPlayer.Equip(_cellInventory);
         }
         else if (item.Type == Item.TypeItem.Recovery)
         {
-
+            _cellInventory.ReceiveItem();
         }
         else
         {
             return;
         }
+    
         RefreshUI();
-        _cellInventory.ReceiveItem();
     }
 
     public void TakeOff()
