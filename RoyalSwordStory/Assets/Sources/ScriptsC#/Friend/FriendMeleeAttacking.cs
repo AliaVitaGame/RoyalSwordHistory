@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyMove))]
-[RequireComponent(typeof(EnemyStats))]
-public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
+[RequireComponent(typeof(FriendMove))]
+[RequireComponent(typeof(FriendStats))]
+public class FriendMeleeAttacking : MonoBehaviour, IUnitAttacking
 {
     [SerializeField] private float damage = 10;
     [SerializeField] private float attackTime = 0.7f;
@@ -60,26 +60,26 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
     private bool _isStopAttacking;
     private Transform _target;
-    private EnemyMove _enemyMove;
-    private EnemyStats _enemyStats;
-    private EnemyAnimationController _animationController;
+    private FriendMove _friendMove;
+    private FriendStats _friendStats;
+    private FriendAnimationController _animationController;
 
 
     private void OnEnable()
     {
-        GetComponent<EnemyStats>().EnemyStanEvent += SetStopAttacking;
+        GetComponent<FriendStats>().FriendStanEvent += SetStopAttacking;
     }
 
     private void OnDisable()
     {
-        GetComponent<EnemyStats>().EnemyStanEvent -= SetStopAttacking;
+        GetComponent<FriendStats>().FriendStanEvent -= SetStopAttacking;
     }
 
     private void Start()
     {
-        _enemyMove = GetComponent<EnemyMove>();
-        _enemyStats = GetComponent<EnemyStats>();
-        _animationController = GetComponent<EnemyAnimationController>();
+        _friendMove = GetComponent<FriendMove>();
+        _friendStats = GetComponent<FriendStats>();
+        _animationController = GetComponent<FriendAnimationController>();
     }
 
     private void FixedUpdate()
@@ -91,8 +91,12 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
             if (Physics2D.OverlapCircle(GetPositionCircle(), radiusDamage, LayerTarget))
                 StartAttack();
             else
-                _enemyMove.MoveToPoint(_target.position);
-        }   
+                _friendMove.MoveToPoint(_target.position);
+        }
+        else
+        {
+            _friendMove.MoveToPlayer();
+        }
     }
 
     private void FindTargetCircle()
@@ -100,9 +104,9 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         var tempObject = Physics2D.OverlapCircle(transform.position, aggressionRadius, LayerTarget);
         if (tempObject)
         {
-            if(tempObject.TryGetComponent(out IUnitHealthStats unit))
+            if (tempObject.TryGetComponent(out IUnitHealthStats unit))
             {
-                if(unit.IsDead == false)
+                if (unit.IsDead == false)
                     _target = tempObject.transform;
             }
         }
@@ -112,7 +116,6 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     {
         if (IsAttacking) return;
         if (_isStopAttacking) return;
-        if (_enemyMove.GetIsGround() == false) return;
 
         IsAttacking = true;
         StartCoroutine(Swing());
@@ -120,10 +123,10 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
     public IEnumerator Swing()
     {
-        if(_isStopAttacking == false)
+        if (_isStopAttacking == false)
         {
             _animationController.RandomSwingAnimation();
-            _enemyMove.SetStopMove(true);
+            _friendMove.SetStopMove(true);
 
             yield return new WaitForSeconds(swingTime);
 
@@ -164,7 +167,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
 
         if (_isStopAttacking == false)
-            _enemyMove.SetStopMove(false);
+            _friendMove.SetStopMove(false);
 
         _animationController.EndetAttack();
     }
@@ -173,7 +176,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     public void SetStopAttacking(bool stopAttacking)
     {
         _isStopAttacking = stopAttacking;
-        _enemyMove.SetStopMove(stopAttacking);
+        _friendMove.SetStopMove(stopAttacking);
     }
 
     private float GetDistance(Vector3 a, Vector3 b)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0354be8cf3b321342b3920dcda29df15
+guid: bd7ab9da5815d644db130be93032f326
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Zhizn
+  - Keleti
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

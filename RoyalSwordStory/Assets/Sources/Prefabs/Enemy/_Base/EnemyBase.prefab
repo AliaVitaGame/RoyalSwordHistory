@@ -241,14 +241,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   attackTime: 0.7
-  repulsion: 10
+  repulsion: 3
   stunTime: 0.3
   radiusDamage: 1.73
   swingTime: 0.5
   aggressionRadius: 7
   layerTarget:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   distanceDamage: {x: 1.5, y: 0}
   audioFX: {fileID: 4921505559624829857}
   audiosAttack:
