@@ -781,7 +781,8 @@ MonoBehaviour:
   speedMove: 800
   jumpForce: 23
   countJump: 1
-  jumpAudios: []
+  jumpAudios:
+  - {fileID: 8300000, guid: 4362d2f56a4c58348addc4a078ed5faf, type: 3}
   audioFX: {fileID: 6145791476826490663}
 --- !u!114 &5860543947160785491
 MonoBehaviour:
@@ -959,6 +960,7 @@ MonoBehaviour:
   _cellGreaves: {fileID: 5617970041217112143}
   _cellBoots: {fileID: 4291304906420889868}
   _cellRing: {fileID: 1105342726446484703}
+  inventoryPlayer: {fileID: 2787407385472888892}
 --- !u!114 &621402578320819767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30196,7 +30198,7 @@ GameObject:
   - component: {fileID: 2731772499687044617}
   - component: {fileID: 2782938677983520281}
   m_Layer: 0
-  m_Name: AttackDown
+  m_Name: AttackDownFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
