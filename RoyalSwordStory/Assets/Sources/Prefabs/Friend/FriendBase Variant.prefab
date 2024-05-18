@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7475842246915537781
+--- !u!1001 &2893365239127909603
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,24 +9,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 755642456027288977, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Size.x
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 755642456027288977, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Size.y
-      value: 2.523922
+      value: 3.160173
+      objectReference: {fileID: 0}
+    - target: {fileID: 755642456027288977, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.025678873
       objectReference: {fileID: 0}
     - target: {fileID: 755642456027288977, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Offset.y
-      value: -0.36303905
+      value: -0.04491353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030670959383837546, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1030670959383837546, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.284
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 2314255085034862557, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6
+      value: -7.02
       objectReference: {fileID: 0}
     - target: {fileID: 2314255085034862557, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.433
+      value: -2.441
       objectReference: {fileID: 0}
     - target: {fileID: 2314255085034862557, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65,41 +77,33 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4332408861116646972, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.021
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332408861116646972, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.242
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 5357797652918778565, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 899ff891bd4be2741bda5ab001ac6886, type: 2}
+      objectReference: {fileID: 22100000, guid: 53b1f44a7902d954f93c01460467cd37, type: 2}
     - target: {fileID: 5904126892053552684, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Name
-      value: FriendMono Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952035666957183850, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
-      propertyPath: repulsion
-      value: 10
+      value: FriendBase Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: jumpForce
-      value: 23
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: speedMove
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: stopDistanceForPlayer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8291693366638294939, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f9c37e6f72a5d4187af8f85c69a03557, type: 3}
+      objectReference: {fileID: 4723107735738678597, guid: f374107ba66790641b6b7c9d0d9a49d3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
