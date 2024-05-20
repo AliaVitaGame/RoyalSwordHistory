@@ -10,7 +10,7 @@ public class PlatformManager : MonoBehaviour
     [SerializeField] private GameObject[] mobileObjects;
     [SerializeField] private GameObject[] desktopObjects;
 
-    public static Action<bool> GetPlatform;
+    public static Action<bool> IsDesctopEvent;
     public static bool IsDesktop;
 
 
@@ -42,6 +42,6 @@ public class PlatformManager : MonoBehaviour
         for (int i = 0; i < desktopObjects.Length; i++)
             desktopObjects[i].SetActive(IsDesktop);
 
-        GetPlatform?.Invoke(IsDesktop);
+        IsDesctopEvent?.Invoke(IsDesktop);
     }
 }
