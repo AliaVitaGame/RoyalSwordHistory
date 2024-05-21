@@ -14,6 +14,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private float damageAttackDown = 10;
     [SerializeField] private float speedAttackDown = 35;
     [SerializeField] private float timePlayAttackDownFX = 40;
+    [SerializeField] private DamageCollision damageCollision;
     [SerializeField] private AudioClip[] attackDownAudio;
     [SerializeField] private ParticleSystem attackDownFX;
     [Space]
@@ -95,6 +96,9 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         _playerStats = GetComponent<PlayerStats>();
         _animationController = GetComponent<PlayerAnimationController>();
         attackDownFX.Stop();
+
+        damageCollision.SetStats(damage, stunTime, repulsion);
+        damageCollision.IgnoreCollision(GetComponent<Collider2D>());
     }
 
     private void Update()
@@ -142,6 +146,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             {
                 attackDownFX.Stop();
                 attackDownFX.Play();
+                damageCollision.gameObject.SetActive(true);
                 audioFX.PlayAudioRandomPitch(attackDownAudio[Random.Range(0, attackDownAudio.Length)]);
             }
 
@@ -153,6 +158,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             _animationController.EndetAttack();
 
         IsAttacking = false;
+        damageCollision.gameObject.SetActive(false);
         attackDownFX.Stop();
     }
 

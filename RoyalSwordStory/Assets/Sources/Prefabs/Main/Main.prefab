@@ -740,6 +740,7 @@ Transform:
   - {fileID: 4233885625346261308}
   - {fileID: 8409622534414341874}
   - {fileID: 1601994796060093059}
+  - {fileID: 215649841973717360}
   m_Father: {fileID: 1627132659764548059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5015230323323775049
@@ -805,6 +806,7 @@ MonoBehaviour:
   damageAttackDown: 10
   speedAttackDown: 35
   timePlayAttackDownFX: 40
+  damageCollision: {fileID: 400008538493493043}
   attackDownAudio:
   - {fileID: 8300000, guid: 208fe52e06e400445a8cd0ef8c09f937, type: 3}
   attackDownFX: {fileID: 2731772499687044617}
@@ -36746,6 +36748,88 @@ MonoBehaviour:
   nullSprite: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
   selectColor: {r: 0, g: 1, b: 0, a: 1}
   deselectColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &8336381988251738275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215649841973717360}
+  - component: {fileID: 6360005651454831818}
+  - component: {fileID: 400008538493493043}
+  m_Layer: 6
+  m_Name: DamageColliderAttackDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &215649841973717360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336381988251738275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.696, y: -1.348, z: 0}
+  m_LocalScale: {x: 0.61993, y: 0.61993, z: 0.61993}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8851050376276546788}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6360005651454831818
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336381988251738275}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &400008538493493043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336381988251738275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1f6ab3810c7f54bbaa610aa875be01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEnter: 1
+  _collisionStay: 0
 --- !u!1 &8399802699655618135
 GameObject:
   m_ObjectHideFlags: 0

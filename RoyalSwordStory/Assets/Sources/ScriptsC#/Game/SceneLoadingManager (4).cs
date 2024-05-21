@@ -3,12 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadingManager : MonoBehaviour
 {
-    public static SceneLoadingManager Instance { set; private get; }
+    public static SceneLoadingManager Instance;
 
     private void Awake()
     {
-        if (Instance) Destroy(gameObject);
-        else Instance = this;
+       Instance = this;
     }
 
     public void LoadSceneID(int ID)
