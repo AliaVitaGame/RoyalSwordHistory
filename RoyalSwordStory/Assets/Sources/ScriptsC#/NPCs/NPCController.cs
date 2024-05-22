@@ -15,12 +15,31 @@ public class NPCController : MonoBehaviour
 
     private float mainCheckRadius;
     private bool playerIsClose = false;
-    
+
+    private bool _playerIsBuyingSMTH;
+
     public static event Action OnPlayerIsClose;
 
     private void Start()
     {
         mainCheckRadius = checkRadiusOne;
+    }
+
+    private void OnEnable()
+    {
+        NPCButtonEventTriggers.OnOpenPocketsButtonPressed += NPCButtonEventTriggers_OnOpenPocketsButtonPressed;
+    }
+    private void OnDisable()
+    {
+        NPCButtonEventTriggers.OnOpenPocketsButtonPressed -= NPCButtonEventTriggers_OnOpenPocketsButtonPressed;
+    }
+
+    private void NPCButtonEventTriggers_OnOpenPocketsButtonPressed(bool shopPanelIsActive)
+    {
+        if(shopPanelIsActive == true)
+            _playerIsBuyingSMTH = true;
+        else if(shopPanelIsActive == false)
+            _playerIsBuyingSMTH = false;
     }
 
     private void FixedUpdate()
@@ -30,6 +49,8 @@ public class NPCController : MonoBehaviour
 
     private void CheckZone()
     {
+        if (_playerIsBuyingSMTH == true) return;
+
         if (Physics2D.OverlapCircle(transform.position, checkRadiusOne, _playerLayer))
         {
             OnPlayerIsClose?.Invoke();

@@ -14,6 +14,8 @@ public class NPCChatCloud : MonoBehaviour
         NPCController.OnPlayerIsClose += NPCController_OnPlayerIsClose;
     }
 
+   
+
     private void OnDisable()
     {
         NPCController.OnPlayerIsClose -= NPCController_OnPlayerIsClose;

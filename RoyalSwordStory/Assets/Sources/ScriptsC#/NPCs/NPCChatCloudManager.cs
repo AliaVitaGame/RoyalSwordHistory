@@ -11,6 +11,22 @@ public class NPCChatCloudManager : MonoBehaviour
     private void Start()
     {
         NPCController.OnPlayerIsClose += NPCController_OnPlayerIsClose;
+        NPCButtonEventTriggers.OnOpenPocketsButtonPressed += NPCButtonEventTriggers_OnOpenPocketsButtonPressed;
+    }
+
+    private void OnDisable()
+    {
+        NPCController.OnPlayerIsClose -= NPCController_OnPlayerIsClose;
+        NPCButtonEventTriggers.OnOpenPocketsButtonPressed -= NPCButtonEventTriggers_OnOpenPocketsButtonPressed;
+    }
+
+    private void NPCButtonEventTriggers_OnOpenPocketsButtonPressed(bool shopPanelIsActive)
+    {
+        if(shopPanelIsActive == true) 
+        {
+            chatPanel.SetActive(false);
+            interactionPanel.SetActive(false);
+        }
     }
 
     private void NPCController_OnPlayerIsClose()
