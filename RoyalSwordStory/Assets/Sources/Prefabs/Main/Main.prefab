@@ -798,10 +798,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  attackTime: 0.15
+  attackTime: 0.1
   forceAttack: 7
   repulsion: 5
-  stunTime: 1
+  stunTime: 0.7
   radiusDamage: 2.68
   damageAttackDown: 7
   speedAttackDown: 25

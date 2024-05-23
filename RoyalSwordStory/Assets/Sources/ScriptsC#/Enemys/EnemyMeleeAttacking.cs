@@ -92,7 +92,7 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
                 StartAttack();
             else
                 _enemyMove.MoveToPoint(_target.position);
-        }   
+        }
     }
 
     private void FindTargetCircle()
@@ -100,9 +100,9 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         var tempObject = Physics2D.OverlapCircle(transform.position, aggressionRadius, LayerTarget);
         if (tempObject)
         {
-            if(tempObject.TryGetComponent(out IUnitHealthStats unit))
+            if (tempObject.TryGetComponent(out IUnitHealthStats unit))
             {
-                if(unit.IsDead == false)
+                if (unit.IsDead == false)
                     _target = tempObject.transform;
             }
         }
@@ -114,21 +114,29 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         if (_isStopAttacking) return;
         if (_enemyMove.GetIsGround() == false) return;
 
-        IsAttacking = true;
         StartCoroutine(Swing());
     }
 
     public IEnumerator Swing()
     {
-        if(_isStopAttacking == false)
+        if (_isStopAttacking == false)
         {
+            IsAttacking = true;
+
             _animationController.RandomSwingAnimation();
             _enemyMove.SetStopMove(true);
 
             yield return new WaitForSeconds(swingTime);
 
-            StartCoroutine(Attack());
-            StartCoroutine(AttackTimer(attackTime));
+            if (_isStopAttacking == false)
+            {
+                StartCoroutine(Attack());
+                StartCoroutine(AttackTimer(attackTime));
+            }
+            else
+            {
+                IsAttacking = false;
+            }
         }
     }
 
@@ -144,13 +152,23 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
             var tempTargets = Physics2D.OverlapCircleAll(GetPositionCircle(), radiusDamage, layerTarget);
 
-            for (int i = 0; i < tempTargets.Length; i++)
+            if (_isStopAttacking == false)
             {
-                if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
+                for (int i = 0; i < tempTargets.Length; i++)
                 {
-                    unitHealth.TakeDamage(damage, StunTime, repulsion * transform.localScale.x);
+                    if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
+                    {
+                        if (_isStopAttacking == false)
+                            unitHealth.TakeDamage(damage, StunTime, repulsion * transform.localScale.x);
+                    }
                 }
             }
+            else
+            {
+                _animationController.EndetAttack();
+            }
+
+
         }
     }
 
@@ -162,9 +180,8 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
 
         IsAttacking = false;
 
-
-        if (_isStopAttacking == false)
-            _enemyMove.SetStopMove(false);
+        if(_isStopAttacking == false)
+        _enemyMove.SetStopMove(false);
 
         _animationController.EndetAttack();
     }
@@ -174,6 +191,12 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
     {
         _isStopAttacking = stopAttacking;
         _enemyMove.SetStopMove(stopAttacking);
+
+        if (stopAttacking)
+        {
+            _animationController.MoveAnimation(false);
+            _animationController.EndetAttack();
+        }
     }
 
     private float GetDistance(Vector3 a, Vector3 b)

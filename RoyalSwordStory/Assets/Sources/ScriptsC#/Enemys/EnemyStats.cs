@@ -63,6 +63,9 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         EnemyStanEvent?.Invoke(true);
 
+        StopAllCoroutines();
+        StartCoroutine(StunTimer(timeStun));
+
         _animationController.HitAnimation(true);
 
         audioFX.PlayAudioRandomPitch(damageAudio[GetRandomValue(0, damageAudio.Length)]);
@@ -81,7 +84,6 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
         if (Health <= 0)
             Dead();
 
-        StartCoroutine(StunTimer(timeStun));
     }
 
     public IEnumerator StunTimer(float time)
@@ -96,10 +98,11 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         IsStunned = false;
 
+        EnemyStanEvent?.Invoke(false);
+
         if (_animationController)
             _animationController.HitAnimation(false);
 
-        EnemyStanEvent?.Invoke(false);
     }
 
     private void Dead()
