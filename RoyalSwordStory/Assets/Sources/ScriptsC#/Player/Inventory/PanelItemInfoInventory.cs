@@ -16,6 +16,8 @@ public class PanelItemInfoInventory : MonoBehaviour
     [Space]
     [SerializeField] private InventoryPlayer inventoryPlayer;
     [SerializeField] private EquippedItemPlayer _equippedItemPlayer;
+    [Space]
+    [SerializeField] private PlayerStats playerStats;
 
     private bool _isEquippedItem;
     private ICell _cellInventory;
@@ -57,6 +59,7 @@ public class PanelItemInfoInventory : MonoBehaviour
         }
         else if (item.Type == Item.TypeItem.Recovery)
         {
+            playerStats.AddHealth(item.AddHealth);
             _cellInventory.ReceiveItem();
         }
         else

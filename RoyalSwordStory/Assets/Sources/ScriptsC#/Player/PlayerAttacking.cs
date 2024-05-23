@@ -13,7 +13,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [Space]
     [SerializeField] private float damageAttackDown = 10;
     [SerializeField] private float speedAttackDown = 35;
-    [SerializeField] private float timePlayAttackDownFX = 40;
+    [SerializeField] private float timePlayAttackDownFX = 30;
     [SerializeField] private DamageCollision damageCollision;
     [SerializeField] private AudioClip[] attackDownAudio;
     [SerializeField] private ParticleSystem attackDownFX;
@@ -97,8 +97,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         _animationController = GetComponent<PlayerAnimationController>();
         attackDownFX.Stop();
 
-        damageCollision.SetStats(damage, stunTime, repulsion);
-        damageCollision.IgnoreCollision(GetComponent<Collider2D>());
+        damageCollision.SetStats(damageAttackDown, stunTime, repulsion, layerTarget, _playerStats);
+        damageCollision.gameObject.SetActive(false);
     }
 
     private void Update()

@@ -1,56 +1,55 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 public class DamageCollision : MonoBehaviour
 {
-    [SerializeField] private bool _collisionEnter = true;
-    [SerializeField] private bool _collisionStay;
+    [SerializeField] private float radiusDamage;
 
     private float _damage;
     private float _timeStun;
     private float _repulsion;
+    private LayerMask _layerDamage;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IUnitHealthStats _myHealth;
+
+
+    private void FixedUpdate()
     {
-        if (_collisionEnter == false) return;
+        var collisionObject = Physics2D.OverlapCircle(transform.position, radiusDamage, _layerDamage);
 
-        Damage(collision.transform);
+        if(collisionObject)
+        Damage(collisionObject.transform);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (_collisionEnter == false) return;
-
-        Damage(collision.transform);
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (_collisionStay == false) return;
-
-        Damage(collision.transform);
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (_collisionStay == false) return;
-
-        Damage(collision.transform);
-    }
-
-    public void SetStats(float damage, float timeStun, float repulsion)
+    public void SetStats(float damage, float timeStun, float repulsion, LayerMask layerDamage, IUnitHealthStats ignoreCollision = null)
     {
         _damage = damage;
         _timeStun = timeStun;
         _repulsion = repulsion;
+        _layerDamage = layerDamage;
+
+        if (ignoreCollision != null)
+            IgnoreCollision(ignoreCollision);
     }
 
     private void Damage(Transform target)
     {
         if (target.TryGetComponent(out IUnitHealthStats unit))
+        {
+            if (_myHealth != null)
+            {
+                if (_myHealth == unit) return;
+            }
+          
             unit.TakeDamage(_damage, _timeStun, _repulsion);
+        }
     }
 
-    public void IgnoreCollision(Collider2D collider) 
-        => Physics2D.IgnoreCollision(collider, GetComponent<Collider2D>());
+    public void IgnoreCollision(IUnitHealthStats unityStats)
+        => _myHealth = unityStats;
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radiusDamage);
+    }
 }

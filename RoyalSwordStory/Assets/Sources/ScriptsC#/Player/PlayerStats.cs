@@ -42,6 +42,8 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         _animationController = GetComponent<PlayerAnimationController>();
         _healthBar = GetComponentInChildren<HealthBar>();
         _healthBar.Unpin();
+
+        RefreshHealthBar();
     }
 
     public void TakeDamage(float damage, float timeStun, float repulsion)
@@ -59,7 +61,7 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
 
         bloodFX.Play();
 
-        _healthBar.SetHealth(Health, MaxHealth);
+        RefreshHealthBar();
 
         _playerMove.SetStopMove(true);
         _playerMove.SetVelosity(repulsion, 0);
@@ -91,12 +93,18 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
         PlayerDaadEvent?.Invoke();
     }
 
+    public void AddHealth(float value)
+    {
+        Health += value;
+        RefreshHealthBar();
+    }
+
     public void Resurrect()
     {
         IsDead = false;
         Health = maxHealth;
         _animationController.Dead(false);
-        _healthBar.SetHealth(Health, MaxHealth);
+        RefreshHealthBar();
         audioFX.transform.SetParent(transform);
     }
 
@@ -104,6 +112,11 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     {
         audioFX.transform.SetParent(null);
         audioFX.PlayAudioRandomPitch(deadAudio[GetRandomValue(0, deadAudio.Length)]);
+    }
+
+    private void RefreshHealthBar()
+    {
+        _healthBar.SetHealth(Health, MaxHealth);
     }
 
     private int GetRandomValue(int min, int max)
