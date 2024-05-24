@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPCItemsShopPanel : MonoBehaviour
@@ -8,12 +6,11 @@ public class NPCItemsShopPanel : MonoBehaviour
 
     private void Awake()
     {
-        if(shopPanel == null)
+        if (shopPanel == null)
         {
             Debug.LogWarning("Ты забыл вставить панель с айтемами для продажи сюда");
             return;
         }
-
         shopPanel.SetActive(false);
     }
 
@@ -31,7 +28,7 @@ public class NPCItemsShopPanel : MonoBehaviour
     {
         if (panelIsActive == true)
             shopPanel.SetActive(true);
-        else if(panelIsActive ==  false)
+        else if (panelIsActive == false)
             shopPanel.SetActive(false);
     }
 }

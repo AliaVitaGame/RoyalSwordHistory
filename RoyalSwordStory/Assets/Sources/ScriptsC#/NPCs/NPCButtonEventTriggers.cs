@@ -10,10 +10,12 @@ public class NPCButtonEventTriggers : MonoBehaviour
     public void OpenSellersPocket()
     {
         OnOpenPocketsButtonPressed?.Invoke(true);
+        ManagerUI.Instance.OpenUI(true);
     }
 
     public void CloseSellersPocket()
     {
         OnOpenPocketsButtonPressed?.Invoke(false);
+        ManagerUI.Instance.OpenUI(false);
     }
 }
