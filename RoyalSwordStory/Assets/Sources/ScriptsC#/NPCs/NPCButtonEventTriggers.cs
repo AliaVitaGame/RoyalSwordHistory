@@ -6,6 +6,7 @@ using UnityEngine;
 public class NPCButtonEventTriggers : MonoBehaviour
 {
     public static event Action <bool> OnOpenPocketsButtonPressed;
+    public static event Action OnCloseItemDescriptionPanel;
 
     public void OpenSellersPocket()
     {
@@ -17,5 +18,10 @@ public class NPCButtonEventTriggers : MonoBehaviour
     {
         OnOpenPocketsButtonPressed?.Invoke(false);
         ManagerUI.Instance.OpenUI(false);
+    }
+
+    public void CloseItemDescriptionPanel()
+    {
+        OnCloseItemDescriptionPanel?.Invoke();
     }
 }

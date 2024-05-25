@@ -3,10 +3,16 @@ using UnityEngine.UI;
 
 public class NPCSellerInventoryButton : MonoBehaviour
 {
-
+    [Header("Items")]
     [SerializeField] private Item[] sellingItems;
-
     [SerializeField] private Image[] sellItemImages;
+
+    [Header("Description panel block")]
+    [SerializeField] private GameObject itemDescriptionPanel;
+    [SerializeField] private Text selectedItemNameText;
+    [SerializeField] private Text selectedDescriptionText;
+    [SerializeField] private Image selectedItemIconImage;
+
 
     private void Start()
     {
@@ -14,15 +20,36 @@ public class NPCSellerInventoryButton : MonoBehaviour
         {
             sellItemImages[i].sprite = sellingItems[i].Sprite;
         }
+
+        itemDescriptionPanel.SetActive(false);
     }
 
-    public void BuyCurrentItem(int itemIndex)
+    private void OnEnable()
     {
-        Debug.Log("good with next number was bought: " + itemIndex);
+        NPCButtonEventTriggers.OnCloseItemDescriptionPanel += NPCButtonEventTriggers_OnCloseItemDescriptionPanel;
+    }
+    private void OnDisable()
+    {
+        NPCButtonEventTriggers.OnCloseItemDescriptionPanel -= NPCButtonEventTriggers_OnCloseItemDescriptionPanel;
+    }
 
-
-
+    private void NPCButtonEventTriggers_OnCloseItemDescriptionPanel()
+    {
+        itemDescriptionPanel.SetActive(false);
     }
 
 
+    public void SeeCurrentItem(int itemIndex)
+    {
+        itemDescriptionPanel.SetActive(true);
+        Debug.Log("good with next number was chosen: " + itemIndex);
+        SetItemDescription(itemIndex);
+    }
+
+    public void SetItemDescription(int itemIndex)
+    {
+        selectedItemNameText.text = sellingItems[itemIndex].NameItem;
+        selectedItemIconImage.sprite = sellingItems[itemIndex].Sprite;
+        selectedDescriptionText.text = sellingItems[itemIndex].Description;
+    }
 }

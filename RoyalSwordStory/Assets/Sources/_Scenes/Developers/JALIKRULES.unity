@@ -156,6 +156,7 @@ RectTransform:
   m_Children:
   - {fileID: 516895290}
   - {fileID: 492745285}
+  - {fileID: 988912512}
   m_Father: {fileID: 921568525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -285,6 +286,10 @@ MonoBehaviour:
   - {fileID: 1323770629}
   - {fileID: 1273350554}
   - {fileID: 1072126999}
+  itemDescriptionPanel: {fileID: 988912511}
+  selectedItemNameText: {fileID: 1154148693}
+  selectedDescriptionText: {fileID: 1487340416}
+  selectedItemIconImage: {fileID: 1287275094}
 --- !u!1 &34552654
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +710,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -839,7 +844,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -997,6 +1002,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 884717605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100929215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100929216}
+  - component: {fileID: 100929218}
+  - component: {fileID: 100929217}
+  m_Layer: 10
+  m_Name: SelectedItemBackgroundImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &100929216
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100929215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.47376, y: 0.47376, z: 0.47376}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1287275093}
+  m_Father: {fileID: 988912512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 44.8, y: 62.9}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &100929217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100929215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.24705882, g: 0.1764706, b: 0.07450981, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &100929218
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100929215}
+  m_CullTransparentMesh: 1
 --- !u!1 &109963598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1164,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1217,7 +1298,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1505,7 +1586,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1707,6 +1788,138 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &263634655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263634656}
+  - component: {fileID: 263634659}
+  - component: {fileID: 263634658}
+  - component: {fileID: 263634657}
+  m_Layer: 10
+  m_Name: CloseDescriptionPanelButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &263634656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263634655}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.9131433, y: 1.9131433, z: 1.9131433}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 988912512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -84.825935, y: 106.032425}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &263634657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263634655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 263634658}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 436212387}
+        m_TargetAssemblyTypeName: NPCButtonEventTriggers, Assembly-CSharp
+        m_MethodName: CloseItemDescriptionPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &263634658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263634655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f9619563aba8b7542abf0aabdc638afe, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &263634659
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263634655}
+  m_CullTransparentMesh: 1
 --- !u!1 &326385036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,7 +2112,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2109,7 +2322,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2243,7 +2456,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2731,7 +2944,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2865,7 +3078,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2943,8 +3156,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 828225302}
+  m_Children: []
   m_Father: {fileID: 15822585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3028,7 +3240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11b712ae2716487429cfdeb03f86a3ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9619563aba8b7542abf0aabdc638afe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3227,7 +3439,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3594,7 +3806,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3728,7 +3940,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3937,7 +4149,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4417,7 +4629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4626,7 +4838,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4882,85 +5094,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818016601}
   m_CullTransparentMesh: 1
---- !u!1 &828225301
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 828225302}
-  - component: {fileID: 828225304}
-  - component: {fileID: 828225303}
-  m_Layer: 10
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &828225302
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828225301}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.23102, y: 0.23102, z: 0.23102}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 492745285}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 95.96, y: 95.96}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &828225303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828225301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 82cc91725ab2f0c41920038a250d768b, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: X
---- !u!222 &828225304
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828225301}
-  m_CullTransparentMesh: 1
 --- !u!1 &832753376
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,7 +5180,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5646,7 +5779,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5992,7 +6125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6126,7 +6259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6249,6 +6382,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &988912511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 988912512}
+  - component: {fileID: 988912514}
+  - component: {fileID: 988912513}
+  m_Layer: 10
+  m_Name: ItemDescriptionPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &988912512
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988912511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5227, y: 0.5227, z: 0.5227}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1154148691}
+  - {fileID: 1487340414}
+  - {fileID: 100929216}
+  - {fileID: 263634656}
+  m_Father: {fileID: 15822585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -121.93094, y: 0}
+  m_SizeDelta: {x: 0, y: 84.82}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &988912513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988912511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7529412, g: 0.4745098, b: 0.003921569, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &988912514
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988912511}
+  m_CullTransparentMesh: 1
 --- !u!1 &1035795704
 GameObject:
   m_ObjectHideFlags: 0
@@ -6414,7 +6626,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6781,7 +6993,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7058,6 +7270,101 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1154148690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1154148691}
+  - component: {fileID: 1154148694}
+  - component: {fileID: 1154148693}
+  - component: {fileID: 1154148692}
+  m_Layer: 10
+  m_Name: SelectedItemNameText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1154148691
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154148690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.61993, y: 0.61993, z: 0.61993}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 988912512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.2, y: -34}
+  m_SizeDelta: {x: 116.108, y: 50.240005}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1154148692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154148690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.98039216}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1154148693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154148690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 82cc91725ab2f0c41920038a250d768b, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: ITEM
+--- !u!222 &1154148694
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154148690}
+  m_CullTransparentMesh: 1
 --- !u!1 &1155047177
 GameObject:
   m_ObjectHideFlags: 0
@@ -7457,7 +7764,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7580,6 +7887,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1287275092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287275093}
+  - component: {fileID: 1287275095}
+  - component: {fileID: 1287275094}
+  m_Layer: 10
+  m_Name: SelectedItemIconImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1287275093
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287275092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 100929216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1287275094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287275092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1287275095
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287275092}
+  m_CullTransparentMesh: 1
 --- !u!1 &1291256875
 GameObject:
   m_ObjectHideFlags: 0
@@ -7971,7 +8353,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8492,7 +8874,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8769,6 +9151,103 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1487340413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487340414}
+  - component: {fileID: 1487340417}
+  - component: {fileID: 1487340416}
+  - component: {fileID: 1487340415}
+  m_Layer: 10
+  m_Name: SelectedItemDescriptionText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1487340414
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487340413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.61993, y: 0.61993, z: 0.61993}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 988912512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 76.009766, y: -118.82596}
+  m_SizeDelta: {x: 218.73, y: 187.07}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1487340415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487340413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.98039216}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1487340416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487340413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 82cc91725ab2f0c41920038a250d768b, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Description
+
+'
+--- !u!222 &1487340417
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487340413}
+  m_CullTransparentMesh: 1
 --- !u!1 &1487838909
 GameObject:
   m_ObjectHideFlags: 0
@@ -10263,7 +10742,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10476,7 +10955,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10610,7 +11089,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10902,7 +11381,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11036,7 +11515,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11170,7 +11649,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11533,7 +12012,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11667,7 +12146,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11801,7 +12280,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11935,7 +12414,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 15822589}
         m_TargetAssemblyTypeName: NPCSellerInventoryButton, Assembly-CSharp
-        m_MethodName: BuyCurrentItem
+        m_MethodName: SeeCurrentItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
