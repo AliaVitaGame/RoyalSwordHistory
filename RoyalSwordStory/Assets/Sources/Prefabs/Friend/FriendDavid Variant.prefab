@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: radiusDamage
       value: 1.73
       objectReference: {fileID: 0}
+    - target: {fileID: 5952035666957183850, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: audiosAttack.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 74198389e177d0948b63ca9a3fb22801, type: 3}
+    - target: {fileID: 5952035666957183850, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: audiosAttack.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 72a9b2a2a3eaa584d9ba3a8e2166f0fd, type: 3}
     - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: jumpForce
       value: 24
