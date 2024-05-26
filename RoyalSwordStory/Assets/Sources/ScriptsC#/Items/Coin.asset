@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Coin
   m_EditorClassIdentifier: 
   typeItem: 0
-  spriteItem: {fileID: -106156895, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
+  spriteItem: {fileID: -908302685, guid: ba00d2cc9cfe3aa4dbabe584112b29a8, type: 3}
   isStack: 1
-  coinCount: 5
+  isEquip: 0
   addProtection: 0
+  addSpeed: 0
   addHealth: 0
   addMana: 0
+  price: 0
   nameItem: "\u041C\u043E\u043D\u0435\u0442\u0430"
   description: "C\u043B\u043E\u0432\u043D\u043E \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0439
     \u043A\u0443\u0441\u043E\u0447\u0435\u043A \u0441\u0447\u0430\u0441\u0442\u044C\u044F,
