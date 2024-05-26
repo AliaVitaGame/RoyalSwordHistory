@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerAttacking : MonoBehaviour, IUnitAttacking
@@ -17,6 +18,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     [SerializeField] private DamageCollision damageCollision;
     [SerializeField] private AudioClip[] attackDownAudio;
     [SerializeField] private ParticleSystem attackDownFX;
+    [SerializeField] private Button attackButtonDown;
     [Space]
     [SerializeField] private float forceAttackUpForJump = 3;
     [Space]
@@ -110,6 +112,11 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             StartAttack(true);
     }
 
+    private void FixedUpdate()
+    {
+        RefreshUI();
+    }
+
     public void StartAttack(bool attackDown = false)
     {
         if (IsAttacking) return;
@@ -201,6 +208,12 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
             _animationController.EndetAttack();
 
         IsAttacking = false;
+    }
+
+    private void RefreshUI()
+    {
+        if(attackButtonDown)
+            attackButtonDown.gameObject.SetActive(_playerMove.GetIsGround() == false);
     }
 
     private Vector3 GetPositionCircle()

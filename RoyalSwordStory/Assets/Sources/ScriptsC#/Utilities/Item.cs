@@ -9,8 +9,6 @@ public class Item : ScriptableObject
     [SerializeField] private bool isStack;
     [SerializeField] private bool isEquip;
     [Space]
-    [Header("Coin")]
-    [SerializeField] private float coinCount;
     [Header("Protection")]
     [SerializeField] private float addProtection;
     [SerializeField] private float addSpeed;
@@ -19,6 +17,7 @@ public class Item : ScriptableObject
     [SerializeField] private float addMana;
     [Space]
     [Header("Other")]
+    [SerializeField] private int price;
     [SerializeField] private string nameItem = "Item";
     [SerializeField, TextArea(10,10)] private string description = "No description";
 
@@ -26,12 +25,12 @@ public class Item : ScriptableObject
     public Sprite Sprite => spriteItem;
     public bool IsStack => isStack;
     public bool IsEquip => isEquip;
-    public float CoinCount => coinCount;
     public float AddProtection => addProtection;
     public float AddSpeed => addSpeed;
     public float AddHealth => addHealth;
     public float AddMana => addMana;
     public string Description => description;
+    public int Price => price;
     public string NameItem => nameItem;
 
     public enum TypeItem

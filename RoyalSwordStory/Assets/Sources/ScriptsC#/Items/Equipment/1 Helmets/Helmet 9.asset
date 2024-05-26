@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Helmet 9
   m_EditorClassIdentifier: 
   typeItem: 2
-  spriteItem: {fileID: -1905961642, guid: b9346bb83c772804880c75b9e64d69e2, type: 3}
+  spriteItem: {fileID: -631702006, guid: 83bf93558b0ec514a95bd6edcd67f7ac, type: 3}
   isStack: 0
   isEquip: 1
-  coinCount: 0
   addProtection: 0
   addSpeed: 0
   addHealth: 0
   addMana: 0
-  nameItem: Helmet 6
+  price: 0
+  nameItem: Helmet 1
   description: 
