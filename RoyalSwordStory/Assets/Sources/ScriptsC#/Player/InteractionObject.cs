@@ -8,6 +8,7 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private AudioClip audioInteraction;
     [SerializeField] private AudioFX audioFX;
 
+    private IItem _lastItem;
     private InventoryPlayer _inventoryPlayer;
 
     private void Start()
@@ -27,6 +28,10 @@ public class InteractionObject : MonoBehaviour
     {
         if(collision.TryGetComponent(out IItem item))
         {
+            if (_lastItem == item) return;
+
+            _lastItem = item;
+
             if (_inventoryPlayer.AddItem(item.GetItem(), item.CountItem))
             {
                 PlayAudio();
@@ -35,7 +40,9 @@ public class InteractionObject : MonoBehaviour
             else
             {
                 if(item != null)
+                {
                     item.SetCountItem(_inventoryPlayer.GetRemainderLastItem());
+                }
             }
         }
     }

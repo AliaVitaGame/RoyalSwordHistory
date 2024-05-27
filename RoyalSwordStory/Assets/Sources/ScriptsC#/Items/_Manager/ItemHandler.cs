@@ -4,10 +4,16 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CircleCollider2D))]
 public class ItemHandler : MonoBehaviour, IItem
 {
+    [SerializeField] private float speedFlyUp = 15;
+    [SerializeField] private float radiusFlyUp = 5;
+    [SerializeField] private LayerMask tagetLayer;
+    [Space]
     [SerializeField] private Item item;
     [SerializeField] private Text countItemText;
     [SerializeField] private GameObject destroyEffectPrefab;
     [SerializeField, Range(1, 64)] private int countItem = 1;
+
+    private Collider2D _target;
 
     public int CountItem
     {
@@ -28,6 +34,17 @@ public class ItemHandler : MonoBehaviour, IItem
 
       if (item.IsEquip) countItemText.gameObject.SetActive(false);
         RefreshUI();
+    }
+
+    private void FixedUpdate()
+    {
+        if(_target == null)
+            _target = Physics2D.OverlapCircle(transform.position, radiusFlyUp, tagetLayer);
+        else
+        {
+            speedFlyUp += Time.fixedDeltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, _target.transform.position, speedFlyUp * Time.fixedDeltaTime);
+        }
     }
 
     public Item GetItem() => item;
@@ -52,5 +69,11 @@ public class ItemHandler : MonoBehaviour, IItem
             if(countItemText.gameObject.activeSelf)
                 countItemText.text = $"{countItem}"; 
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.gray;
+        Gizmos.DrawWireSphere(transform.position, radiusFlyUp);
     }
 }
