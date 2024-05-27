@@ -19,7 +19,7 @@ public class InventoryPlayer : MonoBehaviour
 
     public bool AddItem(Item item, int count)
     {
-        int countItem = count;
+        int countItem = item.IsStack ? count : 1;
         int remains = 0;
 
         if(item.Type == Item.TypeItem.Coin)

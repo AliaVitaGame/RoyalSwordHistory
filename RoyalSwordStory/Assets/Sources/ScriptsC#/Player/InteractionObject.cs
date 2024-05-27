@@ -27,8 +27,7 @@ public class InteractionObject : MonoBehaviour
     {
         if(collision.TryGetComponent(out IItem item))
         {
-            var countItem = item.GetItem().IsStack ? item.CountItem : 1;
-            if (_inventoryPlayer.AddItem(item.GetItem(), countItem))
+            if (_inventoryPlayer.AddItem(item.GetItem(), item.CountItem))
             {
                 PlayAudio();
                 item.Destroy();
@@ -72,7 +71,7 @@ public class InteractionObject : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Color color = Color.green;
+        Gizmos.color = Color.gray;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 } 
