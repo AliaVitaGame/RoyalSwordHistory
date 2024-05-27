@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bc3503182c0724399ad4f5b83f1837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinsAmountTemproary: 0
   sellingItems:
   - {fileID: 11400000, guid: 96c8e7ed2d76486428f5bfdc6573a3e9, type: 2}
   - {fileID: 11400000, guid: aebc7e7bcc2f3f04db2e550144a7bd35, type: 2}
@@ -3727,7 +3728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 583083513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 436212387}
+        m_TargetAssemblyTypeName: NPCButtonEventTriggers, Assembly-CSharp
+        m_MethodName: BuyItemTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &583083513
 MonoBehaviour:
   m_ObjectHideFlags: 0

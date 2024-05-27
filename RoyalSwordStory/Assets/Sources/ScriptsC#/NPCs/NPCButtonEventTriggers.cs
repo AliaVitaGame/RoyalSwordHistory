@@ -7,6 +7,7 @@ public class NPCButtonEventTriggers : MonoBehaviour
 {
     public static event Action <bool> OnOpenPocketsButtonPressed;
     public static event Action OnCloseItemDescriptionPanel;
+    public static event Action OnBuyItemButtonPressed;
 
     public void OpenSellersPocket()
     {
@@ -23,5 +24,10 @@ public class NPCButtonEventTriggers : MonoBehaviour
     public void CloseItemDescriptionPanel()
     {
         OnCloseItemDescriptionPanel?.Invoke();
+    }
+
+    public void BuyItemTrigger()
+    {
+        OnBuyItemButtonPressed?.Invoke();
     }
 }

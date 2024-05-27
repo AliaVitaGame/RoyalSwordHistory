@@ -20,6 +20,6 @@ MonoBehaviour:
   addSpeed: 0
   addHealth: 0
   addMana: 0
-  price: 0
+  price: 20
   nameItem: Helmet 1
   description: 
