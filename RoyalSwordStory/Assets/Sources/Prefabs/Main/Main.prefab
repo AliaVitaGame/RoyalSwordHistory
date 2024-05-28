@@ -5801,6 +5801,8 @@ MonoBehaviour:
   _cellBoots: {fileID: 4291304906420889868}
   _cellRing: {fileID: 1105342726446484703}
   inventoryPlayer: {fileID: 2787407385472888892}
+  audioFX: {fileID: 6145791476826490663}
+  equipAudio: {fileID: 8300000, guid: b9452179a2e7b6d4dbcf417c91ecfda5, type: 3}
 --- !u!114 &621402578320819767
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -103,7 +103,7 @@ public class CellInventory : MonoBehaviour, ICell
         InitializationUI();
         _imageCell.sprite = itemCell ? itemCell.Sprite : nullSprite;
 
-        string text = HasItem() ? $"{countOblectCell}" : null;
+        string text = HasItem() && countOblectCell > 1 ? $"{countOblectCell}" : null;
         _textCount.text = text;
     }
 

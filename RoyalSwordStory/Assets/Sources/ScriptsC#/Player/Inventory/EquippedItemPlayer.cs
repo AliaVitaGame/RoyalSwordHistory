@@ -10,6 +10,9 @@ public class EquippedItemPlayer : MonoBehaviour
     [SerializeField] private CellEquippedItem _cellRing;
     [Space]
     [SerializeField] private InventoryPlayer inventoryPlayer;
+    [Space]
+    [SerializeField] private AudioFX audioFX;
+    [SerializeField] private AudioClip equipAudio;
 
     private Item _lastItem;
 
@@ -55,6 +58,8 @@ public class EquippedItemPlayer : MonoBehaviour
             inventoryPlayer.AddItem(_lastItem, 1);
             _lastItem = null;
         }
+
+        audioFX.PlayAudio(equipAudio);
     }
 
     private void HasItemCell(ICell cell)

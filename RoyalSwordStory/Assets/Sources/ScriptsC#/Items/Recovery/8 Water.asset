@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeItem: 1
   spriteItem: {fileID: -2036382546, guid: b9346bb83c772804880c75b9e64d69e2, type: 3}
-  isStack: 0
+  isStack: 1
   isEquip: 0
   addProtection: 0
   addSpeed: 0
