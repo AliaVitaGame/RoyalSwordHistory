@@ -7,6 +7,7 @@ public class DeadControllerPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject deadPanel;
     [SerializeField] private GameObject[] disabledObjects;
+    [SerializeField] private PlayerStats playerStats;
 
     private PlayerStats _playerStats;
     private PlayerMove _playerMove;
@@ -15,12 +16,12 @@ public class DeadControllerPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerStats.PlayerDaadEvent += Dead;
+        playerStats.PlayerDaadEvent += Dead;
     }
 
     private void OnDisable()
     {
-        PlayerStats.PlayerDaadEvent -= Dead;
+        playerStats.PlayerDaadEvent -= Dead;
     }
 
     private void Start()

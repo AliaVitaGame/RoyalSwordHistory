@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DamageCollision : MonoBehaviour
@@ -10,6 +11,8 @@ public class DamageCollision : MonoBehaviour
     private LayerMask _layerDamage;
 
     private IUnitHealthStats _myHealth;
+
+    public Action DamageCollisionEvent;
 
 
     private void FixedUpdate()
@@ -39,7 +42,9 @@ public class DamageCollision : MonoBehaviour
             {
                 if (_myHealth == unit) return;
             }
-          
+
+            DamageCollisionEvent?.Invoke();
+
             unit.TakeDamage(_damage, _timeStun, _repulsion);
         }
     }

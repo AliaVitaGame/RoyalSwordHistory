@@ -29,8 +29,8 @@ public class PlayerStats : MonoBehaviour, IUnitHealthStats
     public bool IsDead { get; set; }
     public bool IsStunned { get; set; }
 
-    public static Action PlayerHitEvent;
-    public static Action PlayerDaadEvent;
+    public Action PlayerHitEvent;
+    public Action PlayerDaadEvent;
 
     private PlayerMove _playerMove;
     private HealthBar _healthBar;

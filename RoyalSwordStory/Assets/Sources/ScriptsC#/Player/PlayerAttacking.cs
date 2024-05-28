@@ -34,6 +34,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
     private PlayerAnimationController _animationController;
     private PlayerMove _playerMove;
 
+    public System.Action DamageCollisionEvent;
+
     public float Damage
     {
         get => damage;
@@ -184,6 +186,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
         var positionCircle = GetPositionCircle();
         var tempTargets = Physics2D.OverlapCircleAll(positionCircle, radiusDamage, layerTarget);
 
+        bool damageOne = false;
+
         for (int i = 0; i < tempTargets.Length; i++)
         {
             if (tempTargets[i].TryGetComponent(out IUnitHealthStats unitHealth))
@@ -194,7 +198,15 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 
                 if (_playerMove.GetIsGround() == false)
                     _playerMove.SetVelosity(new Vector2(transform.localScale.x, 1) * forceAttackUpForJump);
+
+                if (damageOne == false)
+                {
+                    DamageCollisionEvent?.Invoke();
+                    damageOne = true;
+                }
+
             }
+
         }
     }
 
@@ -212,7 +224,7 @@ public class PlayerAttacking : MonoBehaviour, IUnitAttacking
 
     private void RefreshUI()
     {
-        if(attackButtonDown)
+        if (attackButtonDown)
             attackButtonDown.gameObject.SetActive(_playerMove.GetIsGround() == false);
     }
 
