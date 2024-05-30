@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Kiko
+  m_Controller: {fileID: 9100000, guid: 148d914d8759c97488579c26cf7e165c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 0398c604bfa511b49b6e1a92abda7294, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 400abaf15425a6c48b79cd998cf67186, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b4ae2516673afb24091596e3a8b5192f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ce038b0e7ce912940b86ce15053dc7fe, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 07e59757faae26d4e98ad3b7e5d91ed0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 016664e5656715d4ab3ab347b15218bc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ae42fa1940f46364d9203d6ed6dc6b4a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 400abaf15425a6c48b79cd998cf67186, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 07c88b5dda7e23e408dd6f52ba3c7bae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 40609563f412f0142910d1c8663271a1, type: 2}
