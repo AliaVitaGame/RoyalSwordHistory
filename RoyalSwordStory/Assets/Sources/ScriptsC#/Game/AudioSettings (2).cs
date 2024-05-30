@@ -11,36 +11,57 @@ public class AudioSettings : MonoBehaviour
     [SerializeField] private string nameAudioEffectsVolumeExpose = "SFX";
     [SerializeField] private AudioMixer audioMixer;
 
-    private static float _musicVolume;
-    private static float _audioEffectsVolume;
+
+    private void OnEnable()
+    {
+        DataPlayer.GetDataEvent += LoadSettings;
+    }
+
+    private void OnDisable()
+    {
+        DataPlayer.GetDataEvent -= LoadSettings;
+    }
 
 
-    private void Start() => LoadSettings();
+    private void Start()
+    {
+        if(DataPlayer.SDKEnabled)
+        LoadSettings();
+    }
 
     public void SetVolumeMusic(float value)
     {
-        _musicVolume = value;
+        DataPlayer.GetData().MusicVolume = value;
         audioMixer.SetFloat(nameMusicVolumeExpose, value);
+        Save();
     }
 
     public void SetVolumeAudioEffects(float value)
     {
-        _audioEffectsVolume = value;
+        DataPlayer.GetData().AudioEffectsVolume = value;
         audioMixer.SetFloat(nameAudioEffectsVolumeExpose, value);
+        Save();
     }
 
-    public void LoadSettings()
+    private void Save()
     {
+        DataPlayer.SaveData();
+    }
+
+    private void LoadSettings()
+    {
+        var data = DataPlayer.GetData();
+
         musicVolumeSlider.minValue = -80;
         audioEffectsVolumeSlider.minValue = -80;
 
         musicVolumeSlider.maxValue = 0;
         audioEffectsVolumeSlider.maxValue = 0;
 
-        musicVolumeSlider.value = _musicVolume;
-        audioEffectsVolumeSlider.value = _audioEffectsVolume;  
+        musicVolumeSlider.value = data.MusicVolume;
+        audioEffectsVolumeSlider.value = data.AudioEffectsVolume;  
 
-        audioMixer.SetFloat(nameMusicVolumeExpose, _musicVolume);
-        audioMixer.SetFloat(nameAudioEffectsVolumeExpose, _audioEffectsVolume);
+        audioMixer.SetFloat(nameMusicVolumeExpose, data.MusicVolume);
+        audioMixer.SetFloat(nameAudioEffectsVolumeExpose, data.AudioEffectsVolume);
     }
 }

@@ -1,18 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using YG;
 
 public class DataPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static bool SDKEnabled;
+    public static Action GetDataEvent;
+    public static Action SaveDataEvent;
+
+    private void OnEnable()
     {
-        
+        YandexGame.GetDataEvent += LoadDataEvent;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        YandexGame.GetDataEvent -= LoadDataEvent;
     }
+
+    private void Start()
+    {
+        if (YandexGame.SDKEnabled)
+            LoadSDKEnabled();
+    }
+
+
+    public static void SaveData()
+    {
+        YandexGame.SaveProgress();
+        SaveDataEvent?.Invoke();
+    }
+
+    public static void ResetData()
+    {
+        YandexGame.ResetSaveProgress();
+        SaveData();
+    }
+
+    public static SavesYG GetData() => YandexGame.savesData;
+
+
+    private void LoadDataEvent()
+    {
+        GetDataEvent?.Invoke();
+        LoadSDKEnabled();
+    }
+    private void LoadSDKEnabled() => SDKEnabled = YandexGame.SDKEnabled;
 }

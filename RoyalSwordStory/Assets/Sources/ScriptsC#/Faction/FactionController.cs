@@ -4,49 +4,71 @@ using UnityEngine.UI;
 public class FactionController : MonoBehaviour
 {
     [SerializeField] private Image[] previewFlag;
-    [SerializeField] private Button[] buttonsSelectFlag;
+    [SerializeField] private FactionCell[] factionCells;
     [SerializeField] private FactionCollecting factionCollecting;
-    [SerializeField] private int selectedFlagID;
 
-    private Image[] imagesButton;
+    private void OnEnable()
+    {
+        DataPlayer.GetDataEvent += RefreshUI;
+        DataPlayer.GetDataEvent += InitilizationUI;
+    }
+
+    private void OnDisable()
+    {
+        DataPlayer.GetDataEvent -= RefreshUI;
+        DataPlayer.GetDataEvent -= InitilizationUI;
+    }
 
     private void Start()
     {
-        InitilizationUI();
-        RefreshUI();
+        if (DataPlayer.SDKEnabled)
+        {
+            RefreshUI();
+            InitilizationUI();
+        }
+
     }
 
     public void SelectFlag(int ID)
     {
-        selectedFlagID = ID;
+        var data = DataPlayer.GetData();
+
+        if (data.IsBuyFlag[ID])
+        {
+            data.SelectedFlagID = ID;
+            DataPlayer.SaveData();
+        }
+        else if (MainMenuStore.Instance.TryBuy(factionCells[ID].GetPrice()))
+        {
+            data.SelectedFlagID = ID;
+            DataPlayer.SaveData();
+        }
+
         RefreshUI();
     }
 
     private void RefreshUI()
     {
-        if (previewFlag == null) return;
-        if (previewFlag.Length <= 0) return;
-        if (buttonsSelectFlag == null) return;
-        if (buttonsSelectFlag.Length <= 0) return;
-
         for (int i = 0; i < previewFlag.Length; i++)
-            previewFlag[i].sprite = factionCollecting.Factions[selectedFlagID].FlagSprite;
+            previewFlag[i].sprite = factionCollecting.Factions[DataPlayer.GetData().SelectedFlagID].FlagSprite;
     }
 
     private void InitilizationUI()
     {
-        if (buttonsSelectFlag == null) return;
-        if (buttonsSelectFlag.Length <= 0) return;
+        if (factionCells == null) return;
+        if (factionCells.Length <= 0) return;
 
-        imagesButton = new Image[buttonsSelectFlag.Length];
+        var data = DataPlayer.GetData();
 
-        for (int i = 0; i < buttonsSelectFlag.Length; i++)
+        for (int i = 0; i < factionCells.Length; i++)
         {
             int buttonID = i;
-            buttonsSelectFlag[i].onClick.AddListener(() => SelectFlag(buttonID));
+            factionCells[i].GetButton().onClick.AddListener(() => SelectFlag(buttonID));
 
-            imagesButton[i] = buttonsSelectFlag[i].transform.GetChild(0).GetComponent<Image>();
-            imagesButton[i].sprite = factionCollecting.Factions[i].FlagSprite;
+            factionCells[i].SetFlagSprite(factionCollecting.Factions[i].FlagSprite);
+
+            if (data.IsBuyFlag[i])
+                factionCells[i].SetActiveText(false);
         }
     }
 }
