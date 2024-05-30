@@ -35,9 +35,16 @@ public class MainMenuStore : MonoBehaviour
 
         var data = DataPlayer.GetData();
         var coin = data.CoinCount;
+        string coinText;
+
+        if (data.language == "ru") coinText = "Монеты";
+        else if (data.language == "en") coinText = "Coins";
+        else if (data.language == "en") coinText = "Paralar";
+        else coinText = "$";
+
         for (int i = 0; i < coinCountText.Length; i++)
         {
-            coinCountText[i].text = $"Coin: {coin}";
+            coinCountText[i].text = $"{coinText}: {coin}";
         }
     }
 }

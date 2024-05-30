@@ -1,5 +1,5 @@
 {
-    "idSave": 185,
+    "idSave": 226,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -121,5 +121,5 @@
         false
     ],
     "MusicVolume": 0.0,
-    "AudioEffectsVolume": 0.0
+    "AudioEffectsVolume": -34.0
 }
