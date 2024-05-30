@@ -622,15 +622,89 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670901534768913581, guid: cf891355950cb40479a51fd6ec329242, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2098709122, guid: d4fc3f640a266594daba8d90ebe63865, type: 3}
     - target: {fileID: 7484538244273711531, guid: cf891355950cb40479a51fd6ec329242, type: 3}
       propertyPath: m_Name
       value: HPBar
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3121111575370083858, guid: cf891355950cb40479a51fd6ec329242, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6288836486903562359, guid: cf891355950cb40479a51fd6ec329242, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1429558571905210662}
   m_SourcePrefab: {fileID: 100100000, guid: cf891355950cb40479a51fd6ec329242, type: 3}
+--- !u!114 &941912117293888061 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7983053222880168405, guid: cf891355950cb40479a51fd6ec329242, type: 3}
+  m_PrefabInstance: {fileID: 7195582911439928296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791388769984740255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3791388769984740255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6288836486903562359, guid: cf891355950cb40479a51fd6ec329242, type: 3}
+  m_PrefabInstance: {fileID: 7195582911439928296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1429558571905210662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791388769984740255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 941912117293888061}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u0412\u0440\u0430\u0436\u0438\u043D\u0430"
+  en: Enemy
+  tr: "D\xFC\u015Fman"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0
 --- !u!4 &8865888562100796470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1788542737495623646, guid: cf891355950cb40479a51fd6ec329242, type: 3}

@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: countAttack
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3715312640148906009, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -739636912, guid: 81e9022757fd4b24bb7e597f17760c6e, type: 3}
     - target: {fileID: 4332408861116646972, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.89
@@ -88,8 +92,81 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 32b4ea65c20bd894d8a5a48efd7741a5, type: 3}
+    - target: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Text
+      value: Tera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6646334890005781125}
   m_SourcePrefab: {fileID: 100100000, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+--- !u!114 &1319546251188227395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 7645418012364830754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152545826227455201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3152545826227455201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 7645418012364830754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6646334890005781125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152545826227455201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 1319546251188227395}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u0422\u0435\u0440\u0430"
+  en: Tera
+  tr: Tera
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0

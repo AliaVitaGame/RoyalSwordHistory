@@ -14364,6 +14364,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -390918206, guid: b132e42a23ecea44a94a2e02d2186f1a, type: 3}
+    - target: {fileID: 2969732500028984865, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.365
+      objectReference: {fileID: 0}
     - target: {fileID: 5270756731999835865, guid: 913b822152186a445b08dcbb73a20554, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.12
@@ -14372,6 +14376,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 1fc5e85192dfd35429b2fa8c2f03ec88, type: 2}
+    - target: {fileID: 6858196363074486314, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+      propertyPath: m_Text
+      value: Kiko
+      objectReference: {fileID: 0}
     - target: {fileID: 7378667553212308912, guid: 913b822152186a445b08dcbb73a20554, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.6199374
@@ -14434,10 +14442,79 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5270756731999835865, guid: 913b822152186a445b08dcbb73a20554, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2859909968463195442}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7395713964531124616, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7706926893939809818}
   m_SourcePrefab: {fileID: 100100000, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+--- !u!1 &4971450607201690220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7395713964531124616, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+  m_PrefabInstance: {fileID: 2476128044535655396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7706926893939809818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4971450607201690220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 9039230330090843086}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u041A\u0438\u043A\u043E"
+  en: Kiko
+  tr: kiko
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0
 --- !u!4 &7744366187302583613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5270756731999835865, guid: 913b822152186a445b08dcbb73a20554, type: 3}
   m_PrefabInstance: {fileID: 2476128044535655396}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9039230330090843086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6858196363074486314, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+  m_PrefabInstance: {fileID: 2476128044535655396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4971450607201690220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.2960062
       objectReference: {fileID: 0}
+    - target: {fileID: 1030670959383837546, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.682
+      objectReference: {fileID: 0}
     - target: {fileID: 2314255085034862557, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.15
@@ -76,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.822
       objectReference: {fileID: 0}
+    - target: {fileID: 4454035374500565670, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: autoLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5357797652918778565, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Controller
       value: 
@@ -83,6 +91,22 @@ PrefabInstance:
     - target: {fileID: 5904126892053552684, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Name
       value: FriendBandits1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952035666957183850, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: jumpForce
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: speedMove
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004365463086673882, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: stopDistance
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8291693366638294939, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_FlipX
@@ -92,8 +116,81 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 317b8365a4649ab459f6cb58ec8f9f18, type: 3}
+    - target: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Text
+      value: "\u0412\u043E\u0438\u043D"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7892429228303323744}
   m_SourcePrefab: {fileID: 100100000, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+--- !u!114 &5974106980878843452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 3079980403098110813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739336242271008670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7739336242271008670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 3079980403098110813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7892429228303323744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739336242271008670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 5974106980878843452}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439 \u0432\u043E\u0438\u043D"
+  en: Big Warrior
+  tr: "B\xFCy\xFCk Sava\u015F\xE7\u0131"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0

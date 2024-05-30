@@ -39370,6 +39370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3121111575370083858, guid: cf891355950cb40479a51fd6ec329242, type: 3}
+      propertyPath: autoLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7484538244273711531, guid: cf891355950cb40479a51fd6ec329242, type: 3}
       propertyPath: m_Name
       value: HPBar

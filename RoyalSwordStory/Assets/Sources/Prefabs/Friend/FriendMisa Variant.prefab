@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3715312640148906009, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1393766308, guid: 81e9022757fd4b24bb7e597f17760c6e, type: 3}
     - target: {fileID: 4332408861116646972, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.063
@@ -100,8 +104,81 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 401659501, guid: 95edaa7498b639a43992c28254fff056, type: 3}
+    - target: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Text
+      value: Misa
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7957954028898205000}
   m_SourcePrefab: {fileID: 100100000, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+--- !u!114 &6868160282550061674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 2812102269295853323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412771640976573384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7412771640976573384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 2812102269295853323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7957954028898205000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412771640976573384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 6868160282550061674}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u041C\u0438\u0441\u0430"
+  en: Misa
+  tr: Misa
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0

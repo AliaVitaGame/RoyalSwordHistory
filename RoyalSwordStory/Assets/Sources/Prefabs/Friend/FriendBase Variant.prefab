@@ -76,9 +76,17 @@ PrefabInstance:
       propertyPath: countAttack
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3715312640148906009, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba3ebeb4991134d438869fe141432d65, type: 3}
     - target: {fileID: 4332408861116646972, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454035374500565670, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: autoLoad
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5357797652918778565, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_Controller
@@ -104,8 +112,81 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4723107735738678597, guid: f374107ba66790641b6b7c9d0d9a49d3, type: 3}
+    - target: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: m_Text
+      value: Bob
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3083920255600910763}
   m_SourcePrefab: {fileID: 100100000, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+--- !u!114 &5796501215182033282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8671121972998255969, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 2893365239127909603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637718833274542112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7637718833274542112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4745083807308020931, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+  m_PrefabInstance: {fileID: 2893365239127909603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3083920255600910763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637718833274542112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 5796501215182033282}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u0411\u043E\u0431"
+  en: Bob
+  tr: Bob
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0
