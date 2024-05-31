@@ -19121,6 +19121,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: DarkSide Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1038326635528503362, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038326635528503362, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038326635528503362, guid: 913b822152186a445b08dcbb73a20554, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.4111916
+      objectReference: {fileID: 0}
     - target: {fileID: 1630107700039421098, guid: 913b822152186a445b08dcbb73a20554, type: 3}
       propertyPath: hitColor.g
       value: 0.19215687

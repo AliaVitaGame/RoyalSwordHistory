@@ -72,6 +72,18 @@ PrefabInstance:
       propertyPath: countAttack
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3676630197104220590, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676630197104220590, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676630197104220590, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.41568628
+      objectReference: {fileID: 0}
     - target: {fileID: 4332408861116646972, guid: cdc79a9adec16fe478ba9499dea85888, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.055

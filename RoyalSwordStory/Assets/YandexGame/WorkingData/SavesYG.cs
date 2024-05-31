@@ -13,6 +13,7 @@ namespace YG
         // ------------------------------------
 
         //--Main--
+        public string NamePlayer;
         public int CoinCount;
 
         //--Flags--

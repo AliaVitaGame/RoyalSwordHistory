@@ -12,7 +12,10 @@ EditorBuildSettings:
     path: Assets/Sources/_Scenes/Game/MenuLevels.unity
     guid: 180a3ab7e17559e43922208a7fa0f50d
   - enabled: 1
-    path: Assets/Sources/_Scenes/Game/Level/Demo.unity
+    path: Assets/Sources/_Scenes/Game/BossHunting/BossHunting.unity
+    guid: bacc92cb77245954bb733da3f95ce381
+  - enabled: 1
+    path: Assets/Sources/_Scenes/Game/_Level/Demo.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Sources/_Scenes/Developers/DRON.unity

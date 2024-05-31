@@ -1,8 +1,9 @@
 {
-    "idSave": 226,
+    "idSave": 362,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
+    "NamePlayer": "Dron",
     "CoinCount": 0,
     "SelectedFlagID": 1,
     "IsBuyFlag": [
@@ -121,5 +122,5 @@
         false
     ],
     "MusicVolume": 0.0,
-    "AudioEffectsVolume": -34.0
+    "AudioEffectsVolume": 0.0
 }
