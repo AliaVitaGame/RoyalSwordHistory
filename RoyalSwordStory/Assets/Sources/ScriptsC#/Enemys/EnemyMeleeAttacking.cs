@@ -199,6 +199,9 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
         }
     }
 
+    public void SetAggressionRadius(float value) 
+        => aggressionRadius = value;
+
     private float GetDistance(Vector3 a, Vector3 b)
         => Vector3.Distance(a, b);
 

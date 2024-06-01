@@ -48,7 +48,7 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
     private void Start()
     {
-        _healthBar = GetComponentInChildren<HealthBar>();
+        RefreshUI();
         _healthBar.Unpin();
         _animationController = GetComponent<EnemyAnimationController>();
         SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -77,7 +77,7 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         EnemyAnyHitEvent?.Invoke();
 
-        _healthBar.SetHealth(Health, MaxHealth);
+        RefreshUI();
 
         _enemyMove.SetVelocity(repulsion, 0);
 
@@ -103,6 +103,24 @@ public class EnemyStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
         if (_animationController)
             _animationController.HitAnimation(false);
 
+    }
+
+    public void AddMaxHealth(float value)
+    {
+        MaxHealth += value;
+        RefreshUI();
+    }
+
+    public void RestoreHealth()
+    {
+        Health = MaxHealth;
+        RefreshUI();
+    }
+
+    private void RefreshUI()
+    {
+        if(_healthBar == null) _healthBar = GetComponentInChildren<HealthBar>(); 
+        _healthBar.SetHealth(Health, MaxHealth);
     }
 
     private void Dead()
