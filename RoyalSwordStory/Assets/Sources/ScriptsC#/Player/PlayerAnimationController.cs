@@ -81,4 +81,10 @@ public class PlayerAnimationController : MonoBehaviour
         if (animator == null)
             Debug.LogWarning("√ƒ≈ ¿Õ»Ã¿“Œ– ?");
     }
+
+    public Animator GetAnimator()
+    {
+        InitializationAnimator();
+        return animator;
+    }
 }

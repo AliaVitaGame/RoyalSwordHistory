@@ -6,6 +6,10 @@ public class FactionController : MonoBehaviour
     [SerializeField] private Image[] previewFlag;
     [SerializeField] private FactionCell[] factionCells;
     [SerializeField] private FactionCollecting factionCollecting;
+    [Space]
+    [SerializeField] private AudioFX audioFX;
+    [SerializeField] private AudioClip selectAudio;
+    [SerializeField] private AudioClip noMoneyAudio;
 
     private void OnEnable()
     {
@@ -37,11 +41,17 @@ public class FactionController : MonoBehaviour
         {
             data.SelectedFlagID = ID;
             DataPlayer.SaveData();
+            audioFX.PlayAudioRandomPitch(selectAudio);
         }
         else if (MainMenuStore.Instance.TryBuy(factionCells[ID].GetPrice()))
         {
             data.SelectedFlagID = ID;
             DataPlayer.SaveData();
+            audioFX.PlayAudioRandomPitch(selectAudio);
+        }
+        else
+        {
+            audioFX.PlayAudioRandomPitch(noMoneyAudio);
         }
 
         RefreshUI();
