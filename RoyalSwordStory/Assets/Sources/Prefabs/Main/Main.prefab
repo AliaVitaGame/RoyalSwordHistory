@@ -5650,7 +5650,7 @@ MonoBehaviour:
   forceAttackUpForJump: 3
   layerTarget:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
   distanceDamage: {x: 1.96, y: 0}
   damageEffect: {fileID: 1981463108732876514}
   audioFX: {fileID: 6145791476826490663}
@@ -19656,6 +19656,9 @@ MonoBehaviour:
   layerGround:
     serializedVersion: 2
     m_Bits: 512
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   IsGround: 0
 --- !u!1 &3238324680552626963
 GameObject:

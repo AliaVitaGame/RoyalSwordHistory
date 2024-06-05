@@ -5198,7 +5198,7 @@ MonoBehaviour:
   aggressionRadius: 15
   layerTarget:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
   distanceDamage: {x: 1.5, y: 0}
   audioFX: {fileID: 7434503956594630275}
   audiosAttack:

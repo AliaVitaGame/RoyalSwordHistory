@@ -15,6 +15,9 @@ public class EnemyTurretStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     [SerializeField] private AudioClip[] bloodAudio;
     [SerializeField] private AudioClip[] deadAudio;
     [SerializeField] private AudioFX audioFX;
+    [Space]
+    [SerializeField] private bool deadCollisionGround;
+    [SerializeField] private LayerMask layerGround;
 
     public float Health
     {
@@ -65,8 +68,7 @@ public class EnemyTurretStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
 
         _animationController.HitAnimation(true);
 
-        audioFX.PlayAudioRandomPitch(damageAudio[GetRandomValue(0, damageAudio.Length)]);
-        audioFX.PlayAudioRandomPitch(bloodAudio[GetRandomValue(0, bloodAudio.Length)]);
+        DamageAudio();
 
         Health -= damage;
 
@@ -127,6 +129,12 @@ public class EnemyTurretStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
         Destroy(gameObject);
     }
 
+    private void DamageAudio()
+    {
+        audioFX.PlayAudioRandomPitch(damageAudio[GetRandomValue(0, damageAudio.Length)]);
+        audioFX.PlayAudioRandomPitch(bloodAudio[GetRandomValue(0, bloodAudio.Length)]);
+    }
+
     private void DeadAudio()
     {
         audioFX.transform.SetParent(null);
@@ -138,6 +146,19 @@ public class EnemyTurretStats : MonoBehaviour, IUnitHealthStats, ISwitchColorHit
     {
         SpriteRenderer.color = color;
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (deadCollisionGround == false) return;
+
+        if (layerGround == (1 << collision.gameObject.layer))
+        {
+            DamageAudio();
+            Dead();
+        }
+    }
+
 
     private int GetRandomValue(int min, int max)
         => UnityEngine.Random.Range(min, max);

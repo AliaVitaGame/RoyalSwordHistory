@@ -95,7 +95,9 @@ GameObject:
   - component: {fileID: 5059245400635498615}
   - component: {fileID: 3195459909255061741}
   - component: {fileID: 1416839984353020759}
-  m_Layer: 0
+  - component: {fileID: 4363629369186669371}
+  - component: {fileID: 951819776613504935}
+  m_Layer: 12
   m_Name: _BulletBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,3 +167,35 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &4363629369186669371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555483882780392310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164b3e7c46d7af94bb7ed2d8cbbe5542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceUp: 10
+  forceHorizontal: 10
+  forceAngularVelocity: 100
+  limbsSprite: []
+  limbPrefab: {fileID: 2915469801688882072, guid: f880c78d41f40614d928b3918197e0fc, type: 3}
+--- !u!114 &951819776613504935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555483882780392310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33f0868a2a88c941828cb051f976ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAudio: []
+  deadAudio: []
+  audioFX: {fileID: 0}
