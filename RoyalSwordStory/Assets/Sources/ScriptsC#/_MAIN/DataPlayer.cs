@@ -25,6 +25,12 @@ public class DataPlayer : MonoBehaviour
     }
 
 
+    public static void AddCoin(int value)
+    {
+        YandexGame.savesData.CoinCount += value;
+        SaveData();
+    }
+
     public static void SaveData()
     {
         YandexGame.SaveProgress();

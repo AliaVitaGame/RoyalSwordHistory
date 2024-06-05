@@ -13,7 +13,7 @@ public class EnemyAnimationController : MonoBehaviour
     private string _nameHit = "Hit";
 
 
-    private int _lastAnimationAttack;
+    private int _lastAnimationAttack = 1;
 
     private void Start()
     {

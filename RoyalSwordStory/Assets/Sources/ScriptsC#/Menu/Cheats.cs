@@ -41,6 +41,7 @@ public class Cheats : MonoBehaviour
             {
                 Debug.Log("ACTIVE CHEAT");
                 audioFX.PlayAudioRandomPitch(cheatActivatedAudio);
+                DataPlayer.AddCoin(cheatCodes[i].AddingCoin);
                 return;
             }
         }
@@ -54,4 +55,5 @@ public class Cheats : MonoBehaviour
 public class CheatCode
 {
     public string Code;
+    public int AddingCoin;
 }

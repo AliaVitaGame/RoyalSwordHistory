@@ -46,6 +46,8 @@ public class FactionController : MonoBehaviour
         else if (MainMenuStore.Instance.TryBuy(factionCells[ID].GetPrice()))
         {
             data.SelectedFlagID = ID;
+            data.IsBuyFlag[ID] = true;
+            RefreshTextCell(ID);
             DataPlayer.SaveData();
             audioFX.PlayAudioRandomPitch(selectAudio);
         }
@@ -63,6 +65,12 @@ public class FactionController : MonoBehaviour
             previewFlag[i].sprite = factionCollecting.Factions[DataPlayer.GetData().SelectedFlagID].FlagSprite;
     }
 
+    private void RefreshTextCell(int ID)
+    {
+        var data = DataPlayer.GetData();
+        if (data.IsBuyFlag[ID]) factionCells[ID].SetActiveText(false);
+    }
+
     private void InitilizationUI()
     {
         if (factionCells == null) return;
@@ -74,11 +82,8 @@ public class FactionController : MonoBehaviour
         {
             int buttonID = i;
             factionCells[i].GetButton().onClick.AddListener(() => SelectFlag(buttonID));
-
             factionCells[i].SetFlagSprite(factionCollecting.Factions[i].FlagSprite);
-
-            if (data.IsBuyFlag[i])
-                factionCells[i].SetActiveText(false);
+            RefreshTextCell(i);
         }
     }
 }

@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     private Vector2 _directionMoveX;
 
-    public void SetStats(float damage, float speedMove, float timeStun, float repulsion, Transform target, Transform ignorCollision, bool autoGuidance = false)
+    public void SetStats(float damage, float speedMove, float timeStun, float repulsion, Transform target, Transform ignorCollision, bool autoGuidance, float lifeTime = 7)
     {
         _damage = damage;
         _speedMove = speedMove;
@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour
         _repulsion = repulsion;
         _target = target;
         _autoGuidance = autoGuidance;
+
+        Destroy(gameObject, lifeTime);
 
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ignorCollision.GetComponent<Collider2D>(), true);
 

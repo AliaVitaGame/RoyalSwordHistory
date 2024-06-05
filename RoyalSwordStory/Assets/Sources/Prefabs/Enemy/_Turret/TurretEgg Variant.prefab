@@ -113,9 +113,37 @@ PrefabInstance:
       value: 0.020412803
       objectReference: {fileID: 0}
     - target: {fileID: 3613414022232500166, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613414022232500166, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2603f22ed196248409a65a2cf5d4c9f5, type: 3}
+    - target: {fileID: 3846840805547776134, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846840805547776134, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846840805547776134, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846840805547776134, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.93725497
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846840805547776134, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.854902
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846840805547776134, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.92549026
+      objectReference: {fileID: 0}
     - target: {fileID: 4117629438837799258, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
       propertyPath: m_Controller
       value: 
@@ -124,17 +152,53 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 1784909869937361718, guid: f0b9b67d55da5b143880b79c8c0a0bbf, type: 3}
+    - target: {fileID: 4132946607474320806, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: lifeTimeBullet
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4471014841936580526, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.43
+      value: 0.427
       objectReference: {fileID: 0}
     - target: {fileID: 4471014841936580526, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601706538229842870, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601706538229842870, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601706538229842870, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601706538229842870, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.93725497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601706538229842870, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.854902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601706538229842870, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.92549026
+      objectReference: {fileID: 0}
+    - target: {fileID: 6669665710950995058, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -814838417, guid: cccdc22b3b676b3498eae6939743a017, type: 3}
+    - target: {fileID: 7011459549285322497, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 8370849183029176857, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
       propertyPath: m_Name
-      value: TurretBase Variant
+      value: TurretEgg Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8992029251116742075, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
       propertyPath: m_LocalPosition.y
@@ -143,5 +207,74 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3375997796825106600, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6794644894132471057}
   m_SourcePrefab: {fileID: 100100000, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+--- !u!114 &4756157559072793817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1681562259126173962, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+  m_PrefabInstance: {fileID: 6149489296009717203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903242573204352379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8903242573204352379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3375997796825106600, guid: 6facf9065c3c0f04b935d60352f92b90, type: 3}
+  m_PrefabInstance: {fileID: 6149489296009717203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6794644894132471057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8903242573204352379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLComponent: {fileID: 4756157559072793817}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: "\u0422\u0443\u0440\u0435\u043B\u044C"
+  en: Turret
+  tr: "K\xFC\xE7\xFCk kule"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 1
+  countLang: 0

@@ -7,7 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TurretEgg
-  m_Controller: {fileID: 9100000, guid: 75a958f8fa147f741a19b927b7428f83, type: 2}
+  m_Controller: {fileID: 9100000, guid: 236ec2c4a66424f4f82812c684716f68, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: a3a5c1fdbde303a41940fe8e2577491f, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: eeab2f7aec9086f469b3f00a084db3c8, type: 2}
