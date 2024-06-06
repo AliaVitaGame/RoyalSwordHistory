@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] private Sprite flagDontActive;
     [Space]
     [SerializeField] private AudioClip audioActivated;
+    [SerializeField] private FactionCollecting factionCollecting;
 
     private bool _isActive;
     private AudioFX _audioFX;
@@ -19,11 +20,13 @@ public class Checkpoint : MonoBehaviour
     private void OnEnable()
     {
         _checkpointActivated += Animation;
+        DataPlayer.GetDataEvent += LoadFaction;
     }
 
     private void OnDisable()
     {
         _checkpointActivated -= Animation;
+        DataPlayer.GetDataEvent -= LoadFaction;
     }
 
     private void Start()
@@ -31,6 +34,9 @@ public class Checkpoint : MonoBehaviour
         GetComponent<BoxCollider2D>().isTrigger = true;
         _audioFX = GetComponent<AudioFX>();
         SetSpriteFlag(flagDontActive);
+
+        if(DataPlayer.SDKEnabled)
+           LoadFaction();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,6 +56,12 @@ public class Checkpoint : MonoBehaviour
         var thisCheckpoint = checkpoint == this;
         SetSpriteFlag(thisCheckpoint ? flagActive : flagDontActive);
         _isActive = thisCheckpoint;
+    }
+
+    private void LoadFaction()
+    {
+        var data = DataPlayer.GetData();
+        flagActive = factionCollecting.Factions[data.SelectedFlagID].FlagSprite;
     }
 
     private void SetSpriteFlag(Sprite sprite) => flag.sprite = sprite;

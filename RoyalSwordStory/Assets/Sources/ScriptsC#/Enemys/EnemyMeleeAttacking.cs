@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(EnemyMove))]
 [RequireComponent(typeof(EnemyStats))]
-public class EnemyMeleeAttacking : MonoBehaviour, IUnitAttacking
+public class EnemyMeleeAttacking : MonoBehaviour, IUnitMeleeAttacking
 {
     [SerializeField] private float damage = 10;
     [SerializeField] private float attackTime = 0.7f;

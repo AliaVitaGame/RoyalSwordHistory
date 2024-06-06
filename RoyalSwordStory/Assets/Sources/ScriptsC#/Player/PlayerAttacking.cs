@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerStats))]
-public class PlayerAttacking : MonoBehaviour, IUnitAttacking
+public class PlayerAttacking : MonoBehaviour, IUnitMeleeAttacking
 {
     [SerializeField] private float damage = 10;
     [SerializeField] private float attackTime = 0.12f;

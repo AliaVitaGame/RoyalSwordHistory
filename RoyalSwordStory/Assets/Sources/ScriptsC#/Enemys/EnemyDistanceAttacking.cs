@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyMove))]
+[RequireComponent(typeof(EnemyStats))]
 [RequireComponent(typeof(EnemyAnimationController))]
-public class EnemyTurretShooting : MonoBehaviour, IUnitDistanceAttacking
+public class EnemyDistanceAttacking : MonoBehaviour, IUnitDistanceAttacking
 {
     [SerializeField] private float damage = 10;
     [SerializeField] private float reloadTime = 1;
@@ -54,22 +56,45 @@ public class EnemyTurretShooting : MonoBehaviour, IUnitDistanceAttacking
     public Bullet BulletPrefab { get; set; }
 
     private float _startScaleX;
+    private bool _stopShot;
+    private Collider2D _target;
+    private EnemyMove _enemyMove;
     private EnemyAnimationController _animator;
+
+    private void OnEnable()
+    {
+        GetComponent<EnemyStats>().EnemyStanEvent += SetStopShot;
+    }
+
+    private void OnDisable()
+    {
+        GetComponent<EnemyStats>().EnemyStanEvent -= SetStopShot;
+    }
 
     private void Start()
     {
         _animator = GetComponent<EnemyAnimationController>();
+        _enemyMove = GetComponent<EnemyMove>();
         _startScaleX = transform.localScale.x;
     }
 
     private void FixedUpdate()
     {
-        Collider2D target = Physics2D.OverlapCircle(transform.position, aggressionRadius, layerTarget);
+        if(_target == null)
+        _target = Physics2D.OverlapCircle(transform.position, aggressionRadius, layerTarget);
 
-        if (target)
+        if (_target)
         {
-            StartShot(target.transform);
-            SetRotation(target.transform.position.x > transform.position.x);
+            if(Vector2.Distance(transform.position, _target.transform.position) > aggressionRadius)
+            {
+                if(_stopShot == false)
+                _enemyMove.MoveToPoint(_target.transform.position);
+            }
+            else
+            {
+                StartShot(_target.transform);
+                _enemyMove.MoveToPoint(transform.position);
+            }
 
             if (_isTriggerAnimation == false)
                 _animator.AnimationAttack();
@@ -84,6 +109,7 @@ public class EnemyTurretShooting : MonoBehaviour, IUnitDistanceAttacking
     public void StartShot(Transform target)
     {
         if (IsReload) return;
+        if (_stopShot) return;
         StartCoroutine(Reload());
 
         StartCoroutine(Shot(target));
@@ -91,6 +117,8 @@ public class EnemyTurretShooting : MonoBehaviour, IUnitDistanceAttacking
 
     public IEnumerator Shot(Transform target)
     {
+        _enemyMove.SetStopMove(true);
+
         if (_isTriggerAnimation)
         {
             _animator.AnimationAttack();
@@ -103,6 +131,8 @@ public class EnemyTurretShooting : MonoBehaviour, IUnitDistanceAttacking
         var point = shotPoint[Random.Range(0, shotPoint.Length)];
         var tempBullet = Instantiate(bulletPrefab, point.position, Quaternion.identity);
         tempBullet.SetStats(damage, speedMoveBullet, stunTime, repulsion, target, transform, autoGuidanceBullet, lifeTimeBullet);
+
+        _enemyMove.SetStopMove(false);
     }
 
     public IEnumerator Reload()
@@ -112,12 +142,7 @@ public class EnemyTurretShooting : MonoBehaviour, IUnitDistanceAttacking
         IsReload = false;
     }
 
-    private void SetRotation(bool isRight)
-    {
-        var scale = transform.localScale;
-        var X = isRight ? _startScaleX : _startScaleX * -1;
-        transform.localScale = new Vector3(X, scale.y, scale.z);
-    }
+    private void SetStopShot(bool stop) => _stopShot = stop;
 
     private void OnDrawGizmos()
     {

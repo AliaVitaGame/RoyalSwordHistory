@@ -10,7 +10,7 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
-        // ------------------------------------
+        // ------------------------------------ \\
 
         //--Main--
         public string NamePlayer;
@@ -18,13 +18,24 @@ namespace YG
 
         //--Flags--
         public int SelectedFlagID;
-        public bool[] IsBuyFlag = new bool[113];
+        public bool[] IsBuyFlag = new bool[1000];
+
+        //--Friends--
+        public bool[] AvailableFriends;
+
 
         //--Settings--
         public float MusicVolume;
         public float AudioEffectsVolume;
 
-        // ------------------------------------
+        //--Cheats--
+        public bool[] ActiveCheat = new bool[1000];
+
+        //--Stats--
+        public bool[] CountFinishLevel = new bool[1000];
+        public int CountKilledEnemy;
+
+        // ------------------------------------ \\
 
 
         public SavesYG()

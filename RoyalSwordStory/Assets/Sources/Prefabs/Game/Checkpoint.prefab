@@ -98,6 +98,7 @@ MonoBehaviour:
   flagActive: {fileID: -342246424, guid: cccdc22b3b676b3498eae6939743a017, type: 3}
   flagDontActive: {fileID: -2098709122, guid: d4fc3f640a266594daba8d90ebe63865, type: 3}
   audioActivated: {fileID: 8300000, guid: 31eb5e3de6ef21f47b102bf0dd7301c1, type: 3}
+  factionCollecting: {fileID: 11400000, guid: b2006cd2d5f558444b4ffaf26fbda75d, type: 2}
 --- !u!114 &2908633522360341964
 MonoBehaviour:
   m_ObjectHideFlags: 0

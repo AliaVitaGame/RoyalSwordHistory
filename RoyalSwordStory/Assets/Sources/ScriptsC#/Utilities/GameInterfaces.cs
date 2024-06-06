@@ -11,7 +11,7 @@ public interface IUnitHealthStats
     public IEnumerator StunTimer(float time);
 }
 
-public interface IUnitAttacking
+public interface IUnitMeleeAttacking
 {
     public float Damage { get; set; }
     public float AttackTime { get; set; }
@@ -26,6 +26,24 @@ public interface IUnitAttacking
     public IEnumerator Attack();
     public IEnumerator AttackTimer(float time);
 }
+
+public interface IUnitDistanceAttacking
+{
+    public float Damage { get; set; }
+    public float ReloadTime { get; set; }
+    public float Repulsion { get; set; }
+    public float StunTime { get; set; }
+    public bool IsReload { get; set; }
+    public float LifeTimeBullet { get; set; }
+    public float SpeedMoveBullet { get; set; }
+
+    public LayerMask LayerTarget { get; set; }
+    public Bullet BulletPrefab { get; set; }
+    public void StartShot(Transform target);
+    public IEnumerator Shot(Transform target);
+    public IEnumerator Reload();
+}
+
 
 public interface IItem
 {

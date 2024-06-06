@@ -14861,6 +14861,10 @@ MonoBehaviour:
   deadAudio:
   - {fileID: 8300000, guid: cc7272f0c411c5748a79a6f811f0fdf1, type: 3}
   audioFX: {fileID: 932958082549551949}
+  deadCollisionGround: 0
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &4132946607474320806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14875,7 +14879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   reloadTime: 1
-  timeStun: 0.3
+  stunTime: 0.3
   lifeTimeBullet: 7
   repulsion: 1
   aggressionRadius: 15
