@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Item", fileName = "Item")]
 public class Item : ScriptableObject
@@ -18,8 +18,13 @@ public class Item : ScriptableObject
     [Space]
     [Header("Other")]
     [SerializeField] private int price;
-    [SerializeField] private string nameItem = "Item";
-    [SerializeField, TextArea(10,10)] private string description = "No description";
+    [Space]
+    [SerializeField] private string nameItemRU = "Предмет";
+    [SerializeField] private string nameItemEN = "Item";
+    [SerializeField] private string nameItemTR = "Öğe";
+    [SerializeField, TextArea(7,7)] private string descriptionRU = "Без описания";
+    [SerializeField, TextArea(7,7)] private string descriptionEN = "No description";
+    [SerializeField, TextArea(7,7)] private string descriptionTR = "açıklama yok";
 
     public TypeItem Type => typeItem;
     public Sprite Sprite => spriteItem;
@@ -29,9 +34,9 @@ public class Item : ScriptableObject
     public float AddSpeed => addSpeed;
     public float AddHealth => addHealth;
     public float AddMana => addMana;
-    public string Description => description;
+    public string Description => descriptionRU;
     public int Price => price;
-    public string NameItem => nameItem;
+    public string NameItem => nameItemRU;
 
     public enum TypeItem
     {
