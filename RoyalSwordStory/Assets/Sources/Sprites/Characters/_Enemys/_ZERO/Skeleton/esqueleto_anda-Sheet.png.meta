@@ -119,6 +119,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -131,7 +144,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +165,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +186,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +207,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +228,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +249,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,7 +270,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,7 +291,7 @@ TextureImporter:
         width: 300
         height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,6 +299,447 @@ TextureImporter:
       bones: []
       spriteID: 70ba288711a12374ca915feed53666af
       internalID: 1673385291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 47
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f04c74aeb81604caf919ce155092ed
+      internalID: 315338676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 29
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0365e697e4a61cb4d8b92ab707e6f2f9
+      internalID: -1235429281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 16
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed89584538b6a1c4389fca7d2a2d96d7
+      internalID: -445044040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08e06de0d913db4fafe8a3da4e86c9f
+      internalID: -1354277816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 116
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caae3e79bdf652844924415f997d5932
+      internalID: 294857594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 123
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5996cd6f07308264f8e48761740efd4a
+      internalID: 1684953405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 114
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062e0754ec9c5474d81e137ef69ca8fe
+      internalID: -1775619088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 103
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4cdc9c2c3e16ec4bbd80095673d146d
+      internalID: 910454154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 101
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9740a4135bc4c9b419bfa6c4f8fe2d8b
+      internalID: -1735862462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 86
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34423d2265c669947abd9c1fa16c86d7
+      internalID: 1186301448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 88
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5a6a73d06108f42858d45fd4b83bbb
+      internalID: -1212328373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 86
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed851b1f3adce74b92a29ef448a0416
+      internalID: -1333109396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 71
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d342608cd2dfa44458a595d9bbdb91a3
+      internalID: 1910932502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 76
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448f2fb8edc7ae04aa7152e2ad94a774
+      internalID: 1572560562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 52
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28e8e44830ea284bbe63560d64dd274
+      internalID: 960482621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 3
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5431d75ab9b3b4fbeb70998143f59c
+      internalID: 387026528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 23
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7d021929d1d6c4396318544c202814
+      internalID: -1937001941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 40
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de9721ff69b86f4c98e03d191e26f0a
+      internalID: -2065552751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 60
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475df82dc12238549b195270c9929003
+      internalID: 407015345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 27
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821acddda4322964b90902e1bfb78550
+      internalID: 168086198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: esqueleto_anda-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 8
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685659d0e34e2284d864cffa1ef4f50f
+      internalID: 340952312
       vertices: []
       indices: 
       edges: []
@@ -303,12 +757,33 @@ TextureImporter:
     nameFileIdTable:
       esqueleto_anda-Sheet_0: -1648128233
       esqueleto_anda-Sheet_1: -659434549
+      esqueleto_anda-Sheet_10: -445044040
+      esqueleto_anda-Sheet_11: -1354277816
+      esqueleto_anda-Sheet_12: 294857594
+      esqueleto_anda-Sheet_13: 1684953405
+      esqueleto_anda-Sheet_14: -1775619088
+      esqueleto_anda-Sheet_15: 910454154
+      esqueleto_anda-Sheet_16: -1735862462
+      esqueleto_anda-Sheet_17: 1186301448
+      esqueleto_anda-Sheet_18: -1212328373
+      esqueleto_anda-Sheet_19: -1333109396
       esqueleto_anda-Sheet_2: -1972391351
+      esqueleto_anda-Sheet_20: 1910932502
+      esqueleto_anda-Sheet_21: 1572560562
+      esqueleto_anda-Sheet_22: 960482621
+      esqueleto_anda-Sheet_23: 387026528
+      esqueleto_anda-Sheet_24: -1937001941
+      esqueleto_anda-Sheet_25: -2065552751
+      esqueleto_anda-Sheet_26: 407015345
+      esqueleto_anda-Sheet_27: 168086198
+      esqueleto_anda-Sheet_28: 340952312
       esqueleto_anda-Sheet_3: 1298136316
       esqueleto_anda-Sheet_4: 1834272699
       esqueleto_anda-Sheet_5: -337526324
       esqueleto_anda-Sheet_6: 1610878650
       esqueleto_anda-Sheet_7: 1673385291
+      esqueleto_anda-Sheet_8: 315338676
+      esqueleto_anda-Sheet_9: -1235429281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

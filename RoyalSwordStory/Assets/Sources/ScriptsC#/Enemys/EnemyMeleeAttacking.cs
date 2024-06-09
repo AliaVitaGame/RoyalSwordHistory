@@ -215,5 +215,8 @@ public class EnemyMeleeAttacking : MonoBehaviour, IUnitMeleeAttacking
 
         var positionCircle = GetPositionCircle();
         Gizmos.DrawWireSphere(positionCircle, radiusDamage);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, aggressionRadius);
     }
 }

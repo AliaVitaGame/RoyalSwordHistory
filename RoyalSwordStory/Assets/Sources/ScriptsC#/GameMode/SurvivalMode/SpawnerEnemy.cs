@@ -17,6 +17,7 @@ public class SpawnerEnemy : MonoBehaviour
     [SerializeField] private int increaseSpawnCountEnemy = 3;
     [SerializeField] private int maxSpawnCountEnemy = 50;
     [Space]
+    [SerializeField] private int countDownStart = 3;
     [SerializeField] private Text countdownToLaunchText;
     [SerializeField] private Transform[] spawnPoints;
 
@@ -49,7 +50,7 @@ public class SpawnerEnemy : MonoBehaviour
 
         textObj.SetActive(false);
 
-        for (int i = 3; i > 0; i--)
+        for (int i = countDownStart; i > 0; i--)
         {
             countdownToLaunchText.text = i.ToString();
             textObj.SetActive(false);

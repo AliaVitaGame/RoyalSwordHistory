@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    [SerializeField] private bool notDeleteWithoutParent;
     [SerializeField] private Image healthImage;
 
     private Vector3 _startPosition;
@@ -20,7 +21,7 @@ public class HealthBar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_parent == null)
+        if(_parent == null && notDeleteWithoutParent == false)
         {
             Destroy(gameObject);
             return;

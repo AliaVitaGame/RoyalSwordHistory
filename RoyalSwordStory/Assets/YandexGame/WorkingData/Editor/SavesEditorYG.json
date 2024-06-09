@@ -1,5 +1,5 @@
 {
-    "idSave": 1273,
+    "idSave": 1335,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -123,7 +123,7 @@
     ],
     "AvailableFriends": [],
     "MusicVolume": 0.0,
-    "AudioEffectsVolume": -16.0,
+    "AudioEffectsVolume": 0.0,
     "ActiveCheat": [
         false,
         false,
