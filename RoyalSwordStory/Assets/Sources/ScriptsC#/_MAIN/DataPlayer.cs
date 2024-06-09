@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using YG;
+using static YG.YandexGame;
 
 public class DataPlayer : MonoBehaviour
 {
@@ -41,8 +42,12 @@ public class DataPlayer : MonoBehaviour
     {
         YandexGame.ResetSaveProgress();
         SaveData();
+
     }
 
+
+    public static string GetLanguage() => YandexGame.EnvironmentData.language;
+    public static JsonEnvironmentData GetEnvironmentData() => YandexGame.EnvironmentData;
     public static SavesYG GetData() => YandexGame.savesData;
 
 

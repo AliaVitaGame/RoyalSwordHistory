@@ -34,9 +34,13 @@ public class Item : ScriptableObject
     public float AddSpeed => addSpeed;
     public float AddHealth => addHealth;
     public float AddMana => addMana;
-    public string Description => descriptionRU;
+    public string DescriptionRU => descriptionRU;
+    public string DescriptionEN => descriptionEN;
+    public string DescriptionTR => descriptionTR;
     public int Price => price;
-    public string NameItem => nameItemRU;
+    public string NameItemRU => nameItemRU;
+    public string NameItemEN => nameItemEN;
+    public string NameItemTR => nameItemTR;
 
     public enum TypeItem
     {

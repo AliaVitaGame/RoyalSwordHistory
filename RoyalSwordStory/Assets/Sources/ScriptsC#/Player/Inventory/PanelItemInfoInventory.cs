@@ -22,6 +22,9 @@ public class PanelItemInfoInventory : MonoBehaviour
     private bool _isEquippedItem;
     private ICell _cellInventory;
 
+    private string _nameItemBase;
+    private string _descriptionItemBase;
+
     private void OnEnable()
     {
         CellInventory.CellSelectEvent += ShowInfo;
@@ -43,7 +46,9 @@ public class PanelItemInfoInventory : MonoBehaviour
     private void Start()
     {
         useButton.onClick.AddListener(Use);
-        DontShowInfo();
+       
+        if(DataPlayer.SDKEnabled)
+            DontShowInfo();
     }
 
     public void Use()
@@ -66,7 +71,7 @@ public class PanelItemInfoInventory : MonoBehaviour
         {
             return;
         }
-    
+
         RefreshUI();
     }
 
@@ -89,8 +94,26 @@ public class PanelItemInfoInventory : MonoBehaviour
     {
         var item = cellInventory.GetItem();
         cellItemImage.sprite = item.Sprite;
-        itemNameText.name = item.NameItem;
-        itemDescriptionText.text = item.Description;
+
+        var lan = DataPlayer.GetLanguage();
+        string name = null;
+        string description = null;
+
+        if (lan == "ru") {
+            name = item.NameItemRU;
+            description = item.DescriptionRU;
+        }else if (lan == "en")
+        {
+            name = item.NameItemEN;
+            description = item.DescriptionEN;
+        }
+        else if (lan == "tr") {
+            name = item.NameItemTR;
+            description = item.DescriptionTR;
+        }
+
+        itemNameText.name = name;
+        itemDescriptionText.text = description;
 
         _isEquippedItem = equipped;
         _cellInventory = cellInventory;
@@ -99,9 +122,12 @@ public class PanelItemInfoInventory : MonoBehaviour
 
     private void DontShowInfo()
     {
+        if (_nameItemBase == null) _nameItemBase = itemNameText.text;
+        if (_descriptionItemBase == null) _descriptionItemBase = itemDescriptionText.text;
+
         cellItemImage.sprite = nullSprite;
-        itemNameText.text = "Name item";
-        itemDescriptionText.text = "Click on the item to highlight it";
+        itemNameText.text = _nameItemBase;
+        itemDescriptionText.text = _descriptionItemBase;
         _cellInventory = null;
         RefreshUI();
     }

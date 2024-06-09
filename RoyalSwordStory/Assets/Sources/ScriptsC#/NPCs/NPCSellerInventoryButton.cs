@@ -94,8 +94,8 @@ public class NPCSellerInventoryButton : MonoBehaviour
 
     public void SetItemDescription(int itemIndex)
     {
-        selectedItemNameText.text = sellingItems[itemIndex].NameItem;
+        selectedItemNameText.text = sellingItems[itemIndex].NameItemRU;
         selectedItemIconImage.sprite = sellingItems[itemIndex].Sprite;
-        selectedDescriptionText.text = sellingItems[itemIndex].Description;
+        selectedDescriptionText.text = sellingItems[itemIndex].DescriptionRU;
     }
 }
