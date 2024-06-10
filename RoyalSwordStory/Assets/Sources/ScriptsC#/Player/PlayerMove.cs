@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private AudioClip[] jumpAudios;
     [SerializeField] private AudioFX audioFX;
 
+    private float _deadZoneJump = 1;
     private int _currentCountJump;
     private float _startPlayerSpriteScaleX;
     private bool _isStopMove;
@@ -101,8 +102,9 @@ public class PlayerMove : MonoBehaviour
         else
             _animationController.MoveAnimation(0);
 
-        _animationController.JumpAnimation(_rigidbody.velocity.y > 0);
-        _animationController.FallAnimation(_rigidbody.velocity.y < 0);
+        var RY = _rigidbody.velocity.y;
+        _animationController.JumpAnimation(RY > 0 && RY > _deadZoneJump);
+        _animationController.FallAnimation(RY < 0 && RY < -_deadZoneJump);
     }
 
     private void RotateSprite()

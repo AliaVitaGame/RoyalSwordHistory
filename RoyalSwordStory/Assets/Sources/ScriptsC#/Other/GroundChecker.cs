@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class GroundChecker : MonoBehaviour
 {
+    [SerializeField] private string tagGround = "Ground";
     [SerializeField] private LayerMask layerGround;
     [SerializeField] private LayerMask enemyLayer;
 
@@ -19,15 +20,15 @@ public class GroundChecker : MonoBehaviour
         IsGround = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(layerGround == (1 << collision.gameObject.layer))
+        if(layerGround == (1 << collision.gameObject.layer) || collision.tag == tagGround)
             IsGround = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (layerGround == (1 << collision.gameObject.layer))
+        if (layerGround == (1 << collision.gameObject.layer) || collision.tag == tagGround)
             IsGround = false;
     }
 
