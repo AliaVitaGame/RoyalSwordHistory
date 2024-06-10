@@ -32,6 +32,7 @@ namespace YG
         public bool[] ActiveCheat = new bool[1000];
 
         //--Stats--
+        public bool IsNewPlayer;
         public bool[] CountFinishLevel = new bool[1000];
         public int CountKilledEnemy;
 
