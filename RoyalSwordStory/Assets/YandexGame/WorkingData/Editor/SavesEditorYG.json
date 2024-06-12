@@ -1,11 +1,11 @@
 {
-    "idSave": 128,
+    "idSave": 255,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "NamePlayer": "Игрок235",
-    "CoinCount": 0,
-    "SelectedFlagID": 3,
+    "NamePlayer": "Dron",
+    "CoinCount": 999849,
+    "SelectedFlagID": 40,
     "IsBuyFlag": [
         true,
         true,
@@ -47,7 +47,7 @@
         false,
         false,
         false,
-        false,
+        true,
         false,
         false,
         false,
@@ -1009,8 +1009,8 @@
         false
     ],
     "AvailableFriends": [],
-    "MusicVolume": 0.0,
-    "AudioEffectsVolume": 0.0,
+    "MusicVolume": -45.0,
+    "AudioEffectsVolume": -22.0,
     "ActiveCheat": [
         false,
         false,
