@@ -17467,6 +17467,10 @@ PrefabInstance:
       propertyPath: _cameraShakeIntensity
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6397069464371506242, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6856323628999223351, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
       propertyPath: _deadZoneJump
       value: 1
