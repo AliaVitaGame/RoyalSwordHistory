@@ -1301,6 +1301,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1750676445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6145791476826490663, guid: 052e5026906dab047aed5788cdd3cb6b, type: 3}
+  m_PrefabInstance: {fileID: 1329368670262924655}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8e0a915b6fe21429ea40719100d114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1329368670262924655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1429,6 +1440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MagicManager: {fileID: 11400000, guid: 9ad0d910828bb264aafcf144bb28c9bf, type: 2}
   _keyCode: 49
+  audioFX: {fileID: 1750676445}
 --- !u!114 &9147444204914100506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,6 +1455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MagicManager: {fileID: 11400000, guid: ce02da8c785415940915a21f369090f5, type: 2}
   _keyCode: 50
+  audioFX: {fileID: 1750676445}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
