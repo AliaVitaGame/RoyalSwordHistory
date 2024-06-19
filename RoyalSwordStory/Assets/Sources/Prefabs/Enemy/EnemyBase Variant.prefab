@@ -76,6 +76,38 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1546749617, guid: ac0e8f57b9f213f4b9b7ada11de338da, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -665007564, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 1027183261, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[2]
+      value: 
+      objectReference: {fileID: -821308920, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[3]
+      value: 
+      objectReference: {fileID: -1029249723, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[4]
+      value: 
+      objectReference: {fileID: -2076529771, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[5]
+      value: 
+      objectReference: {fileID: -668685391, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
+    - target: {fileID: 4577687444133710194, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
+      propertyPath: limbsSprite.Array.data[6]
+      value: 
+      objectReference: {fileID: -2059609366, guid: a84d47cd44b7fa941961f655e4f44e21, type: 3}
     - target: {fileID: 4818828509652550290, guid: 55c10402b73e1354f9b71a0ee31cdd55, type: 3}
       propertyPath: groundDistance
       value: 1.97

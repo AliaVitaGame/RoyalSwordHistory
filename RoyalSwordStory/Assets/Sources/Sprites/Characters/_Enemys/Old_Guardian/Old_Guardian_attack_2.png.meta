@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 505d27ccc4d8dcf4ea3b9ee6da8249b5
+guid: 2367adcac36fcf44bba3f0be9e7fe643
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Old_Golem_attack2_0
+      name: Old_Guardian_attack_2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1120
-        width: 160
-        height: 160
+        y: 840
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3cd287b97f053f42a10e7ff5be05931
-      internalID: 1333754376
+      spriteID: 6ba3c8701d339984990de834aca4ed80
+      internalID: -296157128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_attack2_1
+      name: Old_Guardian_attack_2_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 960
-        width: 160
-        height: 160
+        y: 720
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0616a46aa155f934183a6ce020921ac4
-      internalID: 1109871125
+      spriteID: 94347c22e2562c849beafee78c3735c1
+      internalID: -28349978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_attack2_2
+      name: Old_Guardian_attack_2_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
-        width: 160
-        height: 160
+        y: 600
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,41 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2411d663d6c6c34883c082d1e6ef143
-      internalID: -90325773
+      spriteID: e276c26d74596ec42a12bf007adf3ccb
+      internalID: -774610220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_attack2_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 640
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0073d98f046881645acd9ecf218d3124
-      internalID: -54367437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old_Golem_attack2_4
+      name: Old_Guardian_attack_2_3
       rect:
         serializedVersion: 2
         x: 0
         y: 480
-        width: 160
-        height: 160
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b5e4b89824aeea4094bb1c4f83d30f0
-      internalID: -39311394
+      spriteID: 163fc34e09e501745bd12909c2568568
+      internalID: 1744462544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_attack2_5
+      name: Old_Guardian_attack_2_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
-        width: 160
-        height: 160
+        y: 360
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2144cdb0f5b9e54f9c85205d5feb325
-      internalID: -939343648
+      spriteID: 43fa0888e987eb046a7c38fee4d020a7
+      internalID: 1282418698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_attack2_6
+      name: Old_Guardian_attack_2_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 160
-        height: 160
+        y: 240
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +255,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62c71f3c26ea4fb419a50aa061d9aff8
-      internalID: -1184676673
+      spriteID: 4fb3a5d9c60ed9d49b83804acb8a3708
+      internalID: 497562017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_attack2_7
+      name: Old_Guardian_attack_2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c947d601ea575147bead8524369da07
+      internalID: -925616666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Old_Guardian_attack_2_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 250a69ffca3761a4288cb67c5bdacd6e
-      internalID: 1855631721
+      spriteID: deb006073bfdca240a9e4ff6676a74ca
+      internalID: -1185905572
       vertices: []
       indices: 
       edges: []
@@ -314,14 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Old_Golem_attack2_0: 1333754376
-      Old_Golem_attack2_1: 1109871125
-      Old_Golem_attack2_2: -90325773
-      Old_Golem_attack2_3: -54367437
-      Old_Golem_attack2_4: -39311394
-      Old_Golem_attack2_5: -939343648
-      Old_Golem_attack2_6: -1184676673
-      Old_Golem_attack2_7: 1855631721
+      Old_Guardian_attack_2_0: -296157128
+      Old_Guardian_attack_2_1: -28349978
+      Old_Guardian_attack_2_2: -774610220
+      Old_Guardian_attack_2_3: 1744462544
+      Old_Guardian_attack_2_4: 1282418698
+      Old_Guardian_attack_2_5: 497562017
+      Old_Guardian_attack_2_6: -925616666
+      Old_Guardian_attack_2_7: -1185905572
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

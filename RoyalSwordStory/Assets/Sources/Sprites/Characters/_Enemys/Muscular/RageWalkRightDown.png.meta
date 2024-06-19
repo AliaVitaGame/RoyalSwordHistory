@@ -144,7 +144,7 @@ TextureImporter:
         width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
         width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
         width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
         width: 40
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,6 +215,153 @@ TextureImporter:
       bones: []
       spriteID: 01bc9a4179f97fa46bdc799065ded031
       internalID: 1539028511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 10
+        width: 6
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66e5f8ee72e7734b82486cc3dc0289e
+      internalID: -665007564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 11
+        width: 6
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a64f55c73b0ce4d9372941df91866d
+      internalID: 1027183261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 24
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04482f5f395eabf4b9477dfe4b9f988e
+      internalID: -821308920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 2
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e0b84bf7e0aaf45b501177f1a56ab1
+      internalID: -1029249723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_8
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 2
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4045d0d5300f9504a9836a2388c12d0b
+      internalID: -2076529771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7456e4e2af3cbb42bf51fa95eac056b
+      internalID: -668685391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkRightDown_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 12
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3473125ef1af148a67487824b87684
+      internalID: -2059609366
       vertices: []
       indices: 
       edges: []
@@ -232,8 +379,15 @@ TextureImporter:
     nameFileIdTable:
       RageWalkRightDown_0: 1374601268
       RageWalkRightDown_1: 1052731468
+      RageWalkRightDown_10: -2059609366
       RageWalkRightDown_2: 411410370
       RageWalkRightDown_3: 1539028511
+      RageWalkRightDown_4: -665007564
+      RageWalkRightDown_5: 1027183261
+      RageWalkRightDown_6: -821308920
+      RageWalkRightDown_7: -1029249723
+      RageWalkRightDown_8: -2076529771
+      RageWalkRightDown_9: -668685391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

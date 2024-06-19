@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce41b0595e64bbc45a4ec10e9cdaa371
+guid: 373b02c40eac028448e11753458da2ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Old_Golem_spit_0
+      name: Old_Guardian_jump_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 960
-        width: 160
-        height: 160
+        y: 720
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2920260fa3f73eb47bf429809da57ce7
-      internalID: 1746052130
+      spriteID: 3f26c0d0eb564c44889e6f34a046b070
+      internalID: -1650294733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_spit_1
+      name: Old_Guardian_jump_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
-        width: 160
-        height: 160
+        y: 600
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,41 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4a94323395e28f409fddf56634be752
-      internalID: -1929176714
+      spriteID: e57fc5bd2147d024680579d53ea4d541
+      internalID: 1988029625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_spit_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 640
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2ea50b0ffd581947aadbf8dd833f4db
-      internalID: -1646775417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old_Golem_spit_3
+      name: Old_Guardian_jump_2
       rect:
         serializedVersion: 2
         x: 0
         y: 480
-        width: 160
-        height: 160
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aefee4d17dcf3ce4ebfa2821790ac556
-      internalID: 2108775764
+      spriteID: 9c7d2609ba8025e479bd3a97404ad2a6
+      internalID: -689009319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_spit_4
+      name: Old_Guardian_jump_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
-        width: 160
-        height: 160
+        y: 360
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f7824cb079a877428109ad23101b44a
-      internalID: -2032733487
+      spriteID: dce78488e49a4714da46504552c1f1ac
+      internalID: -723781253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_spit_5
+      name: Old_Guardian_jump_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 160
-        height: 160
+        y: 240
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +234,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e8560ee156571349a34683b3e1187f7
-      internalID: -1247017240
+      spriteID: cf3ed523127dd5c4d904784e6bb8c51b
+      internalID: -1298438222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_spit_6
+      name: Old_Guardian_jump_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c903ab9e290a7043bd099203ef9e05b
+      internalID: -1508154950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Old_Guardian_jump_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7011b35ddb1d474fad0d6a44f999357
-      internalID: -1647103170
+      spriteID: 2aad8a6db45890d4ca55e72c4d78ff88
+      internalID: -1020576503
       vertices: []
       indices: 
       edges: []
@@ -293,13 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Old_Golem_spit_0: 1746052130
-      Old_Golem_spit_1: -1929176714
-      Old_Golem_spit_2: -1646775417
-      Old_Golem_spit_3: 2108775764
-      Old_Golem_spit_4: -2032733487
-      Old_Golem_spit_5: -1247017240
-      Old_Golem_spit_6: -1647103170
+      Old_Guardian_jump_0: -1650294733
+      Old_Guardian_jump_1: 1988029625
+      Old_Guardian_jump_2: -689009319
+      Old_Guardian_jump_3: -723781253
+      Old_Guardian_jump_4: -1298438222
+      Old_Guardian_jump_5: -1508154950
+      Old_Guardian_jump_6: -1020576503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

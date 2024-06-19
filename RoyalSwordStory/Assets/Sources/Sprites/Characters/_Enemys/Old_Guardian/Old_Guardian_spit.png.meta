@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce6619fe53ce58e40b5eeca9d715949c
+guid: 0ca081fada481564f82e63ddfdb9b214
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Old_Golem_death_0
+      name: Old_Guardian_spit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
-        width: 160
-        height: 160
+        y: 840
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1213a4ed4fe45d84cbb3f4715313dbf6
-      internalID: -55955376
+      spriteID: 0cc223b5748922b4a92393964293810c
+      internalID: 1137531497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_death_1
+      name: Old_Guardian_spit_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 1280
-        width: 160
-        height: 160
+        y: 720
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9b12d3062e1cc8429b3e35d63a83e87
-      internalID: -1466479450
+      spriteID: e7fed6a286a8878488b1bed8c9ca4451
+      internalID: 973098682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_death_2
+      name: Old_Guardian_spit_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 1120
-        width: 160
-        height: 160
+        y: 600
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,83 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6521ee22dc33549ab43025947113ce
-      internalID: 1579271749
+      spriteID: f4be531885cccf04e9df37cb2de47a31
+      internalID: 1485994079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_death_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 960
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 218bd8f506f616748938358f084200e1
-      internalID: 1259347794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old_Golem_death_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 800
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d40b1e5cc245a3743aa072920a526e4c
-      internalID: -2097035622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old_Golem_death_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 640
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e13eca8089ce9a4e8d978ca5c1c61e1
-      internalID: -815141758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old_Golem_death_6
+      name: Old_Guardian_spit_3
       rect:
         serializedVersion: 2
         x: 0
         y: 480
-        width: 160
-        height: 160
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79d5d9687cdda124882365382f241ecc
-      internalID: 354509334
+      spriteID: 53eb1404e5ad04540abff5854276dfa3
+      internalID: -1760156925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_death_7
+      name: Old_Guardian_spit_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
-        width: 160
-        height: 160
+        y: 360
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28f0e0fb6af08a45af1f6493a1aac3f
-      internalID: 262629936
+      spriteID: 7187ddb104d28be47a94ebf0a1d5ddd9
+      internalID: 769048626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_death_8
+      name: Old_Guardian_spit_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
-        width: 160
-        height: 160
+        y: 240
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +255,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77b733953800ce6419549cb0eac158fb
-      internalID: -1572130677
+      spriteID: 4fceb8a613ff59548914cff865a51962
+      internalID: -1505555357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old_Golem_death_9
+      name: Old_Guardian_spit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8364fa247c6d5c4c953aa5896def49b
+      internalID: 356455944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Old_Guardian_spit_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f51048ac856eb34faa82f6d782bcf27
-      internalID: 1497615528
+      spriteID: 314bea2ad205e87468d2d7b766b3e5a8
+      internalID: -620520606
       vertices: []
       indices: 
       edges: []
@@ -356,16 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Old_Golem_death_0: -55955376
-      Old_Golem_death_1: -1466479450
-      Old_Golem_death_2: 1579271749
-      Old_Golem_death_3: 1259347794
-      Old_Golem_death_4: -2097035622
-      Old_Golem_death_5: -815141758
-      Old_Golem_death_6: 354509334
-      Old_Golem_death_7: 262629936
-      Old_Golem_death_8: -1572130677
-      Old_Golem_death_9: 1497615528
+      Old_Guardian_spit_0: 1137531497
+      Old_Guardian_spit_1: 973098682
+      Old_Guardian_spit_2: 1485994079
+      Old_Guardian_spit_3: -1760156925
+      Old_Guardian_spit_4: 769048626
+      Old_Guardian_spit_5: -1505555357
+      Old_Guardian_spit_6: 356455944
+      Old_Guardian_spit_7: -620520606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
