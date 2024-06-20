@@ -9,12 +9,17 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
-
         // ------------------------------------ \\
+
 
         //--Main--
         public string NamePlayer;
         public int CoinCount;
+
+
+        //--PlayerSkin--
+        public int SelectedPlayerSkinID;
+        public bool[] IsBuyPlayerSkin = new bool[1000];
 
         //--Flags--
         public int SelectedFlagID;

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,7 @@ public class MagicHolder : MonoBehaviour
 {
      public MagicManager MagicManager;
     [SerializeField] private KeyCode _keyCode;
+    [SerializeField] public AudioFX audioFX;
 
     private float _cooldownTime;
     private float _activeTime;
@@ -25,6 +26,7 @@ public class MagicHolder : MonoBehaviour
             if (Input.GetKeyDown(_keyCode))
             {
                 MagicManager.Activate();
+                MagicManager.PlayEquipAudio(audioFX);
                 state = MagicState.active;
                 _activeTime = MagicManager.ActiveTime;
             }

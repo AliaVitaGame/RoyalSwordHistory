@@ -25,3 +25,4 @@ MonoBehaviour:
   _damage: 25
   _timeStun: 1.2
   _repulsion: 0
+  equipAudio: {fileID: 8300000, guid: 92a80e9fc14e85946ba2a460f6d5ae0c, type: 3}

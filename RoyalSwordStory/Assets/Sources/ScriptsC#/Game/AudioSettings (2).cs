@@ -52,12 +52,6 @@ public class AudioSettings : MonoBehaviour
     {
         var data = DataPlayer.GetData();
 
-        musicVolumeSlider.minValue = -80;
-        audioEffectsVolumeSlider.minValue = -80;
-
-        musicVolumeSlider.maxValue = 0;
-        audioEffectsVolumeSlider.maxValue = 0;
-
         musicVolumeSlider.value = data.MusicVolume;
         audioEffectsVolumeSlider.value = data.AudioEffectsVolume;  
 

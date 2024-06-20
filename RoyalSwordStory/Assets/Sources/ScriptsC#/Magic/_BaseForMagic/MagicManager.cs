@@ -9,4 +9,7 @@ public class MagicManager : ScriptableObject
     public float ActiveTime;
 
     public virtual void Activate() { }
+
+    public virtual void PlayEquipAudio(AudioFX audioFX) { }
+    
 }

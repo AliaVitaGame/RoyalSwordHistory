@@ -20,3 +20,4 @@ MonoBehaviour:
   - {fileID: 4766524519739758203, guid: fc96910c83085c544ba2e9b1c3dc5701, type: 3}
   - {fileID: 6766581459858591606, guid: 07b074879ac0e47468e0a032ff84b39a, type: 3}
   _spawnEffect: {fileID: 19800006, guid: 60bc526f4be1e044ab9e46340b82ffb3, type: 3}
+  equipAudio: {fileID: 8300000, guid: 730e3953f624b1c45ba173f7cede91d7, type: 3}

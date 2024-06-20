@@ -21,5 +21,10 @@ MonoBehaviour:
   addHealth: 0
   addMana: 0
   price: 0
-  nameItem: Item
-  description: No description
+  nameItemRU: "\u041F\u0440\u0435\u0434\u043C\u0435\u0442"
+  nameItemEN: Item
+  nameItemTR: "\xD6\u011Fe"
+  descriptionRU: "\u041F\u0435\u0440\u0447\u0430\u0442\u043A\u0430 \u0447\u043B\u0435\u043D\u0430
+    \u0431\u043E\u0439\u0446\u043E\u0432\u0441\u043A\u043E\u0433\u043E \u043A\u043B\u0443\u0431\u0430"
+  descriptionEN: Fight Club Participant's Glove
+  descriptionTR: "D\xF6v\xFC\u015F Kul\xFCb\xFC Eldiveni"

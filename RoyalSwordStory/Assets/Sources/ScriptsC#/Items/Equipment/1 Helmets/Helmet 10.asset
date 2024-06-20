@@ -24,8 +24,7 @@ MonoBehaviour:
   nameItemRU: "\u041F\u0440\u0435\u0434\u043C\u0435\u0442"
   nameItemEN: Item
   nameItemTR: "\xD6\u011Fe"
-  descriptionRU: "\u0416\u0435\u043B\u0435\u0437\u043D\u044B\u0439 \u0448\u043B\u0435\u043C,
-    \u043D\u0430\u0434\u0435\u0436\u043D\u044B\u0439 \u043A\u0430\u043A \u0448\u0432\u0435\u0439\u0446\u0430\u0440\u0441\u043A\u0438\u0435
-    \u0447\u0430\u0441\u044B "
-  descriptionEN: No description
-  descriptionTR: "a\xE7\u0131klama yok"
+  descriptionRU: "\u041D\u0435 \u043E\u0447\u0435\u043D\u044C \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0439,
+    \u043D\u043E \u043D\u0430\u0434\u0435\u0436\u043D\u044B\u0439\n"
+  descriptionEN: Not very beautiful, but reliable
+  descriptionTR: "\xC7ok g\xFCzel de\u011Fil ama g\xFCvenilir"

@@ -12,13 +12,21 @@ public class LaserForward : MagicManager
     [SerializeField] private float _damage;
     [SerializeField] private float _timeStun;
     [SerializeField] private float _repulsion;
+    [Space(20)]
+    [SerializeField] private AudioClip equipAudio;
 
     private Transform _shootingPos;
-
 
     public override void Activate()
     {
         ShootLightning();
+    }
+    public override void PlayEquipAudio(AudioFX audioFX)
+    {
+        if (audioFX != null && equipAudio != null)
+        {
+            audioFX.PlayAudio(equipAudio);
+        }
     }
 
     private void ShootLightning()

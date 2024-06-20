@@ -159,6 +159,8 @@ public class PlayerAttacking : MonoBehaviour, IUnitMeleeAttacking
                 audioFX.PlayAudioRandomPitch(attackDownAudio[Random.Range(0, attackDownAudio.Length)]);
             }
 
+            if (_playerStats.IsDead) break;
+
             yield return new WaitForSeconds(Time.deltaTime);
         }
         _playerMove.SetStopMove(false);
