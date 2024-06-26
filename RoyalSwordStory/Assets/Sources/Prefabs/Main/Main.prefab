@@ -33538,10 +33538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 5146978143670941284}
-  activeInventoryKey: 9
   activeInventoryButton: {fileID: 569230547366832947}
   pausePanel: {fileID: 4137452995567373455}
-  activePauseKey: 27
   activePauseButton: {fileID: 6370316681838394888}
   playerStats: {fileID: 5015230323323775049}
   additionalPanels:
@@ -33736,6 +33734,7 @@ Transform:
   - {fileID: 3868842928750347331}
   - {fileID: 8831924810051598415}
   - {fileID: 87089528192484511}
+  - {fileID: 8051379619062740026}
   m_Father: {fileID: 2526600020197840180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5862590099063732243
@@ -35149,6 +35148,164 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 0
+--- !u!1 &6390025049512899926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8051379619062740026}
+  - component: {fileID: 8063860020661118098}
+  m_Layer: 0
+  m_Name: INPUT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8051379619062740026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390025049512899926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1627132659764548059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8063860020661118098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6390025049512899926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: cc7a0fe039fd9bc4aaaff473ad393b77, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 7875444952161726106}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6856323628999223351}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6476877e-38b6-4492-8ad8-20950334bba4
+    m_ActionName: Unit/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6856323628999223351}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: SetHorizontal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd58978c-cf60-4671-a8e5-090c98d1bbb9
+    m_ActionName: Unit/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5860543947160785491}
+        m_TargetAssemblyTypeName: PlayerAttacking, Assembly-CSharp
+        m_MethodName: StartAttackFirst
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aa81712c-8944-44e8-97d3-65b9a996efe8
+    m_ActionName: Unit/Attack[/Mouse/leftButton,/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest,/XInputControllerWindows2/buttonWest]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5860543947160785491}
+        m_TargetAssemblyTypeName: PlayerAttacking, Assembly-CSharp
+        m_MethodName: StartAttackSecond
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f9212ae7-3237-42c4-beec-11af8b951c75
+    m_ActionName: Unit/AttackDown[/Mouse/rightButton,/XInputControllerWindows/buttonNorth,/XInputControllerWindows1/buttonNorth,/XInputControllerWindows2/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8287336335781131601}
+        m_TargetAssemblyTypeName: PanelActivator, Assembly-CSharp
+        m_MethodName: InputInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ef6712b9-fb76-4e3e-9c52-ac370b481d9a
+    m_ActionName: Unit/Inventory[/Keyboard/tab,/XInputControllerWindows/rightShoulder,/XInputControllerWindows1/rightShoulder,/XInputControllerWindows2/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8287336335781131601}
+        m_TargetAssemblyTypeName: PanelActivator, Assembly-CSharp
+        m_MethodName: InputPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b77d4159-db62-465c-8681-e5f17378dce4
+    m_ActionName: Unit/Pause[/Keyboard/escape,/XInputControllerWindows/start,/XInputControllerWindows1/start,/XInputControllerWindows2/start]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Unit
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 1769714921522761513}
 --- !u!1 &6528468887517959848
 GameObject:
   m_ObjectHideFlags: 0
@@ -39103,7 +39260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5888565879622144674}
   - component: {fileID: 7837325482879676643}
-  - component: {fileID: 2745400039316279465}
+  - component: {fileID: 7875444952161726106}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -39141,7 +39298,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &2745400039316279465
+--- !u!114 &7875444952161726106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39150,17 +39307,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8457016293415223523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: cc7a0fe039fd9bc4aaaff473ad393b77, type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 4228905838461780754, guid: cc7a0fe039fd9bc4aaaff473ad393b77, type: 3}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &8478772263907831377
 GameObject:
   m_ObjectHideFlags: 0

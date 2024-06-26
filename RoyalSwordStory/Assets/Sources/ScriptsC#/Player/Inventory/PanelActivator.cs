@@ -1,34 +1,32 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PanelActivator : MonoBehaviour
 {
     [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private KeyCode activeInventoryKey = KeyCode.Tab;
     [SerializeField] private Button activeInventoryButton;
     [Space]
     [SerializeField] private GameObject pausePanel;
-    [SerializeField] private KeyCode activePauseKey = KeyCode.Escape;
     [SerializeField] private Button activePauseButton;
     [Space]
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private GameObject[] additionalPanels;
-
-
 
     private void Start()
     {
         DeactivateAllPanel();
     }
 
-    private void Update()
+    public void InputInventory(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(activeInventoryKey))
-            SetActiveInventory(!inventoryPanel.activeSelf);
-
-        if (Input.GetKeyDown(activePauseKey))
+        if (context.performed)
+            SetActiveInventory(!inventoryPanel.activeSelf); 
+    }
+    public void InputPause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
             SetActivePause(!pausePanel.activeSelf);
-
     }
 
     public void SetActiveInventory(bool active)

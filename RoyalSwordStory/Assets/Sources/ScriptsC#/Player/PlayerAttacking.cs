@@ -105,19 +105,14 @@ public class PlayerAttacking : MonoBehaviour, IUnitMeleeAttacking
         damageCollision.gameObject.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && PlatformManager.IsDesktop)
-            StartAttack();
-
-        if (Input.GetMouseButtonDown(1) && PlatformManager.IsDesktop)
-            StartAttack(true);
-    }
-
     private void FixedUpdate()
     {
         RefreshUI();
     }
+
+    public void StartAttackFirst() => StartAttack();
+
+    public void StartAttackSecond() => StartAttack(true);
 
     public void StartAttack(bool attackDown = false)
     {

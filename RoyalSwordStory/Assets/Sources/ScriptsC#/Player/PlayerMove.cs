@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerStats))]
@@ -50,18 +51,9 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PlatformManager.IsDesktop)
-            SetHorizontal(Input.GetAxisRaw("Horizontal"));
-
         Move();
         GroundCheck();
         Animation();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
     }
 
     public void Move()
@@ -77,6 +69,12 @@ public class PlayerMove : MonoBehaviour
         RotateSprite();
     }
 
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            Jump();
+    }
+
     public void Jump()
     {
         if (_currentCountJump >= countJump) return;
@@ -86,6 +84,9 @@ public class PlayerMove : MonoBehaviour
         _currentCountJump++;
         audioFX.PlayAudioRandomPitch(jumpAudios[GetRandomValue(0, jumpAudios.Length)]);
     }
+
+    public void SetHorizontal(InputAction.CallbackContext vectorMove) 
+        => InputX = vectorMove.ReadValue<Vector2>().x;
 
     public void SetHorizontal(float X)
         => InputX = X;
